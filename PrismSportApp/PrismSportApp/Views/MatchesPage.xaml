@@ -8,10 +8,78 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
+            <StackLayout Padding="15">
+                <Picker
+                    Title="Select League"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding CompetitionsLists}" />
+                <Picker Title="MatchDay" ItemsSource="{Binding}" />
+            </StackLayout>
+            <ListView
+                CachingStrategy="RecycleElement"
+                ItemsSource="{Binding Matches}"
+                RowHeight="80"
+                SelectionMode="Single"
+                SeparatorColor="ForestGreen">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Group}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontSize="15"
+                                        Text="{Binding HomeTeam.Name, Mode=TwoWay}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Score.FullTime.HomeTeam}"
+                                        TextColor="{Binding HomeColor}"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="3"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Score.FullTime.AwayTeam}"
+                                        TextColor="{Binding AwayColor}"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="4"
+                                        FontSize="15"
+                                        Text="{Binding AwayTeam.Name, Mode=TwoWay}"
+                                        TextColor="Black" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

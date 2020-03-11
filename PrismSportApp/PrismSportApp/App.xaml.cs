@@ -21,7 +21,14 @@ namespace PrismSportApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            //Pages//
             containerRegistry.RegisterForNavigation<MatchesPage, MatchViewModel>();
+
+
+            //Services//
+            containerRegistry.Register<IApiServices, ApiService>();
         }
+
+       
     }
 }
