@@ -1,6 +1,8 @@
 ﻿using Prism;
 using Prism.Ioc;
 using Prism.Unity;
+using PrismSportApp.ViewModels;
+using PrismSportApp.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,12 +16,12 @@ namespace PrismSportApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            //NavigationService.NavigateAsync(new Uri("HomePage", UriKind.Absolute));
+            NavigationService.NavigateAsync("MatchesPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<MatchesPage, MatchViewModel>();
         }
     }
 }
