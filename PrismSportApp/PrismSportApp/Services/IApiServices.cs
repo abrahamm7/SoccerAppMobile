@@ -10,7 +10,8 @@ namespace PrismSportApp
 {
     public interface IApiServices
     {
-       
+        Task<Team> GetId(int id);
+
         [Get("/api.football-data.org/v2/competitions/2000/matches?matchday")]
         Task<Fixtures> GetFixturesWorldCup();
         

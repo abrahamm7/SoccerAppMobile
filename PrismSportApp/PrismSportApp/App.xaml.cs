@@ -16,13 +16,16 @@ namespace PrismSportApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("MatchesPage");
+            //NavigationService.NavigateAsync("MatchesPage");
+            NavigationService.NavigateAsync(new Uri(NavConstants.TabMenu, UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             //Pages//
             containerRegistry.RegisterForNavigation<MatchesPage, MatchViewModel>();
+            containerRegistry.RegisterForNavigation<TeamPage, TeamPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuPages>();
 
 
             //Services//

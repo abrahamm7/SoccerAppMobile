@@ -11,5 +11,6 @@ namespace PrismSportApp.Models
         public const string Champions = "http://api.football-data.org/v2/competitions/2001/matches?matchday";
         public const string Bundesliga = "http://api.football-data.org/v2/competitions/2002/matches?matchday";
         public const string Leagues = "http://api.football-data.org/v2/competitions";
+        public const string Team = "http://api.football-data.org/v2/teams/{id}";
     }
 }

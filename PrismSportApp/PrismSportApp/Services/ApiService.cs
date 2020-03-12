@@ -12,6 +12,13 @@ namespace PrismSportApp
     public class ApiService: IApiServices
     {
         Links Links { get; set; } = new Links();
+        public async Task<Team> GetId(int id)
+        {
+            HttpClient httpClient = new HttpClient();
+            var result = await httpClient.GetStringAsync(Links.Team);
+            return JsonConvert.DeserializeObject<Team>(result);
+
+        }
         public async Task<Fixtures> GetFixturesWorldCup() //WorldCup//
         {
             HttpClient httpClient = new HttpClient();
