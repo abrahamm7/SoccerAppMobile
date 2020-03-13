@@ -24,6 +24,7 @@ namespace PrismSportApp.ViewModels
         public List<Match> Matches { get; set; } = new List<Match>();
         Fixtures Fixture { get; set; } = new Fixtures();
         Competitions League { get; set; } = new Competitions();
+        Competitions LeagueSelect { get; set; } = new Competitions();
 
         INavigationService navigation;
 
@@ -59,7 +60,8 @@ namespace PrismSportApp.ViewModels
 
         async void SelectLeague(object sender)
         {
-
+            var item = sender as Picker;
+            LeagueSelect = (Competitions)item.SelectedItem;
         }
 
         async Task GetMatches()
@@ -67,14 +69,32 @@ namespace PrismSportApp.ViewModels
             try
             {                
                 RestService.For<IApiServices>(Links.Url);
+
                 var response1 = await apiServices.GetLeagues();
+
                 var worldcup = await apiServices.GetFixturesWorldCup();
+
                 var uefa = await apiServices.GetFixturesUefaChampions();
+
                 League = response1;
+
                 var show = League.competitions.Where(elemento => elemento.Id == 2000 || elemento.Id == 2001).ToList();
-                Fixture = worldcup;
-                this.Matches = Fixture.Matches.Distinct().ToList();
-                this.CompetitionsLists = show;
+
+                
+                //{
+                //    Fixture = worldcup;
+                //}
+              
+                    Fixture = uefa;
+                
+                
+              
+
+                //
+
+                this.Matches = Fixture.Matches.Distinct().ToList();                
+
+                this.CompetitionsLists = show; 
                 
             }
             catch (Exception ex)

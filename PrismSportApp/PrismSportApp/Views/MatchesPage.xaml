@@ -19,7 +19,7 @@
                         <behaviorsPack:EventToCommandBehavior
                             Command="{Binding SelectItem}"
                             CommandParameter="{Binding Source={x:Reference PickerCompetitions}}"
-                            EventName="SelectedIndexChanged" />
+                            EventName="SelectedItem" />
                     </Picker.Behaviors>
                 </Picker>
                 <Picker
