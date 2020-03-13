@@ -14,14 +14,8 @@
                     x:Name="PickerCompetitions"
                     Title="Select League"
                     ItemDisplayBinding="{Binding Name}"
-                    ItemsSource="{Binding CompetitionsLists}">
-                    <Picker.Behaviors>
-                        <behaviorsPack:EventToCommandBehavior
-                            Command="{Binding SelectItem}"
-                            CommandParameter="{Binding Source={x:Reference PickerCompetitions}}"
-                            EventName="SelectedItem" />
-                    </Picker.Behaviors>
-                </Picker>
+                    ItemsSource="{Binding CompetitionsLists}"
+                    SelectedItem="{Binding Selected}" />
                 <Picker
                     Title="Stage"
                     ItemDisplayBinding="{Binding Stage}"

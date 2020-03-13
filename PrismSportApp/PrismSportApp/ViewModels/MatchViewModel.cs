@@ -34,7 +34,7 @@ namespace PrismSportApp.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SelectItem { get; set; }
+        public ICommand Selected { get; set; }
         #endregion
 
         #region Constructor
@@ -44,7 +44,7 @@ namespace PrismSportApp.ViewModels
             dialogService = pageDialog;
             apiServices = api;
 
-            SelectItem = new Command(SelectLeague);
+            Selected = new Command(SelectLeague);
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -80,18 +80,10 @@ namespace PrismSportApp.ViewModels
 
                 var show = League.competitions.Where(elemento => elemento.Id == 2000 || elemento.Id == 2001).ToList();
 
+                Fixture = worldcup;
+                              
+                //Fixture = uefa;
                 
-                //{
-                //    Fixture = worldcup;
-                //}
-              
-                    Fixture = uefa;
-                
-                
-              
-
-                //
-
                 this.Matches = Fixture.Matches.Distinct().ToList();                
 
                 this.CompetitionsLists = show; 
