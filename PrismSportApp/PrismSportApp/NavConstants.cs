@@ -8,8 +8,8 @@ namespace PrismSportApp
     {
         //public const string Home = "/NavigationPage/HomePage";
         //public const string Detail = "DetailPage";
-        public const string TabMenu = "/MenuPages?selectedTab=MatchesPage";
-        //public const string MasterMenu = "/MenuPage/NavigationPage/DetailPage";
+        //public const string TabMenu = "/MenuPages?selectedTab=MatchesPage";
+        public const string MasterMenu = "/MenuPages/NavigationPage/MatchesPage";
 
     }
 }

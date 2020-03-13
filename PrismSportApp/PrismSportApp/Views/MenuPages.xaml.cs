@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PrismSportApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPages : TabbedPage
+    public partial class MenuPages : MasterDetailPage
     {
         public MenuPages()
         {

@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -15,12 +16,7 @@
                     Title="Select League"
                     ItemDisplayBinding="{Binding Name}"
                     ItemsSource="{Binding CompetitionsLists}"
-                    SelectedItem="{Binding Selected}" />
-                <Picker
-                    Title="Stage"
-                    ItemDisplayBinding="{Binding Stage}"
-                    ItemsSource="{Binding Matches}" />
-                <Picker Title="MatchDay" ItemsSource="{Binding}" />
+                    SelectedIndex="{Binding Selected, Source={x:Reference PickerCompetitions}}" />
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
@@ -77,14 +73,20 @@
                                                 FontSize="20"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="{Binding Score.FullTime.HomeTeam}"
-                                                TextColor="{Binding HomeColor}"
+                                                TextColor="Black"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="20"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="-"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 FontAttributes="Bold"
                                                 FontSize="20"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="{Binding Score.FullTime.AwayTeam}"
-                                                TextColor="{Binding AwayColor}"
+                                                TextColor="Black"
                                                 VerticalTextAlignment="Start" />
                                         </StackLayout>
                                     </Frame>

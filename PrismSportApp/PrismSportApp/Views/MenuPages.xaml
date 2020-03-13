@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage
+<MasterDetailPage
     x:Class="PrismSportApp.Views.MenuPages"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -8,6 +8,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <!--  Pages can be added as references or inline  -->
-    <local:MatchesPage Title="Fixtures" />
-    <local:TeamPage Title="Teams" />
-</TabbedPage>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="20" BackgroundColor="Silver">
+                <Button
+                    BackgroundColor="Transparent"
+                    Command="{Binding onNavigate}"
+                    CommandParameter="NavigationPage/MatchesPage"
+                    Text="Leagues"
+                    TextColor="Black" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Command="{Binding onNavigate}"
+                    CommandParameter="NavigationPage/TeamPage"
+                    Text="Players"
+                    TextColor="Black" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

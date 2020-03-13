@@ -33,7 +33,7 @@ namespace PrismSportApp.ViewModels
         IApiServices apiServices;
         #endregion
 
-        #region Commands
+        #region Commands and Properties
         public ICommand Selected { get; set; }
         #endregion
 
@@ -44,8 +44,12 @@ namespace PrismSportApp.ViewModels
             dialogService = pageDialog;
             apiServices = api;
 
-            Selected = new Command(SelectLeague);
-
+            Selected = new Command(async(object sender) => 
+            {
+                LeagueSelect = (Competitions)sender;
+            });
+             
+           
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 Messages();
@@ -57,12 +61,8 @@ namespace PrismSportApp.ViewModels
             
         }
         #endregion
-
-        async void SelectLeague(object sender)
-        {
-            var item = sender as Picker;
-            LeagueSelect = (Competitions)item.SelectedItem;
-        }
+        
+       
 
         async Task GetMatches()
         {
