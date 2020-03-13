@@ -114,6 +114,6 @@ namespace PrismSportApp.Models
         public int Count { get; set; }
         public Filters Filters { get; set; }
         public Competition Competition { get; set; }
-        public ObservableCollection<Match> Matches { get; set; }
+        public List<Match> Matches { get; set; }
     }
 }
