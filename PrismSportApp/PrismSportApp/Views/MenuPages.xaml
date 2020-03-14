@@ -14,7 +14,7 @@
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
-                    CommandParameter="NavigationPage/MatchesPage"
+                    CommandParameter="NavigationPage/ListLeaguesPage"
                     Text="Leagues"
                     TextColor="Black" />
                 <Button

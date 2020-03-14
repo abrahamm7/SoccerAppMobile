@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PrismSportApp.Views.ListLeaguesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="LeagueList"
+    Title="Leagues"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                x:Name="ListLeague"
+                CachingStrategy="RecycleElement"
+                ItemsSource="{Binding Leagues}"
+                RowHeight="80"
+                SelectedItem="{Binding Tap, Source={x:Reference ListLeague}}"
+                SelectionMode="Single"
+                SeparatorColor="ForestGreen">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="10">
+                                    <Frame BackgroundColor="Transparent">
+                                        <StackLayout>
+                                            <Label
+                                                FontSize="20"
+                                                Text="{Binding Name}"
+                                                TextColor="Black" />
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
