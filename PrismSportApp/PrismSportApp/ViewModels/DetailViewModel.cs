@@ -26,8 +26,7 @@ namespace PrismSportApp.ViewModels
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            this.NameLeague = parameters.GetValue<string>("Name");
-            
+            this.NameLeague = parameters.GetValue<string>("Name");            
         }
     }
 }
