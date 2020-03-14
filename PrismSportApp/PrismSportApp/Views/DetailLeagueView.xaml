@@ -9,10 +9,32 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
+            <ListView
+                x:Name="ListLeague"
+                CachingStrategy="RecycleElement"
+                ItemsSource="{Binding Table}"
+                RowHeight="80"
+                SelectionMode="Single"
+                SeparatorColor="ForestGreen">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="10">
+                                    <Frame BackgroundColor="Transparent">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding won}" />
+                                        </StackLayout>
+                                        <!--<Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>-->
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

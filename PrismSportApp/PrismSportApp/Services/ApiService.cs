@@ -51,12 +51,12 @@ namespace PrismSportApp
             return JsonConvert.DeserializeObject<Competitions>(text);
 
         }
-        public async Task<LeagueStandings> GetStandings(int id)
+        public async Task<Standings> GetStandings(int id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
             string text = await httpClient.GetStringAsync(Links.LeagueStan);
-            return JsonConvert.DeserializeObject<LeagueStandings>(text);
+            return JsonConvert.DeserializeObject<Standings>(text);
 
         }
     }

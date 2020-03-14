@@ -24,7 +24,7 @@ namespace PrismSportApp
         [Get("/api.football-data.org/v2/competitions")]
         Task<Competitions> GetLeagues();
         
-        Task<LeagueStandings> GetStandings(int id);
+        Task<Standings> GetStandings(int id);
         
     }
 }

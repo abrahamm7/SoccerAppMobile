@@ -15,30 +15,12 @@ namespace PrismSportApp.ViewModels
 
         public TeamPageViewModel()
         {
-            GetDataAysnc();
+           
         }
 
-        async Task GetDataAysnc()
-        {
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
-            {
-                try
-                {
-                    Team = await _apiService.GetId(18);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"API EXCEPTION {ex}");
-                }
+        
 
-            }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("Error", "Internet connection fail", "Ok");
-                //Show internet connection error message HERE
-            }
-
-        }
+        
 
 
 
