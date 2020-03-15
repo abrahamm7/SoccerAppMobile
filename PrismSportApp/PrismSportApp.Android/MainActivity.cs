@@ -11,14 +11,14 @@ using Prism.Ioc;
 
 namespace PrismSportApp.Droid
 {
-    [Activity(Label = "Xport", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Xport", Icon = "@mipmap/futbol", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            SetTheme(Resource.Style.MainTheme);
             base.OnCreate(savedInstanceState);
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#00c853"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

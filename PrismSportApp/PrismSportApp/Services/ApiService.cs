@@ -59,8 +59,7 @@ namespace PrismSportApp
         {
             Links = new Links(param);
             HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
-            //var text = await httpClient.GetStringAsync($"https://api.football-data.org/v2/competitions/{param}/standings?standing");
+            httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");          
             var text = await httpClient.GetStringAsync(Links.LeagueStan);
             return JsonConvert.DeserializeObject<Standings>(text);
 
