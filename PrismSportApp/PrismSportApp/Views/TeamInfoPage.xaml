@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PrismSportApp.Views.TeamInfoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:SVG.Forms.Plugin.Abstractions;assembly=SVG.Forms.Plugin.Abstractions"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="Team Info"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <yummy:PancakeView
+            Margin="0,130,0,0"
+            HasShadow="True"
+            HeightRequest="300"
+            HorizontalOptions="Center"
+            IsClippedToBounds="True"
+            VerticalOptions="Start"
+            WidthRequest="350">
+            <StackLayout>
+                <StackLayout VerticalOptions="Start">
+                    <ffimageloading:CachedImage
+                        Margin="0,0,0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="100"
+                        Source="{Binding Logo, Mode=TwoWay}"
+                        VerticalOptions="Start" />
+                </StackLayout>
+                <Label
+                    Margin="0,0,0,150"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding TeamName, Mode=TwoWay}"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

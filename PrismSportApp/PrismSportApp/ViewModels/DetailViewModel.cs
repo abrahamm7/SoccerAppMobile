@@ -8,7 +8,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PrismSportApp.ViewModels
 {
@@ -19,9 +21,12 @@ namespace PrismSportApp.ViewModels
         public Standings LeagueStandings { get; set; } = new Standings();
         public List<Table> Table { get; set; } = new List<Table>();
         public Teamm Teamm { get; set; } = new Teamm();
+        public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
         public string NameLeague { get; set; }
         public string Code { get; set; }
+
+        public ICommand Tap { get; set; }
         INavigationService navigation;
 
         IPageDialogService dialogService;
@@ -32,6 +37,7 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             apiServices = api;
+            Tap = new Command(SelectTeam);
         }        
 
 
@@ -53,7 +59,6 @@ namespace PrismSportApp.ViewModels
             try
             {
                 RestService.For<IApiServices>(Links.url);
-
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;               
                 this.Table = LeagueStandings.standings.First().table.ToList();
@@ -66,6 +71,16 @@ namespace PrismSportApp.ViewModels
                 Debug.WriteLine($"Error en el metodo Leagues: {ex.Message}");
             }
 
+        }
+
+        async void SelectTeam(object sender)
+        {
+            TeamTable = (Table)sender;
+            var parameters = new NavigationParameters();
+            parameters.Add("TeamName", TeamTable.Team.Name);          
+            parameters.Add("TeamId", TeamTable.Team.Id);          
+            parameters.Add("Logo", TeamTable.Team.CrestUrl);          
+            await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }
 }

@@ -8,6 +8,10 @@ using Android.Widget;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using ImageCircle.Forms.Plugin.Droid;
+using FFImageLoading.Svg.Forms;
+using FFImageLoading.Forms.Platform;
+using SVG.Forms.Plugin.Droid;
 
 namespace PrismSportApp.Droid
 {
@@ -19,6 +23,11 @@ namespace PrismSportApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             SetTheme(Resource.Style.MainTheme);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
+            ImageCircleRenderer.Init();
+            CachedImageRenderer.InitImageViewHandler();
+            SvgImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
             base.OnCreate(savedInstanceState);
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#00c853"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

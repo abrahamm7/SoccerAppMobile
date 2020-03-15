@@ -78,9 +78,9 @@
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <!--<Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                        </Frame.GestureRecognizers>-->
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
+                                            </Frame.GestureRecognizers>
                                         </Frame>
                                     </StackLayout>
                                 </Grid>

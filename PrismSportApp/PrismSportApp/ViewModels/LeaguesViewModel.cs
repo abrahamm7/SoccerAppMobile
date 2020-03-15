@@ -51,6 +51,8 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2015 ||
                 elemento.Id == 2019 ||
                 elemento.Id == 2017 ||
+                elemento.Id == 2003 ||
+                elemento.Id == 2002 ||
                 elemento.Id == 2014).ToList();
                 this.Leagues = show;
 

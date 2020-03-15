@@ -16,7 +16,6 @@
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Leagues}"
                 RowHeight="80"
-                SelectedItem="{Binding Tap, Source={x:Reference ListLeague}}"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen">
                 <ListView.ItemTemplate>
