@@ -15,11 +15,13 @@ namespace PrismSportApp.ViewModels
     public class DetailViewModel: INotifyPropertyChanged ,INavigatedAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public League League;
+        public League League { get; set; } = new League();
         public Standings LeagueStandings { get; set; } = new Standings();
         public List<Table> Table { get; set; } = new List<Table>();
+        public Teamm Teamm { get; set; } = new Teamm();
+        public Links Links { get; set; } = new Links();
         public string NameLeague { get; set; }
-        public int Code { get; set; }
+        public string Code { get; set; }
         INavigationService navigation;
 
         IPageDialogService dialogService;
@@ -30,9 +32,6 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             apiServices = api;
-            GetTable();
-
-
         }        
 
 
@@ -45,32 +44,20 @@ namespace PrismSportApp.ViewModels
         {
             this.NameLeague = parameters.GetValue<string>("Name");
             var key = parameters.GetValue<string>("LeagueId");
-            this.Code = Convert.ToInt32(key);
+            this.Code = key;
+            GetTable(Convert.ToInt32(key));
         }
 
-        async Task GetTable()
-        {
+        async Task GetTable(int param)
+        {           
             try
             {
-                RestService.For<IApiServices>(Links.Url);
+                RestService.For<IApiServices>(Links.url);
 
-                var response = await apiServices.GetStandings(Code);
-                LeagueStandings = response;
-                //var worldcup = await apiServices.GetFixturesWorldCup();
-
-                //var uefa = await apiServices.GetFixturesUefaChampions();
-
+                var response = await apiServices.GetStandings(param);
+                LeagueStandings = response;               
                 this.Table = LeagueStandings.standings.First().table.ToList();
-
-                //var show = League.competitions.Where(elemento => elemento.Id == 2000 || elemento.Id == 2001).ToList();
-
-                //Fixture = worldcup;
-
-                ////Fixture = uefa;
-
-                //this.Matches = Fixture.Matches.Distinct().ToList();
-
-                //this.CompetitionsLists = show;
+               
 
             }
             catch (Exception ex)

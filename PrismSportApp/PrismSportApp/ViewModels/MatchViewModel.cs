@@ -25,7 +25,7 @@ namespace PrismSportApp.ViewModels
         Fixtures Fixture { get; set; } = new Fixtures();
         Competitions League { get; set; } = new Competitions();
         Competitions LeagueSelect { get; set; } = new Competitions();
-
+        public Links Links { get; set; } = new Links();
         INavigationService navigation;
 
         IPageDialogService dialogService;
@@ -68,7 +68,7 @@ namespace PrismSportApp.ViewModels
         {
             try
             {                
-                RestService.For<IApiServices>(Links.Url);
+                RestService.For<IApiServices>(Links.url);
 
                 var response1 = await apiServices.GetLeagues();
 

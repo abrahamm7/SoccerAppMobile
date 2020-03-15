@@ -39,23 +39,23 @@ namespace PrismSportApp.Models
 
     public class Teamm
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string crestUrl { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string CrestUrl { get; set; }
     }
 
     public class Table
     {
-        public int position { get; set; }
-        public Team team { get; set; }
-        public int playedGames { get; set; }
-        public int won { get; set; }
-        public int draw { get; set; }
-        public int lost { get; set; }
-        public int points { get; set; }
-        public int goalsFor { get; set; }
-        public int goalsAgainst { get; set; }
-        public int goalDifference { get; set; }
+        public int Position { get; set; }
+        public Teamm Team { get; set; }
+        public int PlayedGames { get; set; }
+        public int Won { get; set; }
+        public int Draw { get; set; }
+        public int Lost { get; set; }
+        public int Points { get; set; }
+        public int GoalsFor { get; set; }
+        public int GoalsAgainst { get; set; }
+        public int GoalDifference { get; set; }
     }
 
     public class Standing

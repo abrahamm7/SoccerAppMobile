@@ -19,8 +19,8 @@ namespace PrismSportApp.ViewModels
         public List<League> Leagues { get; set; } = new List<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
+        public Links Links { get; set; } = new Links();
 
-        
 
         public ICommand Tap { get; set; }
 
@@ -42,12 +42,16 @@ namespace PrismSportApp.ViewModels
         {
             try
             {
-                RestService.For<IApiServices>(Links.Url);
+                RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues();
                 League = response1;
                 var show = League.competitions.Where(elemento => elemento.Id == 2000 ||
                 elemento.Id == 2001 ||
-                elemento.Id == 2021).ToList();
+                elemento.Id == 2021 ||
+                elemento.Id == 2015 ||
+                elemento.Id == 2019 ||
+                elemento.Id == 2017 ||
+                elemento.Id == 2014).ToList();
                 this.Leagues = show;
 
             }
