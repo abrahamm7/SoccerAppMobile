@@ -23,9 +23,8 @@ namespace PrismSportApp.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             this.TeamName = parameters.GetValue<string>("TeamName");
-            this.Logo = parameters.GetValue<string>("Logo");
+            this.Logo = parameters.GetValue<string>("Logo");   
         }
-
         public TeamInfoViewModel()
         {
             

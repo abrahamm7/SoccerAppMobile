@@ -9,15 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Padding="15">
-                <Picker
-                    x:Name="PickerCompetitions"
-                    Title="Select League"
-                    ItemDisplayBinding="{Binding Name}"
-                    ItemsSource="{Binding CompetitionsLists}"
-                    SelectedIndex="{Binding Selected, Source={x:Reference PickerCompetitions}}" />
-            </StackLayout>
+        <StackLayout>           
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"

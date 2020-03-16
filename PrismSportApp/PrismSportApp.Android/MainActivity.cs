@@ -24,12 +24,12 @@ namespace PrismSportApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             SetTheme(Resource.Style.MainTheme);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
-            ImageCircleRenderer.Init();
-            CachedImageRenderer.InitImageViewHandler();
+            ImageCircleRenderer.Init();            
             SvgImageRenderer.Init();
+            CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
             base.OnCreate(savedInstanceState);
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#00c853"));
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App(new AndroidInitialize()));
