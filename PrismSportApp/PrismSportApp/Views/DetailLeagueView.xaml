@@ -13,68 +13,86 @@
                 x:Name="ListLeague"
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Table}"
-                RowHeight="50"
+                RowHeight="80"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <StackLayout Padding="1" Spacing="20">
-                                        <Frame BackgroundColor="Transparent">
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label
-                                                    Grid.Row="0"
-                                                    Grid.Column="0"
-                                                    FontAttributes="Bold"
-                                                    FontSize="15"
-                                                    HorizontalTextAlignment="Center"
-                                                    Text="{Binding Position}"
-                                                    TextColor="Black"
-                                                    VerticalTextAlignment="Center" />
-                                                <Label
-                                                    Grid.Row="0"
-                                                    Grid.Column="0"
-                                                    FontAttributes="Bold"
-                                                    FontSize="15"
-                                                    HorizontalTextAlignment="Center"
-                                                    Text="{Binding Team.Name, Mode=TwoWay}"
-                                                    TextColor="Black"
-                                                    VerticalTextAlignment="Center" />
-                                                <StackLayout
-                                                    HorizontalOptions="End"
-                                                    Orientation="Horizontal"
-                                                    Spacing="30">
+                                <StackLayout Padding="1" Spacing="20">
+                                    <Frame HorizontalOptions="StartAndExpand" WidthRequest="320">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="15"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding Position}"
+                                                TextColor="Black"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="15"
+                                                HorizontalTextAlignment="Center"
+                                                Text="{Binding Team.Name, Mode=TwoWay}"
+                                                TextColor="Black"
+                                                VerticalTextAlignment="Center" />
+                                            <StackLayout
+                                                HorizontalOptions="EndAndExpand"
+                                                Orientation="Horizontal"
+                                                Spacing="10">
+                                                <StackLayout>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        Text="Pl"
+                                                        TextColor="Black" />
+                                                    <Label
+                                                        HorizontalOptions="End"
+                                                        HorizontalTextAlignment="End"
+                                                        Text="{Binding PlayedGames}"
+                                                        VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <StackLayout>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        Text="W"
+                                                        TextColor="Black" />
                                                     <Label
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Won}"
                                                         VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <StackLayout>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        Text="D"
+                                                        TextColor="Black" />
                                                     <Label
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Draw}"
                                                         VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <StackLayout>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        Text="L"
+                                                        TextColor="Black" />
                                                     <Label
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Lost}"
                                                         VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <StackLayout>
                                                     <Label
                                                         FontAttributes="Bold"
+                                                        Text="PTS"
+                                                        TextColor="Black" />
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Points}"
@@ -82,12 +100,12 @@
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
-                                            </Frame.GestureRecognizers>
-                                        </Frame>
-                                    </StackLayout>
-                                </Grid>
+                                        </StackLayout>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>

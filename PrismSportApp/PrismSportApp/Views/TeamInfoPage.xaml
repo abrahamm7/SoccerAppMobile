@@ -13,14 +13,14 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <yummy:PancakeView
-            Margin="0,130,0,0"
+            Margin="0,110,0,0"
             HasShadow="True"
             HeightRequest="300"
             HorizontalOptions="Center"
-            IsClippedToBounds="True"
             VerticalOptions="Start"
             WidthRequest="350">
-            <StackLayout>
+
+            <StackLayout Spacing="20">
                 <StackLayout VerticalOptions="Start">
                     <ffimageloading:CachedImage
                         Margin="0,0,0,0"
@@ -30,12 +30,56 @@
                         VerticalOptions="Start" />
                 </StackLayout>
                 <Label
-                    Margin="0,0,0,150"
+                    Margin="0,0,0,0"
                     FontSize="20"
                     HorizontalOptions="CenterAndExpand"
                     Text="{Binding TeamName, Mode=TwoWay}"
                     TextColor="Black"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="Start" />
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    Spacing="30">
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Win"
+                            TextColor="Black" />
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Won, Mode=TwoWay}"
+                            TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Draw"
+                            TextColor="Black" />
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Draw, Mode=TwoWay}"
+                            TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Lost"
+                            TextColor="Black" />
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Lost, Mode=TwoWay}"
+                            TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
         </yummy:PancakeView>
     </ContentPage.Content>

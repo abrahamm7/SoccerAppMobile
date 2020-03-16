@@ -80,6 +80,9 @@ namespace PrismSportApp.ViewModels
             parameters.Add("TeamName", TeamTable.Team.Name);          
             parameters.Add("TeamId", TeamTable.Team.Id);          
             parameters.Add("Logo", TeamTable.Team.CrestUrl);          
+            parameters.Add("Win", TeamTable.Won);    
+            parameters.Add("Draws", TeamTable.Draw);                
+            parameters.Add("Losts", TeamTable.Lost);                
             await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }
