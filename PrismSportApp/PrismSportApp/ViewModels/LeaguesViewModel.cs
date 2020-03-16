@@ -71,7 +71,7 @@ namespace PrismSportApp.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("LeagueId", league.Id);
                 parameters.Add("Name", league.Name);
-                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague, UriKind.Relative), parameters);
+                await navigation.NavigateAsync(new Uri(NavConstants.TabMenu, UriKind.Relative), parameters);
             }
         }
     }

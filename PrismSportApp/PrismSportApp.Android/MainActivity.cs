@@ -26,12 +26,12 @@ namespace PrismSportApp.Droid
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             ImageCircleRenderer.Init();            
             SvgImageRenderer.Init();
-            CachedImageRenderer.Init(true);
-            var ignore = typeof(SvgCachedImage);
             base.OnCreate(savedInstanceState);
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CachedImageRenderer.Init(true);
+            var ignore = typeof(SvgCachedImage);
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

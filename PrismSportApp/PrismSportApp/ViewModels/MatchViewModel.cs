@@ -56,7 +56,8 @@ namespace PrismSportApp.ViewModels
             }
             else
             {
-                GetMatches();
+                var league = League.competitions.First().Id;
+                GetMatches(league);
             }
             
         }
@@ -64,30 +65,16 @@ namespace PrismSportApp.ViewModels
         
        
 
-        async Task GetMatches()
+        async Task GetMatches(int id)
         {
             try
             {                
                 RestService.For<IApiServices>(Links.url);
-
-                var response1 = await apiServices.GetLeagues();
-
-                var worldcup = await apiServices.GetFixturesWorldCup();
-
-                var uefa = await apiServices.GetFixturesUefaChampions();
-
-                League = response1;
-
-                var show = League.competitions.Where(elemento => elemento.Id == 2000 || elemento.Id == 2001).ToList();
-
-                Fixture = worldcup;
-                              
-                //Fixture = uefa;
-                
-                this.Matches = Fixture.Matches.Distinct().ToList();                
-
-                this.CompetitionsLists = show; 
-                
+                var response1 = await apiServices.GetFixtures(id);                       
+                Fixture = response1;                            
+             
+                this.Matches = Fixture.Matches.Distinct().ToList();              
+  
             }
             catch (Exception ex)
             {

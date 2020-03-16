@@ -4,8 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="{Binding NameLeague, Mode=TwoWay}"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
@@ -44,12 +44,15 @@
                                                 <StackLayout>
                                                     <Label
                                                         FontAttributes="Bold"
+                                                        HorizontalTextAlignment="Center"
                                                         Text="Pl"
                                                         TextColor="Black" />
                                                     <Label
+                                                        FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding PlayedGames}"
+                                                        TextColor="Black"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>
@@ -58,9 +61,11 @@
                                                         Text="W"
                                                         TextColor="Black" />
                                                     <Label
+                                                        FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Won}"
+                                                        TextColor="Black"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>
@@ -69,9 +74,11 @@
                                                         Text="D"
                                                         TextColor="Black" />
                                                     <Label
+                                                        FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Draw}"
+                                                        TextColor="Black"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>
@@ -80,9 +87,24 @@
                                                         Text="L"
                                                         TextColor="Black" />
                                                     <Label
+                                                        FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Lost}"
+                                                        TextColor="Black"
+                                                        VerticalTextAlignment="Center" />
+                                                </StackLayout>
+                                                <StackLayout>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        Text="GD"
+                                                        TextColor="Black" />
+                                                    <Label
+                                                        FontSize="16"
+                                                        HorizontalOptions="End"
+                                                        HorizontalTextAlignment="End"
+                                                        Text="{Binding GoalDifference}"
+                                                        TextColor="Black"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>

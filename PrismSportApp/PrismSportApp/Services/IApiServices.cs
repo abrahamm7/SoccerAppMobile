@@ -10,21 +10,10 @@ namespace PrismSportApp
 {
     public interface IApiServices
     {
-
-        
-        [Get("/api.football-data.org/v2/competitions/2000/matches?matchday")]
-        Task<Fixtures> GetFixturesWorldCup();
-        
-        [Get("/api.football-data.org/v2/competitions/2001/matches?matchday")]
-        Task<Fixtures> GetFixturesUefaChampions();
-       
-        [Get("/api.football-data.org/v2/competitions/2002/matches?matchday")]
-        Task<Fixtures> GetFixturesBundesliga();        
-
         [Get("/api.football-data.org/v2/competitions")]
-        Task<Competitions> GetLeagues();
-        
+        Task<Competitions> GetLeagues();        
         Task<Standings> GetStandings(int id);
+        Task<Fixtures> GetFixtures(int id);
         
     }
 }

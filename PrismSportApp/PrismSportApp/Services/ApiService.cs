@@ -11,38 +11,15 @@ namespace PrismSportApp
 {
     public class ApiService: IApiServices
     {
-        Links Links;
-        public async Task<Team> GetId(int id)
+        Links Links;       
+        
+        
+        public async Task<Fixtures> GetFixtures(int param) 
         {
-            HttpClient httpClient = new HttpClient();
-            var result = await httpClient.GetStringAsync(Links.Team);
-            return JsonConvert.DeserializeObject<Team>(result);
-
-        }
-        public async Task<Fixtures> GetFixturesWorldCup() //WorldCup//
-        {
-            Links = new Links();
+            Links = new Links(param);
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
-            var text = await httpClient.GetStringAsync(Links.WorldCup);
-            return JsonConvert.DeserializeObject<Fixtures>(text);
-
-        }
-        public async Task<Fixtures> GetFixturesUefaChampions() //UefaChampions//
-        {
-            Links = new Links();
-            HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
-            var text = await httpClient.GetStringAsync(Links.Champions);
-            return JsonConvert.DeserializeObject<Fixtures>(text);
-
-        }
-        public async Task<Fixtures> GetFixturesBundesliga() //Bundesliga//
-        {
-            Links = new Links();
-            HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
-            var text = await httpClient.GetStringAsync(Links.Bundesliga);
+            var text = await httpClient.GetStringAsync(Links.matches);
             return JsonConvert.DeserializeObject<Fixtures>(text);
 
         }

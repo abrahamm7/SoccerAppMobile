@@ -25,6 +25,7 @@ namespace PrismSportApp.ViewModels
         public Links Links { get; set; } = new Links();
         public string NameLeague { get; set; }
         public string Code { get; set; }
+        public string Logo { get; set; }
 
         public ICommand Tap { get; set; }
         INavigationService navigation;
@@ -62,7 +63,7 @@ namespace PrismSportApp.ViewModels
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;               
                 this.Table = LeagueStandings.standings.First().table.ToList();
-               
+                this.Logo = TeamTable.Team.CrestUrl;
 
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>           
+        <StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"
@@ -30,7 +30,6 @@
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="*" />
-
                                     </Grid.RowDefinitions>
                                     <StackLayout
                                         Grid.Row="0"

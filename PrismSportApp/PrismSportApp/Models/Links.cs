@@ -7,7 +7,7 @@ namespace PrismSportApp.Models
     public class Links
     {
         public string url { get; set; }
-        public string WorldCup { get; set; }
+        public string matches { get; set; }
         public string Champions { get; set; }
         public string Bundesliga { get; set; }
         public string Leagues { get; set; }
@@ -16,7 +16,7 @@ namespace PrismSportApp.Models
         public Links(int id)
         {
             url = "https://www.football-data.org/";
-            WorldCup = $"http://api.football-data.org/v2/competitions/2000/matches?matchday";
+            matches = $"http://api.football-data.org/v2/competitions/{id}/matches";
             Champions = $"http://api.football-data.org/v2/competitions/2001/matches?matchday";
             Bundesliga = $"http://api.football-data.org/v2/competitions/2002/matches?matchday";
             Leagues = $"http://api.football-data.org/v2/competitions";
@@ -26,7 +26,7 @@ namespace PrismSportApp.Models
         public Links()
         {
             url = "https://www.football-data.org/";
-            WorldCup = $"http://api.football-data.org/v2/competitions/2000/matches?matchday";
+            matches = $"http://api.football-data.org/v2/competitions/2000/matches?matchday";
             Champions = $"http://api.football-data.org/v2/competitions/2001/matches?matchday";
             Bundesliga = $"http://api.football-data.org/v2/competitions/2002/matches?matchday";
             Leagues = $"http://api.football-data.org/v2/competitions";
