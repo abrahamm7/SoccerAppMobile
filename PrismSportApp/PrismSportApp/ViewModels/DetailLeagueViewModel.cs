@@ -14,7 +14,7 @@ using System.Windows.Input;
 
 namespace PrismSportApp.ViewModels
 {
-    public class DetailViewModel: INotifyPropertyChanged ,INavigatedAware
+    public class DetailLeagueViewModel: INotifyPropertyChanged ,INavigatedAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public League League { get; set; } = new League();
@@ -33,7 +33,7 @@ namespace PrismSportApp.ViewModels
         IPageDialogService dialogService;
 
         IApiServices apiServices;
-        public DetailViewModel(INavigationService navigationService, IApiServices api, IPageDialogService pageDialog)
+        public DetailLeagueViewModel(INavigationService navigationService, IApiServices api, IPageDialogService pageDialog)
         {
             navigation = navigationService;
             dialogService = pageDialog;
@@ -63,8 +63,6 @@ namespace PrismSportApp.ViewModels
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;               
                 this.Table = LeagueStandings.standings.First().table.ToList();
-               
-
             }
             catch (Exception ex)
             {
@@ -76,6 +74,7 @@ namespace PrismSportApp.ViewModels
 
         async void SelectTeam(object sender)
         {
+            NavConstants navConstants = new NavConstants();
             TeamTable = (Table)sender;
             var parameters = new NavigationParameters();
             parameters.Add("TeamName", TeamTable.Team.Name);          
@@ -84,7 +83,7 @@ namespace PrismSportApp.ViewModels
             parameters.Add("Win", TeamTable.Won);    
             parameters.Add("Draws", TeamTable.Draw);                
             parameters.Add("Losts", TeamTable.Lost);                
-            await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
+            await navigation.NavigateAsync(new Uri(navConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }
 }

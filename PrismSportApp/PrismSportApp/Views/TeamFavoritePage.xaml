@@ -4,18 +4,27 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
     Title="Favorite Teams"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label IsVisible="{Binding Visible, Mode=TwoWay}" Text="Aun no contiene elementos" />
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding Visible}"
+                Text="Aun no contiene elementos"
+                VerticalOptions="CenterAndExpand" />
             <ListView
                 CachingStrategy="RecycleElement"
-                IsVisible="{Binding ListVisible, Mode=TwoWay}"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding State, Mode=OneWay}"
+                IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
-                RowHeight="80"
+                RefreshCommand="{Binding Refresh}"
+                RefreshControlColor="ForestGreen"
+                RowHeight="60"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen">
                 <ListView.ItemTemplate>
@@ -24,15 +33,15 @@
                             <ViewCell.View>
                                 <StackLayout Padding="10">
                                     <Frame BackgroundColor="Transparent">
-                                        <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
                                             <Label
                                                 FontSize="20"
                                                 Text="{Binding Name}"
                                                 TextColor="Black" />
                                         </StackLayout>
-                                        <!--<Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                        </Frame.GestureRecognizers>-->
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference FavoriteTeam}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>
                                     </Frame>
                                 </StackLayout>
                             </ViewCell.View>

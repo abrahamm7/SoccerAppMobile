@@ -15,6 +15,8 @@ namespace PrismSportApp.Views
         public MenuStandings()
         {
             InitializeComponent();
+            BindingContext = new DetailLeagueView();
+            BindingContext = new MatchesPage();
         }
     }
 }

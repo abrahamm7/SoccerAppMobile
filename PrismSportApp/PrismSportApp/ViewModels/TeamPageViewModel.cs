@@ -17,15 +17,6 @@ namespace PrismSportApp.ViewModels
         {
            
         }
-
-        
-
-        
-
-
-
-
-
     }
 }
 

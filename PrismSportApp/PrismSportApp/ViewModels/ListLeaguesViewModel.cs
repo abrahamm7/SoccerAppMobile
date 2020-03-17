@@ -8,11 +8,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class LeaguesViewModel: INotifyPropertyChanged
+    public class ListLeaguesViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -29,12 +30,13 @@ namespace PrismSportApp.ViewModels
         IPageDialogService dialogService;
 
         IApiServices apiServices;
-        public LeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
+        public ListLeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
             apiServices = api;
             navigation = navigationService;
             dialogService = pageDialog;
             GetLeagues();
+           
             Tap = new Command(SelectLeague);
         }
 
@@ -63,6 +65,7 @@ namespace PrismSportApp.ViewModels
         }
         async void SelectLeague(object sender)
         {
+            NavConstants navConstants = new NavConstants();
             league = (League)sender;
             var search = League.competitions.Where(elemento => elemento.Id == league.Id);
             if (search.Any())
@@ -70,8 +73,10 @@ namespace PrismSportApp.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("LeagueId", league.Id);
                 parameters.Add("Name", league.Name);
-                await navigation.NavigateAsync(new Uri(NavConstants.TabMenu, UriKind.Relative), parameters);
+                await navigation.NavigateAsync(new Uri(navConstants.TabMenu , UriKind.Relative), parameters);
             }
         }
+
+        
     }
 }

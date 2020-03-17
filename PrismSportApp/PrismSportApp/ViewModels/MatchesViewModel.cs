@@ -16,7 +16,7 @@ using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class MatchViewModel: INotifyPropertyChanged, INavigatedAware
+    public class MatchesViewModel: INotifyPropertyChanged, INavigatedAware
     {
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,7 +40,7 @@ namespace PrismSportApp.ViewModels
         
 
         #region Constructor
-        public MatchViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
+        public MatchesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
             navigation = navigationService;
             dialogService = pageDialog;
