@@ -10,18 +10,30 @@
     <!--  Pages can be added as references or inline  -->
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            <StackLayout Padding="20" BackgroundColor="Silver">
+            <StackLayout
+                Padding="20"
+                BackgroundColor="#FFFFFF"
+                WidthRequest="300">
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/ListLeaguesPage"
+                    ImageSource="{Binding Leagues, Mode=TwoWay}"
                     Text="Leagues"
                     TextColor="Black" />
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/TeamPage"
+                    ImageSource="{Binding players, Mode=TwoWay}"
                     Text="Players"
+                    TextColor="Black" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Command="{Binding onNavigate}"
+                    CommandParameter="NavigationPage/TeamFavoritePage"
+                    ImageSource="{Binding Star, Mode=TwoWay}"
+                    Text="Favorite Teams"
                     TextColor="Black" />
             </StackLayout>
         </ContentPage>

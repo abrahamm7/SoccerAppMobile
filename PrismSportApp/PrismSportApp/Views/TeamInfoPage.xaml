@@ -14,8 +14,9 @@
     <ContentPage.Content>
         <yummy:PancakeView
             Margin="0,110,0,0"
+            CornerRadius="20"
             HasShadow="True"
-            HeightRequest="300"
+            HeightRequest="330"
             HorizontalOptions="Center"
             VerticalOptions="Start"
             WidthRequest="350">
@@ -80,6 +81,20 @@
                             TextColor="Black" />
                     </StackLayout>
                 </StackLayout>
+                <Frame
+                    Padding="0"
+                    BorderColor="ForestGreen"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HorizontalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="White"
+                        BorderColor="ForestGreen"
+                        BorderWidth="2"
+                        CornerRadius="20"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Add to favorites" />
+                </Frame>
             </StackLayout>
         </yummy:PancakeView>
     </ContentPage.Content>

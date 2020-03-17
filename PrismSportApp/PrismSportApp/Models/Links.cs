@@ -17,8 +17,7 @@ namespace PrismSportApp.Models
         {
             url = "https://www.football-data.org/";
             matches = $"http://api.football-data.org/v2/competitions/{id}/matches";
-            Champions = $"http://api.football-data.org/v2/competitions/2001/matches?matchday";
-            Bundesliga = $"http://api.football-data.org/v2/competitions/2002/matches?matchday";
+            
             Leagues = $"http://api.football-data.org/v2/competitions";
             Team = $"http://api.football-data.org/v2/teams/{id}";
             LeagueStan = $"https://api.football-data.org/v2/competitions/{id}/standings?standing";

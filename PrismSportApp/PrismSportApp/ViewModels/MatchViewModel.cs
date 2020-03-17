@@ -16,7 +16,7 @@ using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class MatchViewModel: INotifyPropertyChanged
+    public class MatchViewModel: INotifyPropertyChanged, INavigatedAware
     {
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;
@@ -37,33 +37,31 @@ namespace PrismSportApp.ViewModels
         public ICommand Selected { get; set; }
         #endregion
 
+        
+
         #region Constructor
         public MatchViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
             navigation = navigationService;
             dialogService = pageDialog;
-            apiServices = api;
-
-            Selected = new Command(async(object sender) => 
-            {
-                LeagueSelect = (Competitions)sender;
-            });
-             
-           
-            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                Messages();
-            }
-            else
-            {
-                var league = League.competitions.First().Id;
-                GetMatches(league);
-            }
-            
+            apiServices = api;       
+ 
         }
         #endregion
-        
-       
+
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            var navigationMode = parameters.GetNavigationMode();
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+
+            var key = parameters.GetValue<string>("LeagueId");
+            GetMatches(Convert.ToInt32(key));
+        }
+
 
         async Task GetMatches(int id)
         {
@@ -79,15 +77,10 @@ namespace PrismSportApp.ViewModels
             catch (Exception ex)
             {
 
-                Debug.WriteLine($"Error en el metodo Leagues: {ex.Message}");
+                Debug.WriteLine($"Error en el metodo Matches: {ex.Message}");
             }
 
-        }
-
-        void Messages()
-        {
-            dialogService.DisplayAlertAsync("Error", "Check your connection to internet", "ok");
-        }
+        }    
 
         
     }

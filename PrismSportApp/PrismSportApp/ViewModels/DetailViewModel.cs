@@ -44,7 +44,7 @@ namespace PrismSportApp.ViewModels
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-           
+            var navigationMode = parameters.GetNavigationMode();
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)
@@ -63,7 +63,7 @@ namespace PrismSportApp.ViewModels
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;               
                 this.Table = LeagueStandings.standings.First().table.ToList();
-                this.Logo = TeamTable.Team.CrestUrl;
+               
 
             }
             catch (Exception ex)

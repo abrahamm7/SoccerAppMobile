@@ -13,10 +13,16 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         INavigationService navigationService;
         public DelegateCommand<string> onNavigate { get; set; }
+        public string Star { get; set; }
+        public string Leagues { get; set; }
+        public string Players { get; set; }
         public MenuViewModel(INavigationService navigation)
         {
             navigationService = navigation;
             onNavigate = new DelegateCommand<string>(Navigate);
+            Star = "estrella.png";
+            Players = "players.png";
+            Leagues = "taza.png";
         }
         async void Navigate(string page)
         {

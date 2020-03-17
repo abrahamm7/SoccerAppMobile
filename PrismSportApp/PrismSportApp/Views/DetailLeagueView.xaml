@@ -59,39 +59,39 @@
                                                     <Label
                                                         FontAttributes="Bold"
                                                         Text="W"
-                                                        TextColor="Black" />
+                                                        TextColor="ForestGreen" />
                                                     <Label
                                                         FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Won}"
-                                                        TextColor="Black"
+                                                        TextColor="ForestGreen"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>
                                                     <Label
                                                         FontAttributes="Bold"
                                                         Text="D"
-                                                        TextColor="Black" />
+                                                        TextColor="Gray" />
                                                     <Label
                                                         FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Draw}"
-                                                        TextColor="Black"
+                                                        TextColor="Gray"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>
                                                     <Label
                                                         FontAttributes="Bold"
                                                         Text="L"
-                                                        TextColor="Black" />
+                                                        TextColor="Red" />
                                                     <Label
                                                         FontSize="16"
                                                         HorizontalOptions="End"
                                                         HorizontalTextAlignment="End"
                                                         Text="{Binding Lost}"
-                                                        TextColor="Black"
+                                                        TextColor="Red"
                                                         VerticalTextAlignment="Center" />
                                                 </StackLayout>
                                                 <StackLayout>

@@ -55,7 +55,6 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2002 ||
                 elemento.Id == 2014).ToList();
                 this.Leagues = show;
-
             }
             catch (Exception e)
             {
