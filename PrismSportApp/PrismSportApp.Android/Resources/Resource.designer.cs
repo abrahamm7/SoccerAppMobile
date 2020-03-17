@@ -7755,20 +7755,29 @@ namespace PrismSportApp.Droid
 			// aapt resource value: 0x7F070075
 			public const int players = 2131165301;
 			
-			// aapt resource value: 0x7F070077
-			public const int Splashfutbol = 2131165303;
-			
 			// aapt resource value: 0x7F070076
-			public const int splash_background = 2131165302;
+			public const int soccer = 2131165302;
 			
 			// aapt resource value: 0x7F070078
-			public const int taza = 2131165304;
+			public const int Splashfutbol = 2131165304;
+			
+			// aapt resource value: 0x7F070077
+			public const int splash_background = 2131165303;
 			
 			// aapt resource value: 0x7F070079
-			public const int tooltip_frame_dark = 2131165305;
+			public const int star = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int tooltip_frame_light = 2131165306;
+			public const int taza = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int tooltip_frame_dark = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int tooltip_frame_light = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int worldcup = 2131165309;
 			
 			static Drawable()
 			{

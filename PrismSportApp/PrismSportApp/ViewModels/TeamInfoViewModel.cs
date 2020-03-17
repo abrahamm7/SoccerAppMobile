@@ -1,10 +1,15 @@
 ﻿using FFImageLoading.Svg.Forms;
+using Prism.Commands;
 using Prism.Navigation;
 using PrismSportApp.Models;
+using PrismSportApp.Services;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
@@ -17,7 +22,9 @@ namespace PrismSportApp.ViewModels
         public string Won { get; set; }
         public string Draw { get; set; }
         public string Lost { get; set; }
+        public ICommand Save { get; set; }
         public SvgCachedImage SvgCachedImage { get; set; } = new SvgCachedImage();
+        public SQLiteConnection conn;
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
            
@@ -33,7 +40,16 @@ namespace PrismSportApp.ViewModels
         }
         public TeamInfoViewModel()
         {
-            
+            Save = new Command(AddTeam);
+            conn = DependencyService.Get<ISqliteInterface>().GetConnection();
+
+        }
+
+        async void AddTeam()
+        {
+            Teamm.Name = TeamName;
+            Teamm.CrestUrl = Logo;
+            conn.Insert(Teamm);
         }
     }
 }

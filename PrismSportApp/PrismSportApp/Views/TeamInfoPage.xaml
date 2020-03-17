@@ -91,6 +91,7 @@
                         BackgroundColor="White"
                         BorderColor="ForestGreen"
                         BorderWidth="2"
+                        Command="{Binding Save}"
                         CornerRadius="20"
                         HorizontalOptions="CenterAndExpand"
                         Text="Add to favorites" />

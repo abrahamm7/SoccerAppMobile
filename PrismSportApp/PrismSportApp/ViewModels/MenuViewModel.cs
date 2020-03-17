@@ -20,9 +20,9 @@ namespace PrismSportApp.ViewModels
         {
             navigationService = navigation;
             onNavigate = new DelegateCommand<string>(Navigate);
-            Star = "estrella.png";
-            Players = "players.png";
-            Leagues = "taza.png";
+            Star = "star.png";
+            Players = "soccer.png";
+            Leagues = "worldcup.png";
         }
         async void Navigate(string page)
         {

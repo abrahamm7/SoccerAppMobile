@@ -6,13 +6,40 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
+    Title="Favorite Teams"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
+            <Label IsVisible="{Binding Visible, Mode=TwoWay}" Text="Aun no contiene elementos" />
+            <ListView
+                CachingStrategy="RecycleElement"
+                IsVisible="{Binding ListVisible, Mode=TwoWay}"
+                ItemsSource="{Binding Teams}"
+                RowHeight="80"
+                SelectionMode="Single"
+                SeparatorColor="ForestGreen">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="10">
+                                    <Frame BackgroundColor="Transparent">
+                                        <StackLayout>
+                                            <Label
+                                                FontSize="20"
+                                                Text="{Binding Name}"
+                                                TextColor="Black" />
+                                        </StackLayout>
+                                        <!--<Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>-->
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

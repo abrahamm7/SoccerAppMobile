@@ -13,6 +13,7 @@
             <StackLayout
                 Padding="20"
                 BackgroundColor="#FFFFFF"
+                HorizontalOptions="Center"
                 WidthRequest="300">
                 <Button
                     BackgroundColor="Transparent"
@@ -25,7 +26,7 @@
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/TeamPage"
-                    ImageSource="{Binding players, Mode=TwoWay}"
+                    ImageSource="{Binding Players, Mode=TwoWay}"
                     Text="Players"
                     TextColor="Black" />
                 <Button
