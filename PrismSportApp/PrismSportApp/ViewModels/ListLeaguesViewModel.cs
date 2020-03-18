@@ -4,6 +4,7 @@ using PrismSportApp.Models;
 using Refit;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,7 @@ namespace PrismSportApp.ViewModels
             }
             catch (Exception e)
             {
-                await dialogService.DisplayAlertAsync("Advice", $"{e.Message}", "Ok");
+                await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
             }
         }
         async void SelectLeague(object sender)
