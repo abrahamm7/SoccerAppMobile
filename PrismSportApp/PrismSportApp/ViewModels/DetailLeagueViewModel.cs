@@ -11,6 +11,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace PrismSportApp.ViewModels
 {
@@ -19,7 +20,7 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public League League { get; set; } = new League();
         public Standings LeagueStandings { get; set; } = new Standings();
-        public List<Table> Table { get; set; } = new List<Table>();
+        public IEnumerable<Table> Table { get; set; } = new ObservableCollection<Table>();
         public Teamm Teamm { get; set; } = new Teamm();
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
@@ -62,7 +63,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;               
-                this.Table = LeagueStandings.standings.First().table.ToList();
+                this.Table = LeagueStandings.standings.First().table;
             }
             catch (Exception ex)
             {

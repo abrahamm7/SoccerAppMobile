@@ -18,12 +18,8 @@
                 VerticalOptions="CenterAndExpand" />
             <ListView
                 CachingStrategy="RecycleElement"
-                IsPullToRefreshEnabled="True"
-                IsRefreshing="{Binding State, Mode=OneWay}"
                 IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
-                RefreshCommand="{Binding Refresh}"
-                RefreshControlColor="ForestGreen"
                 RowHeight="60"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen">

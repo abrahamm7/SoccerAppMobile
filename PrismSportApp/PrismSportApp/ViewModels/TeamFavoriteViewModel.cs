@@ -4,6 +4,7 @@ using PrismSportApp.Services;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace PrismSportApp.ViewModels
     public class TeamFavoriteViewModel: INotifyPropertyChanged, INavigatedAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public List<Teamm> Teams { get; set; } = new List<Teamm>();
+        public ObservableCollection<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
         public bool Visible { get; set; }
         public bool ListVisible { get; set; }
         public bool StateButton { get; set; }
@@ -36,15 +37,8 @@ namespace PrismSportApp.ViewModels
 
         public TeamFavoriteViewModel()
         {
-            conn = DependencyService.Get<ISqliteInterface>().GetConnection();
+            conn = DependencyService.Get<ISqliteInterface>().GetConnection();            
             Favorites();
-            Refresh = new Command(() => {
-
-                this.Teams = conn.Query<Teamm>("Select * from Teamm");
-                State = true;
-                State = false;
-
-            });
             StateButton = false;
             Tap = new Command(TapFrame);
         }
@@ -61,10 +55,13 @@ namespace PrismSportApp.ViewModels
             {
                 Visible = false;
                 ListVisible = true;
-                this.Teams = x;
-                
+                foreach (var item in x)
+                {
+                    Teams.Add(item);
+                }
+
             }
-                     
+
         }
 
         async void TapFrame()
