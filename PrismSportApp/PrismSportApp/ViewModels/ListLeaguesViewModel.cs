@@ -23,8 +23,8 @@ namespace PrismSportApp.ViewModels
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();
 
-
         public ICommand Tap { get; set; }
+        public ICommand FollowButton { get; set; }
 
         INavigationService navigation;
 
@@ -37,7 +37,7 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             GetLeagues();
-           
+            FollowButton = new Command(FollowLeague);
             Tap = new Command(SelectLeague);
         }
 
@@ -79,6 +79,12 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        
+        async void FollowLeague()
+        {
+            await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+        }
+
+
+
     }
 }
