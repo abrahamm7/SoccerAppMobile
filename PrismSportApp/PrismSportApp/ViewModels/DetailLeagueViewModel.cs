@@ -39,6 +39,7 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             apiServices = api;
+            //GetTable(Convert.ToInt32(Code));
             Tap = new Command(SelectTeam);
         }        
 
@@ -53,7 +54,7 @@ namespace PrismSportApp.ViewModels
             this.NameLeague = parameters.GetValue<string>("Name");
             var key = parameters.GetValue<string>("LeagueId");
             this.Code = key;
-            GetTable(Convert.ToInt32(key));
+            GetTable(Convert.ToInt32(Code));
         }
 
         async Task GetTable(int param)
@@ -68,7 +69,7 @@ namespace PrismSportApp.ViewModels
             catch (Exception ex)
             {
 
-                Debug.WriteLine($"Error en el metodo Leagues: {ex.Message}");
+                Debug.WriteLine($"Error en el metodo Table: {ex.Message}");
             }
 
         }
@@ -84,6 +85,7 @@ namespace PrismSportApp.ViewModels
             parameters.Add("Win", TeamTable.Won);    
             parameters.Add("Draws", TeamTable.Draw);                
             parameters.Add("Losts", TeamTable.Lost);                
+            parameters.Add("PG", TeamTable.PlayedGames);                
             await navigation.NavigateAsync(new Uri(navConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }

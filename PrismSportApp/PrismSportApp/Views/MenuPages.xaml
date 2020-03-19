@@ -9,31 +9,28 @@
     mc:Ignorable="d">
     <!--  Pages can be added as references or inline  -->
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu" FlowDirection="LeftToRight">
             <StackLayout
                 Padding="20"
                 BackgroundColor="#FFFFFF"
-                HorizontalOptions="Center"
-                WidthRequest="300">
+                HorizontalOptions="Start"
+                WidthRequest="290">
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/ListLeaguesPage"
-                    ImageSource="{Binding Leagues, Mode=TwoWay}"
                     Text="Leagues"
                     TextColor="Black" />
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/TeamPage"
-                    ImageSource="{Binding Players, Mode=TwoWay}"
                     Text="Players"
                     TextColor="Black" />
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/TeamFavoritePage"
-                    ImageSource="{Binding Star, Mode=TwoWay}"
                     Text="Favorite Teams"
                     TextColor="Black" />
             </StackLayout>

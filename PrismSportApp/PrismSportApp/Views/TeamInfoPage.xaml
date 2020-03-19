@@ -8,95 +8,110 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     Title="Team Info"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <yummy:PancakeView
-            Margin="0,110,0,0"
-            CornerRadius="20"
-            HasShadow="True"
-            HeightRequest="330"
-            HorizontalOptions="Center"
-            VerticalOptions="Start"
-            WidthRequest="350">
-
-            <StackLayout Spacing="20">
-                <StackLayout VerticalOptions="Start">
-                    <ffimageloading:CachedImage
+        <ScrollView>
+            <yummy:PancakeView
+                Margin="0,10,0,0"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="500"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                WidthRequest="350">
+                <StackLayout Spacing="20">
+                    <StackLayout VerticalOptions="Start">
+                        <ffimageloading:CachedImage
+                            Margin="0,0,0,0"
+                            Aspect="AspectFit"
+                            HeightRequest="100"
+                            Source="{Binding Logo, Mode=TwoWay}"
+                            VerticalOptions="Start" />
+                    </StackLayout>
+                    <Label
                         Margin="0,0,0,0"
-                        Aspect="AspectFit"
-                        HeightRequest="100"
-                        Source="{Binding Logo, Mode=TwoWay}"
-                        VerticalOptions="Start" />
-                </StackLayout>
-                <Label
-                    Margin="0,0,0,0"
-                    FontSize="20"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding TeamName, Mode=TwoWay}"
-                    TextColor="Black"
-                    VerticalOptions="Start" />
-                <StackLayout
-                    HorizontalOptions="Center"
-                    Orientation="Horizontal"
-                    Spacing="30">
-                    <StackLayout>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Text="Win"
-                            TextColor="Black" />
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding Won, Mode=TwoWay}"
-                            TextColor="Black" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Text="Draw"
-                            TextColor="Black" />
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding Draw, Mode=TwoWay}"
-                            TextColor="Black" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Text="Lost"
-                            TextColor="Black" />
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding Lost, Mode=TwoWay}"
-                            TextColor="Black" />
-                    </StackLayout>
-                </StackLayout>
-                <Frame
-                    Padding="0"
-                    BorderColor="ForestGreen"
-                    CornerRadius="20"
-                    HasShadow="True"
-                    HorizontalOptions="CenterAndExpand">
-                    <Button
-                        BackgroundColor="White"
-                        BorderColor="ForestGreen"
-                        BorderWidth="2"
-                        Command="{Binding Save}"
-                        CornerRadius="20"
+                        FontSize="20"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Add to favorites" />
-                </Frame>
-            </StackLayout>
-        </yummy:PancakeView>
+                        Text="{Binding TeamName, Mode=TwoWay}"
+                        TextColor="Black"
+                        VerticalOptions="Start" />
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="30">
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="Win"
+                                TextColor="Black" />
+                            <Label
+                                FontSize="15"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Won, Mode=TwoWay}"
+                                TextColor="Black" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="Draw"
+                                TextColor="Black" />
+                            <Label
+                                FontSize="15"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Draw, Mode=TwoWay}"
+                                TextColor="Black" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="Lost"
+                                TextColor="Black" />
+                            <Label
+                                FontSize="15"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Lost, Mode=TwoWay}"
+                                TextColor="Black" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="Played Games"
+                                TextColor="Black" />
+                            <Label
+                                FontSize="15"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding PG, Mode=TwoWay}"
+                                TextColor="Black" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Frame
+                        Padding="0"
+                        BorderColor="ForestGreen"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand">
+                        <Button
+                            BackgroundColor="White"
+                            BorderColor="ForestGreen"
+                            BorderWidth="2"
+                            Command="{Binding Save}"
+                            CornerRadius="20"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Add to favorites" />
+                    </Frame>
+                </StackLayout>
+            </yummy:PancakeView>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

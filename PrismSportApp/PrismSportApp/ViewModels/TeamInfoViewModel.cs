@@ -21,6 +21,7 @@ namespace PrismSportApp.ViewModels
         public string Logo { get; set; }
         public string Won { get; set; }
         public string Draw { get; set; }
+        public string PG { get; set; }
         public string Lost { get; set; }
         public ICommand Save { get; set; }
         public SvgCachedImage SvgCachedImage { get; set; } = new SvgCachedImage();
@@ -37,6 +38,7 @@ namespace PrismSportApp.ViewModels
             this.Won = parameters.GetValue<string>("Win");
             this.Lost = parameters.GetValue<string>("Losts");
             this.Draw = parameters.GetValue<string>("Draws");
+            this.PG = parameters.GetValue<string>("PG");
         }
         public TeamInfoViewModel()
         {

@@ -6,6 +6,7 @@
     xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="LeagueList"
     Title="Leagues"
     mc:Ignorable="d">
@@ -14,27 +15,30 @@
             <ListView
                 x:Name="ListLeague"
                 CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
                 ItemsSource="{Binding Leagues}"
-                RowHeight="80"
+                RowHeight="100"
                 SelectionMode="Single"
-                SeparatorColor="ForestGreen">
+                SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Padding="10">
-                                    <Frame BackgroundColor="Transparent">
-                                        <StackLayout>
-                                            <Label
-                                                FontSize="20"
-                                                Text="{Binding Name}"
-                                                TextColor="Black" />
-                                        </StackLayout>
+                                <StackLayout>
+                                    <Frame
+                                        CornerRadius="30"
+                                        HasShadow="True"
+                                        HeightRequest="90">
+                                        <Label
+                                            FontSize="20"
+                                            Text="{Binding Name}"
+                                            TextColor="Black" />
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
                                         </Frame.GestureRecognizers>
                                     </Frame>
                                 </StackLayout>
+
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>

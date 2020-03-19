@@ -21,7 +21,8 @@ namespace PrismSportApp.ViewModels
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;     
         public ObservableCollection<Match> Matches { get; set; } = new ObservableCollection<Match>();
-        Fixtures Fixture { get; set; } = new Fixtures();           
+        Fixtures Fixture { get; set; } = new Fixtures();  
+        public int code { get; set; } 
         public Links Links { get; set; } = new Links();
         INavigationService navigation;
 
@@ -41,8 +42,8 @@ namespace PrismSportApp.ViewModels
         {
             navigation = navigationService;
             dialogService = pageDialog;
-            apiServices = api;       
- 
+            apiServices = api;
+            
         }
         #endregion
 
@@ -56,7 +57,8 @@ namespace PrismSportApp.ViewModels
         {
 
             var key = parameters.GetValue<string>("LeagueId");
-            GetMatches(Convert.ToInt32(key));
+            this.code = Convert.ToInt32(key);
+            GetMatches(Convert.ToInt32(code));
         }
 
 
