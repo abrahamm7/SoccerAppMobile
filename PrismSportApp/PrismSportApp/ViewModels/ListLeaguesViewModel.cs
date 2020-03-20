@@ -1,7 +1,9 @@
 ﻿using Prism.Navigation;
 using Prism.Services;
 using PrismSportApp.Models;
+using PrismSportApp.Services;
 using Refit;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,7 +24,7 @@ namespace PrismSportApp.ViewModels
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();
-
+        public SQLiteConnection conn;
         public ICommand Tap { get; set; }
         public ICommand FollowButton { get; set; }
 
@@ -39,6 +41,7 @@ namespace PrismSportApp.ViewModels
             GetLeagues();
             FollowButton = new Command(FollowLeague);
             Tap = new Command(SelectLeague);
+            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
         }
 
         async void GetLeagues()
@@ -68,7 +71,7 @@ namespace PrismSportApp.ViewModels
         async void SelectLeague(object sender)
         {
             NavConstants navConstants = new NavConstants();
-            league = (League)sender;
+            this.league = (League)sender;
             var search = League.competitions.Where(elemento => elemento.Id == league.Id);
             if (search.Any())
             {
@@ -79,12 +82,10 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        async void FollowLeague()
+        async void FollowLeague(object sender)
         {
-            await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+            var x = (League)sender;            
+            conn.Insert(x);
         }
-
-
-
     }
 }

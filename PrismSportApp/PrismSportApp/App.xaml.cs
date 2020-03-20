@@ -28,6 +28,7 @@ namespace PrismSportApp
             NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
             conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
             conn.CreateTable<Teamm>();
+            conn.CreateTable<League>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -35,7 +36,7 @@ namespace PrismSportApp
             //Pages//
             containerRegistry.RegisterForNavigation<TeamPage, TeamPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuPages,MenuViewModel>();
-            containerRegistry.RegisterForNavigation<ListLeaguesPage,ListLeaguesViewModel>();
+            containerRegistry.RegisterForNavigation<ListLeaguesPage,ListLeaguesViewModel>();           
             containerRegistry.RegisterForNavigation<TeamInfoPage,TeamInfoViewModel>();
             containerRegistry.RegisterForNavigation<TeamFavoritePage, TeamFavoriteViewModel>();
             containerRegistry.RegisterForNavigation<MenuStandings>();
