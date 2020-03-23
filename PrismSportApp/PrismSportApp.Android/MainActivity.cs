@@ -12,6 +12,7 @@ using ImageCircle.Forms.Plugin.Droid;
 using FFImageLoading.Svg.Forms;
 using FFImageLoading.Forms.Platform;
 using SVG.Forms.Plugin.Droid;
+using Xamarin.Forms;
 
 namespace PrismSportApp.Droid
 {
@@ -27,6 +28,7 @@ namespace PrismSportApp.Droid
             ImageCircleRenderer.Init();            
             SvgImageRenderer.Init();
             base.OnCreate(savedInstanceState);
+            Forms.SetFlags("CarouselView_Experimental");
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

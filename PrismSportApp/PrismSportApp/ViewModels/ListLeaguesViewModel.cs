@@ -19,7 +19,7 @@ namespace PrismSportApp.ViewModels
     public class ListLeaguesViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public string Logo { get; set; }
         public IEnumerable<League> Leagues { get; set; } = new ObservableCollection<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
@@ -42,6 +42,7 @@ namespace PrismSportApp.ViewModels
             FollowButton = new Command(FollowLeague);
             Tap = new Command(SelectLeague);
             conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
+            Logo = "LaLiga.png";
         }
 
         async void GetLeagues()
@@ -61,7 +62,7 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2003 ||
                 elemento.Id == 2002 ||
                 elemento.Id == 2014);
-                this.Leagues = show;
+                this.Leagues = show;                
             }
             catch (Exception e)
             {

@@ -171,10 +171,10 @@
       <Version>2.4.11.982</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Svg">
-      <Version>2.4.11.982</Version>
+      <Version>2.2.16</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
-      <Version>2.4.11.982</Version>
+      <Version>2.2.16</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.11.982</Version>

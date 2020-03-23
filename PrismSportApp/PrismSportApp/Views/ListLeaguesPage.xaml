@@ -12,61 +12,68 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <ListView
+            <CarouselView
                 x:Name="ListLeague"
-                CachingStrategy="RecycleElement"
-                HasUnevenRows="True"
-                ItemsSource="{Binding Leagues}"
-                RowHeight="50"
-                SelectionMode="Single"
-                SeparatorVisibility="None">
-                <ListView.ItemTemplate>
+                IsScrollAnimated="True"
+                ItemsSource="{Binding Leagues}">
+                <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Frame
-                                        CornerRadius="30"
-                                        HasShadow="True"
-                                        HeightRequest="80">
-                                        <yummy:PancakeView
-                                            BackgroundColor="White"
-                                            CornerRadius="20"
-                                            HasShadow="True">
-                                            <StackLayout>
-                                                <Label
-                                                    Margin="12,15,0,0"
-                                                    FontSize="20"
-                                                    Text="{Binding Name}"
-                                                    TextColor="Black"
-                                                    VerticalTextAlignment="Start" />
-                                                <Button
-                                                    Margin="10,0,5,0"
-                                                    BackgroundColor="White"
-                                                    BorderColor="ForestGreen"
-                                                    BorderWidth="1"
-                                                    Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
-                                                    CommandParameter="{Binding .}"
-                                                    CornerRadius="15"
-                                                    FontSize="10"
-                                                    HeightRequest="30"
-                                                    HorizontalOptions="End"
-                                                    Text="Follow"
-                                                    TextColor="ForestGreen"
-                                                    WidthRequest="130" />
-                                            </StackLayout>
-                                        </yummy:PancakeView>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                        </Frame.GestureRecognizers>
-                                    </Frame>
-                                </StackLayout>
-
-                            </ViewCell.View>
-                        </ViewCell>
+                        <StackLayout>
+                            <Frame
+                                CornerRadius="30"
+                                HasShadow="True"
+                                HeightRequest="340"
+                                VerticalOptions="Center">
+                                <yummy:PancakeView
+                                    BackgroundColor="White"
+                                    CornerRadius="20"
+                                    HasShadow="True">
+                                    <StackLayout VerticalOptions="End">
+                                        <StackLayout>
+                                            <Image Aspect="AspectFit">
+                                                <Image.Triggers>
+                                                    <DataTrigger TargetType="Image" >
+                                                        
+                                                    </DataTrigger>
+                                                </Image.Triggers>
+                                            </Image>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center">
+                                            <Label
+                                                Margin="12,15,0,20"
+                                                FontSize="20"
+                                                Text="{Binding Name}"
+                                                TextColor="Black"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Margin="10,5,0,10"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Start">
+                                            <Button
+                                                BackgroundColor="White"
+                                                BorderColor="ForestGreen"
+                                                BorderWidth="1"
+                                                Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
+                                                CommandParameter="{Binding .}"
+                                                CornerRadius="15"
+                                                FontSize="10"
+                                                HeightRequest="30"
+                                                HorizontalOptions="End"
+                                                Text="Follow"
+                                                TextColor="ForestGreen"
+                                                WidthRequest="130" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </yummy:PancakeView>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
