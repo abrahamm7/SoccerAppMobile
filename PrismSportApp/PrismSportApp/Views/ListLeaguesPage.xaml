@@ -32,9 +32,7 @@
                                         <StackLayout>
                                             <Image Aspect="AspectFit">
                                                 <Image.Triggers>
-                                                    <DataTrigger TargetType="Image" >
-                                                        
-                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Image" />
                                                 </Image.Triggers>
                                             </Image>
                                         </StackLayout>
