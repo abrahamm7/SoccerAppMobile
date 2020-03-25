@@ -27,7 +27,7 @@ namespace PrismSportApp.Droid
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             ImageCircleRenderer.Init();            
             SvgImageRenderer.Init();
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

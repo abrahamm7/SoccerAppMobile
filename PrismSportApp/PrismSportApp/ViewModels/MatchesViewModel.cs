@@ -52,23 +52,7 @@ namespace PrismSportApp.ViewModels
             
         }
         #endregion
-        async Task GetMatches(int id)
-        {
-            try
-            {                
-                RestService.For<IApiServices>(Links.url);
-                var response1 = await apiServices.GetFixtures(id);                       
-                Fixture = response1;
-                this.Matches = Fixture.Matches;              
-  
-            }
-            catch (Exception ex)
-            {
-
-                Debug.WriteLine($"Error en el metodo Matches: {ex.Message}");
-            }
-
-        }
+       
         async void GetLeagues()
         {
             try
@@ -93,10 +77,27 @@ namespace PrismSportApp.ViewModels
             }
         }
         async void Pick(object sender)
+        {  
+            
+           // await GetMatches();
+        }
+        async Task GetMatches(int id)
         {
-                 
-           
-        }        
+            try
+            {
+                RestService.For<IApiServices>(Links.url);
+                var response1 = await apiServices.GetFixtures(id);
+                Fixture = response1;
+                this.Matches = Fixture.Matches;
+
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine($"Error en el metodo Matches: {ex.Message}");
+            }
+
+        }
     }
 }
 

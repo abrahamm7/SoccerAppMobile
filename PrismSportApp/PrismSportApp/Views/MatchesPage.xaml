@@ -20,7 +20,7 @@
                     ItemsSource="{Binding Leagues}">
                     <Picker.Behaviors>
                         <behaviorsPack:EventToCommandBehavior
-                            Command="{Binding Path=BindingContext.SelectLeague, Source={x:Reference Gamepage}}"
+                            Command="{Binding Path=BindingContext.SelectLeague, Source={x:Reference pickleague}}"
                             CommandParameter="{Binding .}"
                             EventName="SelectedIndexChanged" />
                     </Picker.Behaviors>
