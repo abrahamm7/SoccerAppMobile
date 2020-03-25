@@ -9,103 +9,101 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Gamepage"
     Title="Games"
+    BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="15">
+            <StackLayout Padding="15" BackgroundColor="White">
                 <Picker
                     x:Name="pickleague"
                     Title="Select League"
                     ItemDisplayBinding="{Binding Name}"
-                    ItemsSource="{Binding Leagues}">
-                    <Picker.Behaviors>
-                        <behaviorsPack:EventToCommandBehavior
-                            Command="{Binding Path=BindingContext.SelectLeague, Source={x:Reference pickleague}}"
-                            CommandParameter="{Binding .}"
-                            EventName="SelectedIndexChanged" />
-                    </Picker.Behaviors>
-                </Picker>
+                    ItemsSource="{Binding Leagues}"
+                    SelectedItem="{Binding LeagueSelected, Mode=TwoWay}" />
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"
-                RowHeight="200"
+                RowHeight="220"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Grid.ColumnSpan="2">
-                                        <Label
-                                            FontAttributes="Bold"
-                                            FontSize="18"
-                                            Text="{Binding Group}"
-                                            TextColor="Black" />
-                                    </StackLayout>
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        FontSize="18"
-                                        HorizontalTextAlignment="Center"
-                                        Text="{Binding HomeTeam.Name, Mode=TwoWay}"
-                                        TextColor="Black"
-                                        VerticalTextAlignment="Center" />
-                                    <Frame
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        BorderColor="ForestGreen"
-                                        CornerRadius="15"
-                                        HasShadow="True">
+                                <Frame>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
                                         <StackLayout
-                                            Orientation="Horizontal"
-                                            Spacing="10"
-                                            VerticalOptions="Start">
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2">
                                             <Label
                                                 FontAttributes="Bold"
-                                                FontSize="20"
-                                                HorizontalOptions="CenterAndExpand"
-                                                Text="{Binding Score.FullTime.HomeTeam}"
-                                                TextColor="Black"
-                                                VerticalOptions="CenterAndExpand" />
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="20"
-                                                HorizontalOptions="CenterAndExpand"
-                                                Text="-"
-                                                VerticalOptions="CenterAndExpand" />
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="20"
-                                                HorizontalOptions="CenterAndExpand"
-                                                Text="{Binding Score.FullTime.AwayTeam}"
-                                                TextColor="Black"
-                                                VerticalTextAlignment="Start" />
+                                                FontSize="18"
+                                                Text="{Binding Group}"
+                                                TextColor="Black" />
                                         </StackLayout>
-                                    </Frame>
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="2"
-                                        FontSize="18"
-                                        HorizontalTextAlignment="Center"
-                                        Text="{Binding AwayTeam.Name, Mode=TwoWay}"
-                                        TextColor="Black"
-                                        VerticalTextAlignment="Center" />
-                                </Grid>
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            FontSize="18"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding HomeTeam.Name, Mode=TwoWay}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Frame
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            BorderColor="ForestGreen"
+                                            CornerRadius="15"
+                                            HasShadow="True">
+                                            <StackLayout
+                                                Orientation="Horizontal"
+                                                Spacing="10"
+                                                VerticalOptions="Start">
+                                                <Label
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Text="{Binding Score.FullTime.HomeTeam}"
+                                                    TextColor="Black"
+                                                    VerticalOptions="CenterAndExpand" />
+                                                <Label
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Text="-"
+                                                    VerticalOptions="CenterAndExpand" />
+                                                <Label
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Text="{Binding Score.FullTime.AwayTeam}"
+                                                    TextColor="Black"
+                                                    VerticalTextAlignment="Start" />
+                                            </StackLayout>
+                                        </Frame>
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            FontSize="18"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding AwayTeam.Name, Mode=TwoWay}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                </Frame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>

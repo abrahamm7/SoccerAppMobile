@@ -18,9 +18,7 @@ using System.Runtime.CompilerServices;
 namespace PrismSportApp.ViewModels
 {
     public class MatchesViewModel: INotifyPropertyChanged
-    {
-        
-        
+    {        
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;     
         public ObservableCollection<Match> Matches { get; set; } = new ObservableCollection<Match>();
@@ -38,7 +36,22 @@ namespace PrismSportApp.ViewModels
         #endregion
 
         #region Commands and Properties
-        public ICommand SelectLeague { get; set; }
+        League Leaguess;
+        public League LeagueSelected
+        {
+            get
+            {
+                return Leaguess;
+            }
+            set
+            {
+                Leaguess = value;
+                if (Leaguess!= null)
+                {
+                   GetMatches(Leaguess.Id);
+                }
+            }
+        }
         #endregion
 
         #region Constructor
@@ -46,8 +59,7 @@ namespace PrismSportApp.ViewModels
         {
             navigation = navigationService;
             dialogService = pageDialog;
-            apiServices = api;
-            SelectLeague = new Command(Pick);
+            apiServices = api;            
             GetLeagues();
             
         }
@@ -76,11 +88,6 @@ namespace PrismSportApp.ViewModels
                 await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
             }
         }
-        async void Pick(object sender)
-        {  
-            
-           // await GetMatches();
-        }
         async Task GetMatches(int id)
         {
             try
@@ -98,6 +105,7 @@ namespace PrismSportApp.ViewModels
             }
 
         }
+        
     }
 }
 
