@@ -25,7 +25,7 @@ namespace PrismSportApp.ViewModels
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
         public string NameLeague { get; set; }
-        public string Code { get; set; }
+        public int Code { get; set; }
         public string Logo { get; set; }
 
         public ICommand Tap { get; set; }
@@ -38,8 +38,7 @@ namespace PrismSportApp.ViewModels
         {
             navigation = navigationService;
             dialogService = pageDialog;
-            apiServices = api;
-            //GetTable(Convert.ToInt32(Code));
+            apiServices = api;            
             Tap = new Command(SelectTeam);
         }        
 
@@ -52,9 +51,8 @@ namespace PrismSportApp.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             this.NameLeague = parameters.GetValue<string>("Name");
-            var key = parameters.GetValue<string>("LeagueId");
-            this.Code = key;
-            GetTable(Convert.ToInt32(Code));
+            this.Code = Convert.ToInt32(parameters.GetValue<string>("LeagueId"));                       
+            GetTable(Code);
         }
 
         async Task GetTable(int param)

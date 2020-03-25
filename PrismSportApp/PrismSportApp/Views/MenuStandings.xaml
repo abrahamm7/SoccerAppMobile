@@ -9,6 +9,6 @@
     mc:Ignorable="d">
     <TabbedPage.Children>
         <local:DetailLeagueView Title="Table" />
-        <local:MatchesPage Title="Fixtures" />
+
     </TabbedPage.Children>
 </TabbedPage>

@@ -7,9 +7,25 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Gamepage"
+    Title="Games"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout Padding="15">
+                <Picker
+                    x:Name="pickleague"
+                    Title="Select League"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding Leagues}">
+                    <Picker.Behaviors>
+                        <behaviorsPack:EventToCommandBehavior
+                            Command="{Binding Path=BindingContext.SelectLeague, Source={x:Reference Gamepage}}"
+                            CommandParameter="{Binding .}"
+                            EventName="SelectedIndexChanged" />
+                    </Picker.Behaviors>
+                </Picker>
+            </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"

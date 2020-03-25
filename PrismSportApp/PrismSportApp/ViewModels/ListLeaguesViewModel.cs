@@ -51,8 +51,7 @@ namespace PrismSportApp.ViewModels
             {
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues();
-                League = response1;
-                //var show = League.competitions;
+                League = response1;               
                 var show = League.competitions.Where(elemento => elemento.Id == 2000 ||
                 elemento.Id == 2001 ||
                 elemento.Id == 2021 ||
@@ -79,7 +78,7 @@ namespace PrismSportApp.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("LeagueId", league.Id);
                 parameters.Add("Name", league.Name);
-                await navigation.NavigateAsync(new Uri(navConstants.TabMenu , UriKind.Relative), parameters);
+                await navigation.NavigateAsync(new Uri(navConstants.DetailLeague , UriKind.Relative), parameters);
             }
         }
 

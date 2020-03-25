@@ -30,6 +30,12 @@
                 <Button
                     BackgroundColor="Transparent"
                     Command="{Binding onNavigate}"
+                    CommandParameter="NavigationPage/MatchesPage"
+                    Text="Games"
+                    TextColor="Black" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Command="{Binding onNavigate}"
                     CommandParameter="NavigationPage/TeamFavoritePage"
                     Text="Favorite Teams"
                     TextColor="Black" />
