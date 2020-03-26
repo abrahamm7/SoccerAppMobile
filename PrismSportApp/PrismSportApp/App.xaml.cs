@@ -23,7 +23,7 @@ namespace PrismSportApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            //NavigationService.NavigateAsync("MatchesPage");
+            //NavigationService.NavigateAsync("MatchesPage");            
             NavConstants nav = new NavConstants();
             NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
             conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();

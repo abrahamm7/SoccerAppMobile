@@ -21,8 +21,8 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Padding="1" Spacing="20">
-                                    <Frame HorizontalOptions="StartAndExpand" WidthRequest="320">
+                                <StackLayout>
+                                    <Frame HorizontalOptions="CenterAndExpand" WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
                                             <Label
                                                 FontAttributes="Bold"

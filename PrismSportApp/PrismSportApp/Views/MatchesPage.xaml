@@ -15,7 +15,6 @@
         <StackLayout>
             <StackLayout Padding="15" BackgroundColor="White">
                 <Picker
-                    x:Name="pickleague"
                     Title="Select League"
                     ItemDisplayBinding="{Binding Name}"
                     ItemsSource="{Binding Leagues}"
@@ -43,7 +42,6 @@
                                             <RowDefinition Height="*" />
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-
                                         <StackLayout
                                             Grid.Row="0"
                                             Grid.Column="0"
