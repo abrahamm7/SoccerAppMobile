@@ -22,40 +22,23 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Frame
-                                CornerRadius="30"
-                                HasShadow="True"
-                                HeightRequest="340"
-                                VerticalOptions="Center">
+                            <Frame Style="{StaticResource ListLeagueFrames}">
                                 <StackLayout VerticalOptions="End">
                                     <StackLayout>
-                                        <Image Aspect="AspectFit" Source="PremierLeague.png" />
+                                        <Image Aspect="AspectFit" Source="{Binding Logo, Mode=TwoWay}" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="Center">
-                                        <Label
-                                            Margin="12,15,0,20"
-                                            FontSize="20"
-                                            Text="{Binding Name}"
-                                            TextColor="Black"
-                                            VerticalTextAlignment="Center" />
+                                        <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
                                     </StackLayout>
                                     <StackLayout
                                         Margin="10,5,0,10"
                                         HorizontalOptions="Center"
                                         VerticalOptions="Start">
                                         <Button
-                                            BackgroundColor="White"
-                                            BorderColor="ForestGreen"
-                                            BorderWidth="1"
                                             Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
                                             CommandParameter="{Binding .}"
-                                            CornerRadius="15"
-                                            FontSize="10"
-                                            HeightRequest="30"
-                                            HorizontalOptions="End"
-                                            Text="Follow"
-                                            TextColor="ForestGreen"
-                                            WidthRequest="130" />
+                                            Style="{StaticResource ListLeagueButton}"
+                                            Text="Follow" />
                                     </StackLayout>
                                 </StackLayout>
                                 <Frame.GestureRecognizers>

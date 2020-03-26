@@ -7,5 +7,136 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com"
     mc:Ignorable="d">
-    <Application.Resources />
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--#region ListLeaguePage-->
+            <Style x:Key="ListLeagueFrames" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="HeightRequest" Value="340" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="ListLeagueLabel" TargetType="Label">
+                <Setter Property="Margin" Value="12,15,0,20" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="ListLeagueBackGroundColor" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            <Style x:Key="ListLeagueButton" TargetType="Button">
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="TextColor" Value="ForestGreen" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="BorderColor" Value="ForestGreen" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="WidthRequest" Value="130" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region DetailLeaguePage-->
+            <Style x:Key="DetailLeagueFrame" TargetType="Frame">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="WidthRequest" Value="400" />
+            </Style>
+
+            <!--#region Position and Team Name-->
+            <Style x:Key="DetailLeagueLabelPosition" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="DetailLeagueLabelName" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region PlayedGames-->
+            <Style x:Key="DetailLeagueLabelTitle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="DetailLeagueLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Win-->
+            <Style x:Key="DetailLeagueLabelTitleW" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="ForestGreen" />
+            </Style>
+
+            <Style x:Key="DetailLeagueLabelW" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="ForestGreen" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Draw-->
+            <Style x:Key="DetailLeagueLabelTitleD" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="Gray" />
+            </Style>
+
+            <Style x:Key="DetailLeagueLabelD" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Lost-->
+            <Style x:Key="DetailLeagueLabelTitleL" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+
+            <Style x:Key="DetailLeagueLabelL" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Points-->
+            <Style x:Key="DetailLeagueLabelPTS" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+            <!--#endregion-->
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>

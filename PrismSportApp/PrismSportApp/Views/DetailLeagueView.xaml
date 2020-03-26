@@ -24,103 +24,35 @@
                                 <StackLayout>
                                     <Frame HorizontalOptions="CenterAndExpand" WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="15"
-                                                HorizontalTextAlignment="End"
-                                                Text="{Binding Position}"
-                                                TextColor="Black"
-                                                VerticalTextAlignment="Center" />
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="15"
-                                                HorizontalTextAlignment="Center"
-                                                Text="{Binding Team.Name, Mode=TwoWay}"
-                                                TextColor="Black"
-                                                VerticalTextAlignment="Center" />
+                                            <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
+                                            <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />
                                             <StackLayout
                                                 HorizontalOptions="EndAndExpand"
                                                 Orientation="Horizontal"
                                                 Spacing="10">
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        HorizontalTextAlignment="Center"
-                                                        Text="Pl"
-                                                        TextColor="Black" />
-                                                    <Label
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding PlayedGames}"
-                                                        TextColor="Black"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="Pl" />
+                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding PlayedGames}" />
                                                 </StackLayout>
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        Text="W"
-                                                        TextColor="ForestGreen" />
-                                                    <Label
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding Won}"
-                                                        TextColor="ForestGreen"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleW}" Text="W" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelW}" Text="{Binding Won}" />
                                                 </StackLayout>
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        Text="D"
-                                                        TextColor="Gray" />
-                                                    <Label
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding Draw}"
-                                                        TextColor="Gray"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleD}" Text="D" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelD}" Text="{Binding Draw}" />
                                                 </StackLayout>
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        Text="L"
-                                                        TextColor="Red" />
-                                                    <Label
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding Lost}"
-                                                        TextColor="Red"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleL}" Text="L" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelL}" Text="{Binding Lost}" />
                                                 </StackLayout>
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        Text="GD"
-                                                        TextColor="Black" />
-                                                    <Label
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding GoalDifference}"
-                                                        TextColor="Black"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="GD" />
+                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding GoalDifference}" />
                                                 </StackLayout>
                                                 <StackLayout>
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        Text="PTS"
-                                                        TextColor="Black" />
-                                                    <Label
-                                                        FontAttributes="Bold"
-                                                        FontSize="16"
-                                                        HorizontalOptions="End"
-                                                        HorizontalTextAlignment="End"
-                                                        Text="{Binding Points}"
-                                                        TextColor="Black"
-                                                        VerticalTextAlignment="Center" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="PTS" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelPTS}" Text="{Binding Points}" />
                                                 </StackLayout>
                                             </StackLayout>
                                         </StackLayout>

@@ -46,21 +46,7 @@ namespace PrismSportApp
             
             //Services//
             containerRegistry.Register<IApiServices, ApiService>();
-        }
-
-        //protected override void OnStart()
-        //{
-        //    if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-        //    {
-        //        Message(dialog);
-        //    }
-        //}
-        
-        //async void Message(IPageDialogService pageDialog)
-        //{
-        //    dialog = pageDialog;
-        //    await dialog.DisplayAlertAsync("Advice", $"Not connection to internet", "Ok");
-        //}
+        }        
 
     }
 }
