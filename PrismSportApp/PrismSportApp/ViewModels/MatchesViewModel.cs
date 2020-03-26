@@ -37,7 +37,7 @@ namespace PrismSportApp.ViewModels
 
         #region Commands and Properties
         League Leaguess;
-        public League LeagueSelected
+        public League LeagueSelected //Select element in picker//
         {
             get
             {
@@ -64,7 +64,8 @@ namespace PrismSportApp.ViewModels
             
         }
         #endregion
-       
+
+        #region Metodos
         async void GetLeagues()
         {
             try
@@ -105,7 +106,7 @@ namespace PrismSportApp.ViewModels
             }
 
         }
-        
+        #endregion
     }
 }
 

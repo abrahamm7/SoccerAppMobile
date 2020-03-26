@@ -29,6 +29,7 @@ namespace PrismSportApp.Droid
             SvgImageRenderer.Init();            
             base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
+            Forms.SetFlags("SwipeView_Experimental");
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

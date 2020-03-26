@@ -13,34 +13,25 @@ using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class TeamFavoriteViewModel: INotifyPropertyChanged, INavigatedAware
+    public class TeamFavoriteViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ObservableCollection<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
+        public IList<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
         public bool Visible { get; set; }
-        public bool ListVisible { get; set; }
-        public bool StateButton { get; set; }
-        public bool State { get; set; }
+        public bool ListVisible { get; set; }      
         public string Logo { get; set; }
+        public string Delete { get; set; }
         public ICommand Refresh { get; set; }
         public ICommand Tap { get; set; }
-        public SQLiteConnection conn;
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-         
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-           
-        }
+        public ICommand DeleteItem { get; set; }
+        public SQLiteConnection conn;        
 
         public TeamFavoriteViewModel()
         {
             conn = DependencyService.Get<ISqliteInterface>().GetConnection();            
-            Favorites();
-            StateButton = false;
-            Tap = new Command(TapFrame);
+            Favorites();                     
+            DeleteItem = new Command(Clear);
+            Delete = "Delete";
         }
 
         async void Favorites()
@@ -64,9 +55,18 @@ namespace PrismSportApp.ViewModels
 
         }
 
-        async void TapFrame()
+       
+        async void Clear(object sender)
         {
-            StateButton = true;
+            var x = sender as Teamm;
+            conn.Query<Teamm>($"Delete From Teamm Where Id = {x.Id}");
+            Teams = conn.Query<Teamm>("SELECT * From Teamm").ToList();
+            if (Teams.Count == 0)
+            {
+                Visible = true;
+                ListVisible = false;
+            }
+
         }
     }
 }

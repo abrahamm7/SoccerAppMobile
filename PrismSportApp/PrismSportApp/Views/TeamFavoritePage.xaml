@@ -17,12 +17,10 @@
                 Text="Aun no contiene elementos"
                 VerticalOptions="CenterAndExpand" />
             <ListView
-                CachingStrategy="RecycleElement"
                 IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
-                RowHeight="60"
-                SelectionMode="Single"
-                SeparatorColor="ForestGreen">
+                RowHeight="70"
+                SelectionMode="Single">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -35,12 +33,16 @@
                                                 Text="{Binding Name}"
                                                 TextColor="Black" />
                                         </StackLayout>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference FavoriteTeam}}" CommandParameter="{Binding .}" />
-                                        </Frame.GestureRecognizers>
                                     </Frame>
                                 </StackLayout>
                             </ViewCell.View>
+                            <ViewCell.ContextActions>
+                                <MenuItem
+                                    Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
+                                    CommandParameter="{Binding .}"
+                                    IconImageSource="Trash.png"
+                                    Text="{Binding Delete, Mode=TwoWay}" />
+                            </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
