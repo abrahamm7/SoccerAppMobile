@@ -60,8 +60,7 @@ namespace PrismSportApp.Models
         public int Points { get; set; }
         public int GoalsFor { get; set; }
         public int GoalsAgainst { get; set; }
-        public int GoalDifference { get; set; }
-        public string Color { get; set; }
+        public int GoalDifference { get; set; }        
 
     }
 

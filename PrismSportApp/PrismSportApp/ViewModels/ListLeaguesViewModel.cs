@@ -18,9 +18,11 @@ namespace PrismSportApp.ViewModels
 {
     public class ListLeaguesViewModel: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;       
         public string Logo { get; set; }
         public string TitlePage { get; set; }
+        public string SetColor { get; set; }
+        public bool State { get; set; }
         public IEnumerable<League> Leagues { get; set; } = new ObservableCollection<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
@@ -42,9 +44,10 @@ namespace PrismSportApp.ViewModels
             GetLeagues();
             FollowButton = new Command(FollowLeague);
             Tap = new Command(SelectLeague);
-            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
-            Logo = "PremierLeague.png";
+            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();            
             TitlePage = "Leagues";
+            
+           
         }
 
         async void GetLeagues()
@@ -63,7 +66,21 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2003 ||
                 elemento.Id == 2002 ||
                 elemento.Id == 2014);
-                this.Leagues = show;                
+                this.Leagues = show;
+                var x = show.First().Id;
+                switch (x) //Check code
+                {
+                    case 2001:
+                        Logo = "LaLiga.png";
+                        break;
+
+                    case 2021:
+                        Logo = "PremierLeague.png";
+                        break;
+                    case 2017:
+                        Logo = "Bundesliga.png";
+                        break;
+                }
             }
             catch (Exception e)
             {
@@ -85,9 +102,12 @@ namespace PrismSportApp.ViewModels
         }
 
         async void FollowLeague(object sender)
-        {
-            var x = (League)sender;            
+        {            
+            var x = (League)sender;
             conn.Insert(x);
+
         }
+
+        
     }
 }

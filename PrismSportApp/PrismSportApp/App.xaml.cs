@@ -38,8 +38,7 @@ namespace PrismSportApp
             containerRegistry.RegisterForNavigation<MenuPages,MenuViewModel>();
             containerRegistry.RegisterForNavigation<ListLeaguesPage,ListLeaguesViewModel>();           
             containerRegistry.RegisterForNavigation<TeamInfoPage,TeamInfoViewModel>();
-            containerRegistry.RegisterForNavigation<TeamFavoritePage, TeamFavoriteViewModel>();
-            containerRegistry.RegisterForNavigation<MenuStandings>();
+            containerRegistry.RegisterForNavigation<TeamFavoritePage, TeamFavoriteViewModel>();         
             containerRegistry.RegisterForNavigation<DetailLeagueView,DetailLeagueViewModel>();
             containerRegistry.RegisterForNavigation<MatchesPage, MatchesViewModel>();
             containerRegistry.RegisterForNavigation<NavigationPage>();

@@ -24,8 +24,7 @@ namespace PrismSportApp.ViewModels
         public Teamm Teamm { get; set; } = new Teamm();
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
-        public string NameLeague { get; set; }
-        public string SetColor { get; set; }
+        public string NameLeague { get; set; }        
         public int Code { get; set; }
         public string Logo { get; set; }
 
@@ -63,14 +62,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;                          
-                this.Table = LeagueStandings.standings.First().table;
-                foreach (var item in Table)
-                {
-                    if (item.Position >= 1 || item.Position <= 4) //Check code//
-                    {
-                        this.SetColor = "#689F38";                        
-                    }
-                }
+                this.Table = LeagueStandings.standings.First().table;                
             }
             catch (Exception ex)
             {

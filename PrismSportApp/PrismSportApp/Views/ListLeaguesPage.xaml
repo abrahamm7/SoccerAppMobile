@@ -3,8 +3,10 @@
     x:Class="PrismSportApp.Views.ListLeaguesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:PrismSportApp"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="LeagueList"
@@ -12,7 +14,7 @@
     BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0,120,0,0" Padding="15">
             <CarouselView
                 x:Name="ListLeague"
                 HorizontalScrollBarVisibility="Always"
@@ -22,10 +24,10 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Frame Style="{StaticResource ListLeagueFrames}">
+                            <Frame x:Name="Container" Style="{StaticResource ListLeagueFrames}">
                                 <StackLayout VerticalOptions="End">
                                     <StackLayout>
-                                        <Image Aspect="AspectFit" Source="{Binding Logo, Mode=TwoWay}" />
+                                        <Image Aspect="AspectFit" Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="Center">
                                         <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
@@ -35,10 +37,16 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Start">
                                         <Button
+                                            BackgroundColor="{Binding Path=BindingContext.SetColor, Source={x:Reference LeagueList}}"
                                             Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
                                             CommandParameter="{Binding .}"
+                                            IsEnabled="{Binding State}"
                                             Style="{StaticResource ListLeagueButton}"
-                                            Text="Follow" />
+                                            Text="Follow">
+                                            <Button.Behaviors>
+                                                <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                            </Button.Behaviors>
+                                        </Button>
                                     </StackLayout>
                                 </StackLayout>
                                 <Frame.GestureRecognizers>

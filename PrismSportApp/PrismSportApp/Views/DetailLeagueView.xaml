@@ -3,6 +3,7 @@
     x:Class="PrismSportApp.Views.DetailLeagueView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -22,10 +23,7 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout>
-                                    <Frame
-                                        BackgroundColor="{Binding Path=BindingContext.SetColor, Source={x:Reference ListLeague}}"
-                                        HorizontalOptions="CenterAndExpand"
-                                        WidthRequest="400">
+                                    <Frame HorizontalOptions="CenterAndExpand" WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
                                             <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />
@@ -62,6 +60,9 @@
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
                                         </Frame.GestureRecognizers>
+                                        <Frame.Behaviors>
+                                            <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                        </Frame.Behaviors>
                                     </Frame>
                                 </StackLayout>
                             </ViewCell.View>
