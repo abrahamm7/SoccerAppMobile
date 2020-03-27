@@ -14,49 +14,51 @@
     BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout Margin="0,120,0,0" Padding="15">
-            <CarouselView
-                x:Name="ListLeague"
-                HorizontalScrollBarVisibility="Always"
-                IsScrollAnimated="False"
-                ItemsSource="{Binding Leagues}"
-                VerticalScrollBarVisibility="Never">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Frame x:Name="Container" Style="{StaticResource ListLeagueFrames}">
-                                <StackLayout VerticalOptions="End">
-                                    <StackLayout>
-                                        <Image Aspect="AspectFit" Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" />
+        <ScrollView>
+            <StackLayout Margin="0,120,0,0" Padding="15">
+                <CarouselView
+                    x:Name="ListLeague"
+                    HorizontalScrollBarVisibility="Always"
+                    IsScrollAnimated="False"
+                    ItemsSource="{Binding Leagues}"
+                    VerticalScrollBarVisibility="Never">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Frame x:Name="Container" Style="{StaticResource ListLeagueFrames}">
+                                    <StackLayout VerticalOptions="End">
+                                        <StackLayout>
+                                            <Image Aspect="AspectFit" Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" />
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center">
+                                            <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Margin="10,5,0,10"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Start">
+                                            <Button
+                                                BackgroundColor="{Binding Path=BindingContext.SetColor, Source={x:Reference LeagueList}}"
+                                                Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
+                                                CommandParameter="{Binding .}"
+                                                IsEnabled="{Binding State}"
+                                                Style="{StaticResource ListLeagueButton}"
+                                                Text="Follow">
+                                                <Button.Behaviors>
+                                                    <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                                </Button.Behaviors>
+                                            </Button>
+                                        </StackLayout>
                                     </StackLayout>
-                                    <StackLayout HorizontalOptions="Center">
-                                        <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
-                                    </StackLayout>
-                                    <StackLayout
-                                        Margin="10,5,0,10"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Start">
-                                        <Button
-                                            BackgroundColor="{Binding Path=BindingContext.SetColor, Source={x:Reference LeagueList}}"
-                                            Command="{Binding Path=BindingContext.FollowButton, Source={x:Reference LeagueList}}"
-                                            CommandParameter="{Binding .}"
-                                            IsEnabled="{Binding State}"
-                                            Style="{StaticResource ListLeagueButton}"
-                                            Text="Follow">
-                                            <Button.Behaviors>
-                                                <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
-                                            </Button.Behaviors>
-                                        </Button>
-                                    </StackLayout>
-                                </StackLayout>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                </Frame.GestureRecognizers>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-        </StackLayout>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

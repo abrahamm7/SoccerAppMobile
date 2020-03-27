@@ -10,75 +10,82 @@
     mc:Ignorable="d">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
-            <StackLayout
-                Padding="20"
-                BackgroundColor="#FFFFFF"
-                WidthRequest="315">
-                <StackLayout>
-                    <Button
-                        BackgroundColor="Transparent"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/ListLeaguesPage"
-                        Text="Leagues"
-                        TextColor="Black" />
-                    <Button
-                        BackgroundColor="Transparent"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/TeamPage"
-                        Text="Players"
-                        TextColor="Black" />
-                    <Button
-                        BackgroundColor="Transparent"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/MatchesPage"
-                        Text="Games"
-                        TextColor="Black" />
-                    <Button
-                        BackgroundColor="Transparent"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/TeamFavoritePage"
-                        Text="Favorite Teams"
-                        TextColor="Black" />
+            <ScrollView>
+                <StackLayout
+                    Padding="20"
+                    BackgroundColor="#FFFFFF"
+                    WidthRequest="315">
+                    <StackLayout>
+                        <Button
+                            BackgroundColor="Transparent"
+                            Command="{Binding onNavigate}"
+                            CommandParameter="NavigationPage/ListLeaguesPage"
+                            Text="Leagues"
+                            TextColor="Black" />
+                        <Button
+                            BackgroundColor="Transparent"
+                            Command="{Binding onNavigate}"
+                            CommandParameter="NavigationPage/MatchesPage"
+                            Text="Games"
+                            TextColor="Black" />
+                        <Button
+                            BackgroundColor="Transparent"
+                            Command="{Binding onNavigate}"
+                            CommandParameter="NavigationPage/TeamFavoritePage"
+                            Text="Favorite Teams"
+                            TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout Margin="0,190,0,0" Orientation="Horizontal">
+                        <Image Source="star.png" />
+                        <Label
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Favorites"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ListView
+                            x:Name="FavoritesLeagues"
+                            IsVisible="{Binding StateList}"
+                            ItemsSource="{Binding LeaguesFavorites}"
+                            RowHeight="100"
+                            VerticalScrollBarVisibility="Never">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Frame
+                                                BackgroundColor="#FFFFFF"
+                                                HorizontalOptions="Center"
+                                                WidthRequest="300">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Image
+                                                        Aspect="AspectFit"
+                                                        HeightRequest="20"
+                                                        Source="LaLiga.png"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        FontSize="20"
+                                                        Text="{Binding Name}"
+                                                        TextColor="Black"
+                                                        VerticalOptions="Center" />
+                                                </StackLayout>
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference FavoritesLeagues}}" CommandParameter="{Binding .}" />
+                                                </Frame.GestureRecognizers>
+                                                <Frame.Behaviors>
+                                                    <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                                </Frame.Behaviors>
+                                            </Frame>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Margin="0,190,0,0" Orientation="Horizontal">
-                    <Image Source="star.png" />
-                    <Label
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
-                        Text="Favorites"
-                        TextColor="Black"
-                        VerticalOptions="Center" />
-                </StackLayout>
-                <StackLayout>
-                    <ListView ItemsSource="{Binding LeaguesFavorites}" RowHeight="100">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Frame HorizontalOptions="Center" WidthRequest="300">
-                                            <StackLayout Orientation="Horizontal">
-                                                <Image
-                                                    Aspect="AspectFit"
-                                                    HeightRequest="20"
-                                                    Source="SeriaA.png"
-                                                    VerticalOptions="Center" />
-                                                <Label
-                                                    FontSize="20"
-                                                    Text="{Binding Name}"
-                                                    TextColor="Black"
-                                                    VerticalOptions="Center" />
-                                            </StackLayout>
-                                            <Frame.Behaviors>
-                                                <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
-                                            </Frame.Behaviors>
-                                        </Frame>
-                                    </ViewCell.View>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-            </StackLayout>
+            </ScrollView>
         </ContentPage>
     </MasterDetailPage.Master>
 </MasterDetailPage>
