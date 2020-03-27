@@ -1,7 +1,9 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace PrismSportApp.Models
 {
@@ -46,9 +48,10 @@ namespace PrismSportApp.Models
         public string CrestUrl { get; set; }
     }
 
-    public class Table
+    public class Table: INotifyPropertyChanged
     {
-        public int Position { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public int Position { get; set; }       
         public Teamm Team { get; set; }
         public int PlayedGames { get; set; }
         public int Won { get; set; }
@@ -58,6 +61,8 @@ namespace PrismSportApp.Models
         public int GoalsFor { get; set; }
         public int GoalsAgainst { get; set; }
         public int GoalDifference { get; set; }
+        public string Color { get; set; }
+
     }
 
     public class Standing

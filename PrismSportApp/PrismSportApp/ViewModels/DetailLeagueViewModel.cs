@@ -25,6 +25,7 @@ namespace PrismSportApp.ViewModels
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
         public string NameLeague { get; set; }
+        public string SetColor { get; set; }
         public int Code { get; set; }
         public string Logo { get; set; }
 
@@ -51,7 +52,7 @@ namespace PrismSportApp.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             this.NameLeague = parameters.GetValue<string>("Name");
-            this.Code = Convert.ToInt32(parameters.GetValue<string>("LeagueId"));                       
+            this.Code = Convert.ToInt32(parameters.GetValue<string>("LeagueId"));            
             GetTable(Code);
         }
 
@@ -61,8 +62,15 @@ namespace PrismSportApp.ViewModels
             {
                 RestService.For<IApiServices>(Links.url);
                 var response = await apiServices.GetStandings(param);
-                LeagueStandings = response;               
+                LeagueStandings = response;                          
                 this.Table = LeagueStandings.standings.First().table;
+                foreach (var item in Table)
+                {
+                    if (item.Position >= 1 || item.Position <= 4) //Check code//
+                    {
+                        this.SetColor = "#689F38";                        
+                    }
+                }
             }
             catch (Exception ex)
             {

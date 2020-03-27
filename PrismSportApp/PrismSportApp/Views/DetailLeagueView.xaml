@@ -22,7 +22,10 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout>
-                                    <Frame HorizontalOptions="CenterAndExpand" WidthRequest="400">
+                                    <Frame
+                                        BackgroundColor="{Binding Path=BindingContext.SetColor, Source={x:Reference ListLeague}}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
                                             <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />

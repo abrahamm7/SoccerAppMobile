@@ -34,7 +34,7 @@ namespace PrismSportApp
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             //Pages//
-            containerRegistry.RegisterForNavigation<TeamPage, TeamPageViewModel>();
+            
             containerRegistry.RegisterForNavigation<MenuPages,MenuViewModel>();
             containerRegistry.RegisterForNavigation<ListLeaguesPage,ListLeaguesViewModel>();           
             containerRegistry.RegisterForNavigation<TeamInfoPage,TeamInfoViewModel>();
