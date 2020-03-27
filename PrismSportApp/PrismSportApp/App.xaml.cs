@@ -24,11 +24,11 @@ namespace PrismSportApp
         {
             InitializeComponent();
             //NavigationService.NavigateAsync("MatchesPage");            
-            NavConstants nav = new NavConstants();
-            NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
             conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
             conn.CreateTable<Teamm>();
             conn.CreateTable<League>();
+            NavConstants nav = new NavConstants();
+            NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
