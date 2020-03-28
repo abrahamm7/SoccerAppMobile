@@ -17,13 +17,17 @@
                 ItemsSource="{Binding Table}"
                 RowHeight="80"
                 SelectionMode="Single"
-                SeparatorColor="ForestGreen">
+                SeparatorColor="ForestGreen"
+                Visual="Material">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout>
-                                    <Frame HorizontalOptions="CenterAndExpand" WidthRequest="400">
+                                    <Frame
+                                        HorizontalOptions="CenterAndExpand"
+                                        Visual="Material"
+                                        WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
                                             <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />

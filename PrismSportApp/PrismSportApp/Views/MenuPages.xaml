@@ -50,7 +50,8 @@
                             IsVisible="{Binding StateList}"
                             ItemsSource="{Binding LeaguesFavorites}"
                             RowHeight="100"
-                            VerticalScrollBarVisibility="Never">
+                            VerticalScrollBarVisibility="Never"
+                            Visual="Material">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>

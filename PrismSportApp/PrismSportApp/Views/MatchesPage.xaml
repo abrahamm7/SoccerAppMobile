@@ -18,14 +18,16 @@
                     Title="Select League"
                     ItemDisplayBinding="{Binding Name}"
                     ItemsSource="{Binding Leagues}"
-                    SelectedItem="{Binding LeagueSelected, Mode=TwoWay}" />
+                    SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
+                    Visual="Material" />
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"
                 RowHeight="220"
                 SelectionMode="Single"
-                SeparatorColor="ForestGreen">
+                SeparatorColor="ForestGreen"
+                Visual="Material">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

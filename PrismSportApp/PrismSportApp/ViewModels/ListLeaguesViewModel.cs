@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -50,7 +51,7 @@ namespace PrismSportApp.ViewModels
            
         }
 
-        async void GetLeagues()
+        async Task GetLeagues()
         {
             try
             {

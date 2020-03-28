@@ -11,8 +11,7 @@ namespace PrismSportApp
 {
     public class ApiService: IApiServices
     {
-        Links Links;       
-        
+        Links Links;              
         
         public async Task<Fixtures> GetFixtures(int param) 
         {

@@ -12,6 +12,7 @@
     x:Name="LeagueList"
     Title="Leagues"
     BackgroundColor="White"
+    Visual="Material"
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
@@ -25,13 +26,19 @@
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Frame x:Name="Container" Style="{StaticResource ListLeagueFrames}">
+                                <Frame
+                                    x:Name="Container"
+                                    Style="{StaticResource ListLeagueFrames}"
+                                    Visual="Material">
                                     <StackLayout VerticalOptions="End">
                                         <StackLayout>
                                             <Image Aspect="AspectFit" Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="Center">
-                                            <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
+                                            <Label
+                                                Style="{StaticResource ListLeagueLabel}"
+                                                Text="{Binding Name}"
+                                                Visual="Material" />
                                         </StackLayout>
                                         <StackLayout
                                             Margin="10,5,0,10"
@@ -43,7 +50,8 @@
                                                 CommandParameter="{Binding .}"
                                                 IsEnabled="{Binding State}"
                                                 Style="{StaticResource ListLeagueButton}"
-                                                Text="Follow">
+                                                Text="Follow"
+                                                Visual="Material">
                                                 <Button.Behaviors>
                                                     <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
                                                 </Button.Behaviors>

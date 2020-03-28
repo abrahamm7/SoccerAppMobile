@@ -18,15 +18,15 @@ namespace PrismSportApp
     public partial class App : PrismApplication
     {
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
-     
+        
         public SQLiteConnection conn;
+        public ISqliteInterface sqlite = new SqliteModel();
         protected override void OnInitialized()
         {
-            InitializeComponent();
-            //NavigationService.NavigateAsync("MatchesPage");            
-            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
-            conn.CreateTable<Teamm>();
-            conn.CreateTable<League>();
+            InitializeComponent();            
+            var x = sqlite.GetConnection();            
+            x.CreateTable<Teamm>();
+            x.CreateTable<League>();
             NavConstants nav = new NavConstants();
             NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
         }
@@ -45,6 +45,7 @@ namespace PrismSportApp
             
             //Services//
             containerRegistry.Register<IApiServices, ApiService>();
+            containerRegistry.Register<ISqliteInterface, SqliteModel>();
         }        
 
     }
