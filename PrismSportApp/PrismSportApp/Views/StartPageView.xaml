@@ -20,6 +20,7 @@
                         <lottie:AnimationView
                             Animation="spinning-ball.json"
                             AutoPlay="True"
+                            HeightRequest="110"
                             Loop="True" />
                     </StackLayout>
                     <Entry
