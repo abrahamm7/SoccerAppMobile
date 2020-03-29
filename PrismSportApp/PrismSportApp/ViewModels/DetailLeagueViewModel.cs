@@ -73,8 +73,7 @@ namespace PrismSportApp.ViewModels
         }
 
         async void SelectTeam(object sender)
-        {
-            NavConstants navConstants = new NavConstants();
+        {            
             TeamTable = (Table)sender;
             var parameters = new NavigationParameters();
             parameters.Add("TeamName", TeamTable.Team.Name);          
@@ -84,7 +83,7 @@ namespace PrismSportApp.ViewModels
             parameters.Add("Draws", TeamTable.Draw);                
             parameters.Add("Losts", TeamTable.Lost);                
             parameters.Add("PG", TeamTable.PlayedGames);                
-            await navigation.NavigateAsync(new Uri(navConstants.TeamInfo, UriKind.Relative), parameters);
+            await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }
 }

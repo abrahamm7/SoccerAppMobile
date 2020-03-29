@@ -5,23 +5,23 @@ using System.Text;
 
 namespace PrismSportApp
 {
-    public class NavConstants
+    public static class NavConstants
     {
 
-        public string TabMenu { get; set; }
-        public string MasterMenu { get; set; }
-        public string DetailLeague { get; set; }
-        public string TeamInfo { get; set; }
-        public string FavoriteLeague { get; set; }
+        //public string TabMenu { get; set; }
+        //public string MasterMenu { get; set; }
+        //public string DetailLeague { get; set; }
+        //public string TeamInfo { get; set; }
+        //public string FavoriteLeague { get; set; }
 
-        public NavConstants()
-        {
-            TabMenu = $"/MenuStandings?{KnownNavigationParameters.SelectedTab}=DetailLeagueView";
-            MasterMenu = "/MenuPages/NavigationPage/ListLeaguesPage";
-            DetailLeague = "DetailLeagueView";
-            TeamInfo = "TeamInfoPage";
-            FavoriteLeague = "LeagueFavoritePage";
-        }
+        
+       
+       public static string MasterMenu = "/MenuPages/NavigationPage/ListLeaguesPage";
+       public static string DetailLeague = "DetailLeagueView";
+       public static string TeamInfo = "TeamInfoPage";
+       public static string FavoriteLeague = "LeagueFavoritePage";
+       public static string StartPage = "StartPageView";
+        
       
 
     }

@@ -89,8 +89,7 @@ namespace PrismSportApp.ViewModels
             }
         }
         async void SelectLeague(object sender)
-        {
-            NavConstants navConstants = new NavConstants();
+        {            
             this.league = (League)sender;
             var search = League.competitions.Where(elemento => elemento.Id == league.Id);
             if (search.Any())
@@ -98,7 +97,7 @@ namespace PrismSportApp.ViewModels
                 var parameters = new NavigationParameters();
                 parameters.Add("LeagueId", league.Id);
                 parameters.Add("Name", league.Name);
-                await navigation.NavigateAsync(new Uri(navConstants.DetailLeague , UriKind.Relative), parameters);
+                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.Relative), parameters);
             }
         }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -11,6 +10,7 @@ using Prism.Ioc;
 using ImageCircle.Forms.Plugin.Droid;
 using FFImageLoading.Svg.Forms;
 using Xamarin.Forms;
+using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
 
 namespace PrismSportApp.Droid
@@ -24,14 +24,14 @@ namespace PrismSportApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             SetTheme(Resource.Style.MainTheme);
             
-            ImageCircleRenderer.Init();            
-                       
             base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
             
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            AnimationViewRenderer.Init();
+            ImageCircleRenderer.Init();
 
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);

@@ -26,9 +26,8 @@ namespace PrismSportApp
             InitializeComponent();            
             var x = sqlite.GetConnection();            
             x.CreateTable<Teamm>();
-            x.CreateTable<League>();
-            NavConstants nav = new NavConstants();
-            NavigationService.NavigateAsync(new Uri(nav.MasterMenu, UriKind.Absolute));
+            x.CreateTable<League>();           
+            NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -41,6 +40,7 @@ namespace PrismSportApp
             containerRegistry.RegisterForNavigation<TeamFavoritePage, TeamFavoriteViewModel>();         
             containerRegistry.RegisterForNavigation<DetailLeagueView,DetailLeagueViewModel>();
             containerRegistry.RegisterForNavigation<MatchesPage, MatchesViewModel>();
+            containerRegistry.RegisterForNavigation<StartPageView, StartPageViewModel>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             
             //Services//
