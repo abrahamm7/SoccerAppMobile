@@ -24,21 +24,19 @@
                             Loop="True" />
                     </StackLayout>
                     <Entry
-                        BackgroundColor="Transparent"
+                        x:Name="Usertxt"
                         Placeholder="Name"
-                        PlaceholderColor="White"
-                        TextColor="White"
-                        Visual="Material" />
+                        Style="{StaticResource StartPageEntry}"
+                        Text="{Binding User.Name}" />
                     <Entry
-                        BackgroundColor="Transparent"
+                        x:Name="Emailtxt"
                         Placeholder="Email"
-                        PlaceholderColor="White"
-                        TextColor="White"
-                        Visual="Material" />
+                        Style="{StaticResource StartPageEntry}"
+                        Text="{Binding User.Email}" />
                     <Button
-                        CornerRadius="15"
-                        Text="Sign Up"
-                        Visual="Material" />
+                        Command="{Binding SignButton}"
+                        Style="{StaticResource StartPageButton}"
+                        Text="Sign Up" />
                 </StackLayout>
             </yummy:PancakeView>
         </ScrollView>

@@ -9,6 +9,21 @@
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
+            <!--#region StartPage-->
+            <Style x:Key="StartPageEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="PlaceholderColor" Value="White" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="StartPageButton" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+            <!--#endregion-->
+
             <!--#region ListLeaguePage-->
             <Style x:Key="ListLeagueFrames" TargetType="Frame">
                 <Setter Property="CornerRadius" Value="20" />

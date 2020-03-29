@@ -17,14 +17,14 @@ namespace PrismSportApp
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }        
         
-        public SQLiteConnection conn;
         public ISqliteInterface sqlite = new SqliteModel();
         protected override void OnInitialized()
         {
             InitializeComponent();            
-            var x = sqlite.GetConnection();            
+            var x = sqlite.GetConnection();
+            x.CreateTable<User>();
             x.CreateTable<Teamm>();
             x.CreateTable<League>();           
             NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
