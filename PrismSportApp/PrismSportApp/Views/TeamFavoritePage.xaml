@@ -5,17 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
     Title="Favorite Teams"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                IsVisible="{Binding Visible}"
-                Text="Aun no contiene elementos"
-                VerticalOptions="CenterAndExpand" />
+            <StackLayout Margin="0,190,0,0">
+                <lottie:AnimationView
+                    Animation="search-and-clear.json"
+                    AutoPlay="True"
+                    HeightRequest="110"
+                    IsVisible="{Binding Visible}"
+                    Loop="True" />
+                <Label
+                    FontSize="17"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="{Binding Visible}"
+                    Text="Teams not found"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
             <ListView
                 IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
