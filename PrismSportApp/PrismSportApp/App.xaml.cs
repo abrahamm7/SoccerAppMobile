@@ -9,6 +9,7 @@ using PrismSportApp.ViewModels;
 using PrismSportApp.Views;
 using SQLite;
 using System;
+using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,8 +27,17 @@ namespace PrismSportApp
             var x = sqlite.GetConnection();
             x.CreateTable<User>();
             x.CreateTable<Teamm>();
-            x.CreateTable<League>();           
-            NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
+            x.CreateTable<League>();
+            var List = x.Query<User>("Select * From User");
+            if (List.Any())
+            {
+                NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+            }
+            else
+            {                
+                NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
+            }
+           
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
