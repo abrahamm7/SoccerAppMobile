@@ -35,16 +35,15 @@ namespace PrismSportApp.ViewModels
 
         IApiServices apiServices;
 
-        ISqliteInterface sqlite;
 
 
 
-        public ListLeaguesViewModel(IApiServices api, ISqliteInterface sqliteInterface, INavigationService navigationService, IPageDialogService pageDialog)
+        public ListLeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
             apiServices = api;
             navigation = navigationService;
             dialogService = pageDialog;
-            sqlite = sqliteInterface;           
+                    
             Tap = new Command(SelectLeague);            
             TitlePage = "Leagues";
             GetLeagues();
@@ -96,8 +95,7 @@ namespace PrismSportApp.ViewModels
             if (search.Any())
             {
                 var parameters = new NavigationParameters();
-                parameters.Add("LeagueId", league.Id);
-                parameters.Add("Name", league.Name);
+                parameters.Add("League", league);               
                 await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.Relative), parameters);
             }
         }

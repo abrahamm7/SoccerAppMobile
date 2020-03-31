@@ -45,14 +45,13 @@ namespace PrismSportApp.ViewModels
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            var navigationMode = parameters.GetNavigationMode();
+            
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            this.NameLeague = parameters.GetValue<string>("Name");
-            this.Code = Convert.ToInt32(parameters.GetValue<string>("LeagueId"));            
-            GetTable(Code);
+            League = parameters.GetValue<League>("League");                     
+            GetTable(League.Id);
         }
 
         async Task GetTable(int param)
