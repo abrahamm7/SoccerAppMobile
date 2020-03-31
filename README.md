@@ -1,5 +1,5 @@
 # ScreenShots
-![](Startpage.gif)
+![](StartPage.gif)
 ![picture](Login.png)
 ![picture](League.jpeg)
 ![picture](Table.jpeg)
