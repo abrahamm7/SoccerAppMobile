@@ -21,13 +21,8 @@ namespace PrismSportApp.ViewModels
         public League League { get; set; } = new League();
         public Standings LeagueStandings { get; set; } = new Standings();
         public IEnumerable<Table> Table { get; set; } = new ObservableCollection<Table>();
-        public Teamm Teamm { get; set; } = new Teamm();
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
-        public string NameLeague { get; set; }        
-        public int Code { get; set; }
-        public string Logo { get; set; }
-
         public ICommand Tap { get; set; }
         INavigationService navigation;
 
