@@ -13013,7 +13013,10 @@ namespace PrismSportApp.Droid
 			public const int Trash = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int worldcup = 2131165319;
+			public const int trofeo = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int worldcup = 2131165320;
 			
 			static Drawable()
 			{

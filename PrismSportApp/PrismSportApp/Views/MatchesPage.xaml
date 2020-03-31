@@ -67,7 +67,8 @@
                                             Grid.Column="1"
                                             BorderColor="ForestGreen"
                                             CornerRadius="15"
-                                            HasShadow="True">
+                                            HasShadow="True"
+                                            Visual="Material">
                                             <StackLayout
                                                 Orientation="Horizontal"
                                                 Spacing="10"

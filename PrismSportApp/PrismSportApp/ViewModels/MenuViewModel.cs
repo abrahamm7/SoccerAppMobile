@@ -19,62 +19,23 @@ namespace PrismSportApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         INavigationService navigationService;
-        public DelegateCommand<string> onNavigate { get; set; }
-        public League league { get; set; } = new League();
-        public Competitions League { get; set; } = new Competitions();
-        public IList<League> LeaguesFavorites { get; set; } = new ObservableCollection<League>();
-        public ICommand Tap { get; set; }
-        public string Star { get; set; }
-        public bool State { get; set; }
-        public bool StateList { get; set; }
-        public string Leagues { get; set; }
-        public string Players { get; set; }
-        public SQLiteConnection conn;
-        public MenuViewModel(INavigationService navigation)
+        public DelegateCommand<string> onNavigate { get; set; }       
+        public User User { get; set; } = new User();        
+        public ICommand Tap { get; set; }   
+        ISqliteInterface sqlite;
+        public MenuViewModel(INavigationService navigation, ISqliteInterface sqliteInterface)
         {
             navigationService = navigation;
             onNavigate = new DelegateCommand<string>(Navigate);
-            Star = "star.png";
-            Players = "soccer.png";
-            Leagues = "worldcup.png";
-            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();
-            //Tap = new Command(SelectLeague);
-            GetLeagues();
+            sqlite = sqliteInterface;
+            var x = sqlite.GetConnection();
+            var list = x.Query<User>("select * from User");
+            User.Name = list.First().Name;
+            
         }
         async void Navigate(string page)
         {
             await navigationService.NavigateAsync(new Uri(page, UriKind.Relative));
-        }
-        async void GetLeagues()
-        {
-            var x = conn.Query<League>("Select * from League").ToList();
-            if (x.Count == 0)
-            {
-                State = true;
-                StateList = false;
-                
-            }
-            else
-            {
-                State = false;
-                StateList = true;
-                LeaguesFavorites = conn.Query<League>("Select * from League").ToList();
-            }
-                        
-        }
-
-        //async void SelectLeague(object sender)
-        //{
-        //    NavConstants navConstants = new NavConstants();
-        //    this.league = (League)sender;
-        //    var search = League.competitions.Where(elemento => elemento.Name == league.Name);
-        //    if (search.Any())
-        //    {
-        //        var parameters = new NavigationParameters();
-        //        parameters.Add("LeagueId", league.Id);
-        //        parameters.Add("Name", league.Name);
-        //        await navigationService.NavigateAsync(new Uri(navConstants.DetailLeague, UriKind.Relative), parameters);
-        //    }
-        //}
+        }      
     }
 }

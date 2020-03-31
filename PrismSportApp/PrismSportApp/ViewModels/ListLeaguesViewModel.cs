@@ -22,13 +22,10 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;       
         public string Logo { get; set; }
         public string TitlePage { get; set; }
-        public string SetColor { get; set; }
-        public bool State { get; set; }
         public IEnumerable<League> Leagues { get; set; } = new ObservableCollection<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
-        public Links Links { get; set; } = new Links();
-        public SQLiteConnection conn;
+        public Links Links { get; set; } = new Links();        
         public ICommand Tap { get; set; }
         public ICommand FollowButton { get; set; }
 
@@ -37,19 +34,24 @@ namespace PrismSportApp.ViewModels
         IPageDialogService dialogService;
 
         IApiServices apiServices;
-        public ListLeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
+
+        ISqliteInterface sqlite;
+
+
+
+        public ListLeaguesViewModel(IApiServices api, ISqliteInterface sqliteInterface, INavigationService navigationService, IPageDialogService pageDialog)
         {
             apiServices = api;
             navigation = navigationService;
             dialogService = pageDialog;
-            GetLeagues();
+            sqlite = sqliteInterface;
             FollowButton = new Command(FollowLeague);
-            Tap = new Command(SelectLeague);
-            conn = Xamarin.Forms.DependencyService.Get<ISqliteInterface>().GetConnection();            
+            Tap = new Command(SelectLeague);            
             TitlePage = "Leagues";
+            GetLeagues();
             
-           
         }
+
 
         async Task GetLeagues()
         {
@@ -104,8 +106,8 @@ namespace PrismSportApp.ViewModels
         async void FollowLeague(object sender)
         {            
             var x = (League)sender;
+            var conn = sqlite.GetConnection();
             conn.Insert(x);
-
         }
 
         
