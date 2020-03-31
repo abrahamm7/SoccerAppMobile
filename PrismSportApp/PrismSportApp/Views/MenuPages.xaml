@@ -13,47 +13,29 @@
     mc:Ignorable="d">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
-            <yummy:PancakeView
-                Padding="20"
-                BackgroundColor="#FFFFFF"
-                BackgroundGradientEndColor="#5C258D"
-                BackgroundGradientStartColor="#303F9F"
-                WidthRequest="315">
+            <yummy:PancakeView Style="{StaticResource GradientPageMenu}" WidthRequest="315">
                 <StackLayout Spacing="30">
                     <StackLayout HeightRequest="120">
-                        <Label
-                            FontSize="30"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding User.Name, Mode=TwoWay}"
-                            TextColor="White" />
+                        <Label Style="{StaticResource UserStyleName}" Text="{Binding User.Name, Mode=TwoWay}" />
                     </StackLayout>
                     <StackLayout HeightRequest="320">
                         <Button
-                            BackgroundColor="Transparent"
                             Command="{Binding onNavigate}"
                             CommandParameter="NavigationPage/TeamFavoritePage"
-                            FontSize="18"
-                            HorizontalOptions="Start"
+                            Style="{StaticResource Buttons}"
                             Text="Favorite Teams"
-                            TextColor="White"
                             WidthRequest="150" />
                         <Button
                             Margin="5,0,0,0"
-                            BackgroundColor="Transparent"
                             Command="{Binding onNavigate}"
                             CommandParameter="NavigationPage/ListLeaguesPage"
-                            FontSize="18"
-                            HorizontalOptions="Start"
-                            Text="Leagues"
-                            TextColor="White" />
+                            Style="{StaticResource Buttons}"
+                            Text="Leagues" />
                         <Button
-                            BackgroundColor="Transparent"
                             Command="{Binding onNavigate}"
                             CommandParameter="NavigationPage/MatchesPage"
-                            FontSize="18"
-                            HorizontalOptions="Start"
-                            Text="Games"
-                            TextColor="White" />
+                            Style="{StaticResource Buttons}"
+                            Text="Games" />
                     </StackLayout>
                     <lottie:AnimationView
                         Animation="cup.json"

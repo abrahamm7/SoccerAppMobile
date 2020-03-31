@@ -12,6 +12,7 @@ using FFImageLoading.Svg.Forms;
 using Xamarin.Forms;
 using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
+using TinySvgHelper;
 
 namespace PrismSportApp.Droid
 {
@@ -26,13 +27,13 @@ namespace PrismSportApp.Droid
             
             base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
-            
+            SvgHelper.Init();
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
-
+            Stormlion.PhotoBrowser.Droid.Platform.Init(this);
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
             LoadApplication(new App(new AndroidInitialize()));

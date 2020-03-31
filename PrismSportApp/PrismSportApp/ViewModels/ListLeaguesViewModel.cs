@@ -4,6 +4,7 @@ using PrismSportApp.Models;
 using PrismSportApp.Services;
 using Refit;
 using SQLite;
+using Stormlion.PhotoBrowser;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,8 +27,7 @@ namespace PrismSportApp.ViewModels
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();        
-        public ICommand Tap { get; set; }
-        public ICommand FollowButton { get; set; }
+        public ICommand Tap { get; set; }        
 
         INavigationService navigation;
 
@@ -44,8 +44,7 @@ namespace PrismSportApp.ViewModels
             apiServices = api;
             navigation = navigationService;
             dialogService = pageDialog;
-            sqlite = sqliteInterface;
-            FollowButton = new Command(FollowLeague);
+            sqlite = sqliteInterface;           
             Tap = new Command(SelectLeague);            
             TitlePage = "Leagues";
             GetLeagues();
@@ -103,12 +102,7 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        async void FollowLeague(object sender)
-        {            
-            var x = (League)sender;
-            var conn = sqlite.GetConnection();
-            conn.Insert(x);
-        }
+    
 
         
     }

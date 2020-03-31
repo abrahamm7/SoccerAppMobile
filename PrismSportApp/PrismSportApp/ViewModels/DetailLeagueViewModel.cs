@@ -76,13 +76,7 @@ namespace PrismSportApp.ViewModels
         {            
             TeamTable = (Table)sender;
             var parameters = new NavigationParameters();
-            parameters.Add("TeamName", TeamTable.Team.Name);          
-            parameters.Add("TeamId", TeamTable.Team.Id);          
-            parameters.Add("Logo", TeamTable.Team.CrestUrl);          
-            parameters.Add("Win", TeamTable.Won);    
-            parameters.Add("Draws", TeamTable.Draw);                
-            parameters.Add("Losts", TeamTable.Lost);                
-            parameters.Add("PG", TeamTable.PlayedGames);                
+            parameters.Add("Team", TeamTable);                            
             await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
         }
     }

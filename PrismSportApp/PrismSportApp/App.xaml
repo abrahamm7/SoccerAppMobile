@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
@@ -24,12 +25,47 @@
             </Style>
             <!--#endregion-->
 
+            <Style x:Key="Stack" TargetType="StackLayout">
+                <Setter Property="Padding" Value="30" />
+                <Setter Property="Spacing" Value="20" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="GradientPage" TargetType="yummy:PancakeView">
+                <Setter Property="BackgroundGradientStartColor" Value="#303F9F" />
+                <Setter Property="BackgroundGradientEndColor" Value="#5C258D" />
+            </Style>
+
+
+            <!--#region MenuPages-->
+            <Style x:Key="GradientPageMenu" TargetType="yummy:PancakeView">
+                <Setter Property="BackgroundGradientStartColor" Value="#303F9F" />
+                <Setter Property="BackgroundGradientEndColor" Value="#5C258D" />
+                <Setter Property="WidthRequest" Value="315" />
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <Style x:Key="Buttons" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="UserStyleName" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
             <!--#region ListLeaguePage-->
             <Style x:Key="ListLeagueFrames" TargetType="Frame">
                 <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="HasShadow" Value="True" />
                 <Setter Property="HeightRequest" Value="340" />
                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Visual" Value="Material" />
             </Style>
             <Style x:Key="ListLeagueLabel" TargetType="Label">
                 <Setter Property="Margin" Value="12,15,0,20" />
@@ -40,16 +76,13 @@
             <Style x:Key="ListLeagueBackGroundColor" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
-            <Style x:Key="ListLeagueButton" TargetType="Button">
-                <Setter Property="CornerRadius" Value="15" />
-                <Setter Property="FontSize" Value="10" />
-                <Setter Property="TextColor" Value="ForestGreen" />
-                <Setter Property="HorizontalOptions" Value="End" />
-                <Setter Property="HeightRequest" Value="30" />
-                <Setter Property="BorderColor" Value="ForestGreen" />
-                <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="WidthRequest" Value="130" />
+            <Style x:Key="ListLeagueCarousel" TargetType="CarouselView">
+                <Setter Property="HorizontalScrollBarVisibility" Value="Never" />
+                <Setter Property="IsScrollAnimated" Value="False" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+            </Style>
+            <Style x:Key="ListLeagueImage" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
             <!--#endregion-->
 
