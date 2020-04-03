@@ -21,12 +21,12 @@ namespace PrismSportApp.ViewModels
     {        
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;     
-        public ObservableCollection<Match> Matches { get; set; } = new ObservableCollection<Match>();
+        public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();
+        public IList<Match> Stages { get; set; } = new ObservableCollection<Match>();
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
-        public League league { get; set; } = new League();
+        public Match Matchh { get; set; } = new Match();
         Competitions League { get; set; } = new Competitions();
-        Fixtures Fixture { get; set; } = new Fixtures();  
-        public int code { get; set; } 
+        Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
         INavigationService navigation;
 
@@ -37,6 +37,7 @@ namespace PrismSportApp.ViewModels
 
         #region Commands and Properties
         League Leaguess;
+        Match Match;
         public League LeagueSelected //Select element in picker//
         {
             get
@@ -51,6 +52,33 @@ namespace PrismSportApp.ViewModels
                    GetMatches(Leaguess.Id);
                 }
             }
+        }
+
+        public Match StageSelected
+        {
+            get
+            {
+                return Match;
+            }
+            set
+            {
+                Match = value;
+                if (Match!= null)
+                {
+                    try
+                    {
+                        if (Matches.Contains(Match))
+                        {
+                            this.Matches = Fixture.Matches.Where(elemento => elemento.Stage == Match.Stage).ToList();
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine($"Error en picker de stage {e.Message}");   
+                    }
+                }
+            }         
         }
         #endregion
 
@@ -97,15 +125,18 @@ namespace PrismSportApp.ViewModels
                 var response1 = await apiServices.GetFixtures(id);
                 Fixture = response1;
                 this.Matches = Fixture.Matches;
+                foreach (var item in Matches)
+                {
+                    this.Stages.Add(item);
+                }
 
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine($"Error en el metodo Matches: {ex.Message}");
             }
 
-        }
+        }        
         #endregion
     }
 }

@@ -21,7 +21,7 @@ namespace PrismSportApp
             var text = await httpClient.GetStringAsync(Links.matches);
             return JsonConvert.DeserializeObject<Fixtures>(text);
 
-        }
+        }        
         public async Task<Competitions> GetLeagues()
         {
             Links = new Links();

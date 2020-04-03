@@ -99,9 +99,5 @@ namespace PrismSportApp.ViewModels
                 await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.Relative), parameters);
             }
         }
-
-    
-
-        
     }
 }

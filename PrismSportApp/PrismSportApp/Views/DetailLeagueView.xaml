@@ -64,6 +64,9 @@
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
                                         </Frame.GestureRecognizers>
+                                        <Frame.Behaviors>
+                                            <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                        </Frame.Behaviors>
                                     </Frame>
                                 </StackLayout>
                             </ViewCell.View>
