@@ -15,7 +15,7 @@
                 Margin="0,10,0,0"
                 CornerRadius="20"
                 HasShadow="True"
-                HeightRequest="500"
+                HeightRequest="400"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
                 WidthRequest="350">
