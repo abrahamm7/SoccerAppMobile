@@ -16,7 +16,7 @@
                 x:Name="ListLeague"
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Table}"
-                RowHeight="80"
+                RowHeight="100"
                 SelectionMode="Single"
                 SeparatorColor="ForestGreen"
                 Visual="Material">
@@ -24,53 +24,65 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout>
-                                    <Frame
-                                        HorizontalOptions="CenterAndExpand"
-                                        Visual="Material"
-                                        WidthRequest="400">
+                                <Frame>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="370" />
+                                            <ColumnDefinition Width="370" />
+                                            <ColumnDefinition Width="370" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
-                                            <Svg:SvgCachedImage Source="{Binding Team.CrestUrl}" />
-                                            <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />
-                                            <StackLayout
-                                                HorizontalOptions="EndAndExpand"
-                                                Orientation="Horizontal"
-                                                Spacing="10">
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="Pl" />
-                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding PlayedGames}" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Style="{StaticResource DetailLeagueLabelPosition}"
+                                                Text="{Binding Position}" />
+                                            <Svg:SvgCachedImage
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                Aspect="AspectFit"
+                                                Source="{Binding Team.CrestUrl}" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="3"
+                                                Style="{StaticResource DetailLeagueLabelName}"
+                                                Text="{Binding Team.Name, Mode=TwoWay}" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout HorizontalOptions="End">
+                                                    <StackLayout BackgroundColor="Yellow" Orientation="Horizontal">
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="Pl" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitleW}" Text="W" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitleD}" Text="D" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitleL}" Text="L" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="GD" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="PTS" />
+                                                    </StackLayout>
+                                                    <StackLayout BackgroundColor="Bisque" Orientation="Horizontal">
+                                                        <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding PlayedGames}" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelW}" Text="{Binding Won}" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelD}" Text="{Binding Draw}" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelL}" Text="{Binding Lost}" />
+                                                        <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding GoalDifference}" />
+                                                        <Label Style="{StaticResource DetailLeagueLabelPTS}" Text="{Binding Points}" />
+                                                    </StackLayout>
                                                 </StackLayout>
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitleW}" Text="W" />
-                                                    <Label Style="{StaticResource DetailLeagueLabelW}" Text="{Binding Won}" />
-                                                </StackLayout>
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitleD}" Text="D" />
-                                                    <Label Style="{StaticResource DetailLeagueLabelD}" Text="{Binding Draw}" />
-                                                </StackLayout>
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitleL}" Text="L" />
-                                                    <Label Style="{StaticResource DetailLeagueLabelL}" Text="{Binding Lost}" />
-                                                </StackLayout>
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="GD" />
-                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding GoalDifference}" />
-                                                </StackLayout>
-                                                <StackLayout>
-                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="PTS" />
-                                                    <Label Style="{StaticResource DetailLeagueLabelPTS}" Text="{Binding Points}" />
-                                                </StackLayout>
-                                            </StackLayout>
+                                            </Grid>
+
                                         </StackLayout>
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
-                                        </Frame.GestureRecognizers>
-                                        <Frame.Behaviors>
-                                            <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
-                                        </Frame.Behaviors>
-                                    </Frame>
-                                </StackLayout>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
+                                    </Frame.GestureRecognizers>
+                                    <Frame.Behaviors>
+                                        <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                    </Frame.Behaviors>
+                                </Frame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
