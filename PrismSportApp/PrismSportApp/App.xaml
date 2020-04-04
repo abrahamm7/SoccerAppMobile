@@ -111,48 +111,48 @@
             <!--#region PlayedGames-->
             <Style x:Key="DetailLeagueLabelTitle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
 
             <Style x:Key="DetailLeagueLabel" TargetType="Label">
 
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
+
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
+
             </Style>
             <!--#endregion-->
 
             <!--#region Win-->
             <Style x:Key="DetailLeagueLabelTitleW" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="ForestGreen" />
             </Style>
 
             <Style x:Key="DetailLeagueLabelW" TargetType="Label">
 
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
+
                 <Setter Property="TextColor" Value="ForestGreen" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
+
             </Style>
             <!--#endregion-->
 
             <!--#region Draw-->
             <Style x:Key="DetailLeagueLabelTitleD" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Gray" />
             </Style>
 
             <Style x:Key="DetailLeagueLabelD" TargetType="Label">
 
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
+
                 <Setter Property="TextColor" Value="Gray" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
+
             </Style>
             <!--#endregion-->
 
@@ -160,15 +160,15 @@
             <Style x:Key="DetailLeagueLabelTitleL" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextColor" Value="Red" />
             </Style>
 
             <Style x:Key="DetailLeagueLabelL" TargetType="Label">
 
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
+
                 <Setter Property="TextColor" Value="Red" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
+
             </Style>
             <!--#endregion-->
 
@@ -176,10 +176,9 @@
             <Style x:Key="DetailLeagueLabelPTS" TargetType="Label">
 
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="14" />
+
             </Style>
             <!--#endregion-->
             <!--#endregion-->

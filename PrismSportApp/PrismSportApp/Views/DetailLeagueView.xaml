@@ -50,31 +50,33 @@
                                                 Grid.Column="3"
                                                 Style="{StaticResource DetailLeagueLabelName}"
                                                 Text="{Binding Team.Name, Mode=TwoWay}" />
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*" />
-                                                </Grid.ColumnDefinitions>
-                                                <StackLayout HorizontalOptions="End">
-                                                    <StackLayout BackgroundColor="Yellow" Orientation="Horizontal">
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="Pl" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitleW}" Text="W" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitleD}" Text="D" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitleL}" Text="L" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="GD" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="PTS" />
-                                                    </StackLayout>
-                                                    <StackLayout BackgroundColor="Bisque" Orientation="Horizontal">
-                                                        <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding PlayedGames}" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelW}" Text="{Binding Won}" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelD}" Text="{Binding Draw}" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelL}" Text="{Binding Lost}" />
-                                                        <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding GoalDifference}" />
-                                                        <Label Style="{StaticResource DetailLeagueLabelPTS}" Text="{Binding Points}" />
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </Grid>
-
                                         </StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout
+                                                HorizontalOptions="End"
+                                                VerticalOptions="Center"
+                                                WidthRequest="110">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="Pl" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleW}" Text="W" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleD}" Text="D" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitleL}" Text="L" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="GD" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelTitle}" Text="PTS" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding PlayedGames}" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelW}" Text="{Binding Won}" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelD}" Text="{Binding Draw}" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelL}" Text="{Binding Lost}" />
+                                                    <Label Style="{StaticResource DetailLeagueLabel}" Text="{Binding GoalDifference}" />
+                                                    <Label Style="{StaticResource DetailLeagueLabelPTS}" Text="{Binding Points}" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Grid>
                                     </Grid>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
