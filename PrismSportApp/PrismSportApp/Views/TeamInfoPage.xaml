@@ -3,10 +3,9 @@
     x:Class="PrismSportApp.Views.TeamInfoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:svg="clr-namespace:TinySvgHelper;assembly=TinySvgHelper"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     Title="Team Info"
     mc:Ignorable="d">
@@ -22,7 +21,7 @@
                 WidthRequest="350">
                 <StackLayout Spacing="20">
                     <StackLayout VerticalOptions="Start">
-                        <ffimageloading:CachedImage
+                        <Svg:SvgCachedImage
                             Margin="0,0,0,0"
                             Aspect="AspectFit"
                             HeightRequest="100"

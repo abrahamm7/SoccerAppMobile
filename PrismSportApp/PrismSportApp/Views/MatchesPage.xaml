@@ -20,12 +20,6 @@
                     ItemsSource="{Binding Leagues}"
                     SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
                     Visual="Material" />
-                <Picker
-                    Title="Select Stage"
-                    ItemDisplayBinding="{Binding Stage}"
-                    ItemsSource="{Binding Stages}"
-                    SelectedItem="{Binding StageSelected, Mode=TwoWay}"
-                    Visual="Material" />
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"

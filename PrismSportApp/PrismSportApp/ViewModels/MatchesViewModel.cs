@@ -21,8 +21,7 @@ namespace PrismSportApp.ViewModels
     {        
         #region Class
         public event PropertyChangedEventHandler PropertyChanged;     
-        public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();
-        public IList<Match> Stages { get; set; } = new ObservableCollection<Match>();
+        public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();        
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
         public Match Matchh { get; set; } = new Match();
         Competitions League { get; set; } = new Competitions();
@@ -54,32 +53,7 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        public Match StageSelected
-        {
-            get
-            {
-                return Match;
-            }
-            set
-            {
-                Match = value;
-                if (Match!= null)
-                {
-                    try
-                    {
-                        if (Matches.Contains(Match))
-                        {
-                            this.Matches = Fixture.Matches.Where(elemento => elemento.Stage == Match.Stage).ToList();
-                        }
-
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.WriteLine($"Error en picker de stage {e.Message}");   
-                    }
-                }
-            }         
-        }
+       
         #endregion
 
         #region Constructor
@@ -125,10 +99,7 @@ namespace PrismSportApp.ViewModels
                 var response1 = await apiServices.GetFixtures(id);
                 Fixture = response1;
                 this.Matches = Fixture.Matches;
-                foreach (var item in Matches)
-                {
-                    this.Stages.Add(item);
-                }
+                
 
             }
             catch (Exception ex)

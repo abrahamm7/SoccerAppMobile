@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Xml.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -16,7 +17,8 @@ namespace PrismSportApp.ViewModels
     public class TeamInfoViewModel: INotifyPropertyChanged, INavigatedAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public Table Table { get; set; } = new Table();        
+        public Table Table { get; set; } = new Table();
+        
         public ICommand Save { get; set; }
        
         ISqliteInterface Sqlite;

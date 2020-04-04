@@ -32,9 +32,7 @@ namespace PrismSportApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
-           
             CachedImageRenderer.Init(true);
-            var ignore = typeof(SvgCachedImage);
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
