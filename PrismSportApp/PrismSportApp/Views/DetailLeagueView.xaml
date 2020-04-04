@@ -3,6 +3,7 @@
     x:Class="PrismSportApp.Views.DetailLeagueView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
@@ -30,6 +31,7 @@
                                         WidthRequest="400">
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource DetailLeagueLabelPosition}" Text="{Binding Position}" />
+                                            <Svg:SvgCachedImage Source="{Binding Team.CrestUrl}" />
                                             <Label Style="{StaticResource DetailLeagueLabelName}" Text="{Binding Team.Name, Mode=TwoWay}" />
                                             <StackLayout
                                                 HorizontalOptions="EndAndExpand"

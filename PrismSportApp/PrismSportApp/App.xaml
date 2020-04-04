@@ -23,7 +23,6 @@
                 <Setter Property="CornerRadius" Value="15" />
                 <Setter Property="Visual" Value="Material" />
             </Style>
-            <!--#endregion-->
 
             <Style x:Key="Stack" TargetType="StackLayout">
                 <Setter Property="Padding" Value="30" />
@@ -35,7 +34,7 @@
                 <Setter Property="BackgroundGradientStartColor" Value="#303F9F" />
                 <Setter Property="BackgroundGradientEndColor" Value="#5C258D" />
             </Style>
-
+            <!--#endregion-->
 
             <!--#region MenuPages-->
             <Style x:Key="GradientPageMenu" TargetType="yummy:PancakeView">
@@ -103,7 +102,7 @@
 
             <Style x:Key="DetailLeagueLabelName" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="13" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
@@ -185,6 +184,72 @@
             </Style>
             <!--#endregion-->
             <!--#endregion-->
+
+            <!--#region TeamInfoPage-->
+            <Style x:Key="Titles" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="TitlesTeamName" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="Content" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="FrameInfo" TargetType="Frame">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BorderColor" Value="ForestGreen" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="20" />
+            </Style>
+
+            <Style x:Key="ButtonTeamInfo" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="ForestGreen" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region MatchesPage-->
+            <Style x:Key="GroupLabel" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="Team" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="Score" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--#endregion-->
+
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

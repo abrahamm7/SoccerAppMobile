@@ -48,20 +48,13 @@
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             Grid.ColumnSpan="2">
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="18"
-                                                Text="{Binding Group}"
-                                                TextColor="Black" />
+                                            <Label Style="{StaticResource Key=GroupLabel}" Text="{Binding Group}" />
                                         </StackLayout>
                                         <Label
                                             Grid.Row="1"
                                             Grid.Column="0"
-                                            FontSize="18"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{Binding HomeTeam.Name, Mode=TwoWay}"
-                                            TextColor="Black"
-                                            VerticalTextAlignment="Center" />
+                                            Style="{StaticResource Key=Team}"
+                                            Text="{Binding HomeTeam.Name, Mode=TwoWay}" />
                                         <Frame
                                             Grid.Row="1"
                                             Grid.Column="1"
@@ -73,36 +66,16 @@
                                                 Orientation="Horizontal"
                                                 Spacing="10"
                                                 VerticalOptions="Start">
-                                                <Label
-                                                    FontAttributes="Bold"
-                                                    FontSize="15"
-                                                    HorizontalOptions="CenterAndExpand"
-                                                    Text="{Binding Score.FullTime.HomeTeam}"
-                                                    TextColor="Black"
-                                                    VerticalOptions="CenterAndExpand" />
-                                                <Label
-                                                    FontAttributes="Bold"
-                                                    FontSize="15"
-                                                    HorizontalOptions="CenterAndExpand"
-                                                    Text="-"
-                                                    VerticalOptions="CenterAndExpand" />
-                                                <Label
-                                                    FontAttributes="Bold"
-                                                    FontSize="15"
-                                                    HorizontalOptions="CenterAndExpand"
-                                                    Text="{Binding Score.FullTime.AwayTeam}"
-                                                    TextColor="Black"
-                                                    VerticalTextAlignment="Start" />
+                                                <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.HomeTeam}" />
+                                                <Label Style="{StaticResource Key=Score}" Text="-" />
+                                                <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.AwayTeam}" />
                                             </StackLayout>
                                         </Frame>
                                         <Label
                                             Grid.Row="1"
                                             Grid.Column="2"
-                                            FontSize="18"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{Binding AwayTeam.Name, Mode=TwoWay}"
-                                            TextColor="Black"
-                                            VerticalTextAlignment="Center" />
+                                            Style="{StaticResource Key=Team}"
+                                            Text="{Binding AwayTeam.Name, Mode=TwoWay}" />
                                     </Grid>
                                 </Frame>
                             </ViewCell.View>

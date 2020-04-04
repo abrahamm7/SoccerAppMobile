@@ -48,9 +48,8 @@ namespace PrismSportApp.Models
         public string CrestUrl { get; set; }
     }
 
-    public class Table: INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
+    public class Table
+    {        
         public int Position { get; set; }       
         public Teamm Team { get; set; }
         public int PlayedGames { get; set; }

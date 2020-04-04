@@ -28,85 +28,32 @@
                             Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}"
                             VerticalOptions="Start" />
                     </StackLayout>
-                    <Label
-                        Margin="0,0,0,0"
-                        FontSize="20"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="{Binding Table.Team.Name, Mode=TwoWay}"
-                        TextColor="Black"
-                        VerticalOptions="Start" />
+                    <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     <StackLayout
                         HorizontalOptions="Center"
                         Orientation="Horizontal"
                         Spacing="30">
                         <StackLayout>
-                            <Label
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                Text="Win"
-                                TextColor="Black" />
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Table.Won, Mode=TwoWay}"
-                                TextColor="Black" />
+                            <Label Style="{StaticResource Key=Titles}" Text="Win" />
+                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Won, Mode=TwoWay}" />
                         </StackLayout>
                         <StackLayout>
-                            <Label
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                Text="Draw"
-                                TextColor="Black" />
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Table.Draw, Mode=TwoWay}"
-                                TextColor="Black" />
+                            <Label Style="{StaticResource Key=Titles}" Text="Draw" />
+                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Draw, Mode=TwoWay}" />
                         </StackLayout>
                         <StackLayout>
-                            <Label
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                Text="Lost"
-                                TextColor="Black" />
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Table.Lost, Mode=TwoWay}"
-                                TextColor="Black" />
+                            <Label Style="{StaticResource Key=Titles}" Text="Lost" />
+                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Lost, Mode=TwoWay}" />
                         </StackLayout>
                         <StackLayout>
-                            <Label
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                Text="Played Games"
-                                TextColor="Black" />
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Table.PlayedGames, Mode=TwoWay}"
-                                TextColor="Black" />
+                            <Label Style="{StaticResource Key=Titles}" Text="Played Games" />
+                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.PlayedGames, Mode=TwoWay}" />
                         </StackLayout>
                     </StackLayout>
-                    <Frame
-                        Padding="0"
-                        BorderColor="ForestGreen"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        HorizontalOptions="CenterAndExpand">
-                        <Button
-                            BackgroundColor="White"
-                            BorderColor="ForestGreen"
-                            BorderWidth="2"
-                            Command="{Binding Save}"
-                            CornerRadius="20"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Add to favorites" />
-                    </Frame>
+                    <Button
+                        Command="{Binding Save}"
+                        Style="{StaticResource Key=ButtonTeamInfo}"
+                        Text="Add to favorites" />
                 </StackLayout>
             </yummy:PancakeView>
         </ScrollView>
