@@ -1,5 +1,4 @@
-﻿using FormsControls.Base;
-using Prism;
+﻿using Prism;
 using Prism.Ioc;
 using Prism.Services;
 using Prism.Services.Dialogs;
