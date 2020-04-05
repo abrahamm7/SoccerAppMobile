@@ -1,4 +1,4 @@
-# Simple soccer application with data of leagues and teams
+# ScrenShots
 
 ![picture](Login.png)
 ![picture](League.jpeg)
