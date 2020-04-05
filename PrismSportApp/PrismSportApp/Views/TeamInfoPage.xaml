@@ -3,59 +3,64 @@
     x:Class="PrismSportApp.Views.TeamInfoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Micro1="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Name="InfoPage"
     Title="Team Info"
+    BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <yummy:PancakeView
-                Margin="0,10,0,0"
-                CornerRadius="20"
-                HasShadow="True"
-                HeightRequest="400"
-                HorizontalOptions="Center"
-                VerticalOptions="Start"
-                WidthRequest="350">
-                <StackLayout Spacing="20">
-                    <StackLayout VerticalOptions="Start">
+            <StackLayout Spacing="20">
+                <yummy:PancakeView
+                    BackgroundColor="#303F9F"
+                    CornerRadius="0,0,20,20"
+                    HeightRequest="200">
+                    <StackLayout>
                         <Svg:SvgCachedImage
                             Margin="0,0,0,0"
                             Aspect="AspectFit"
-                            HeightRequest="100"
+                            BitmapOptimizations="True"
+                            FadeAnimationForCachedImages="True"
+                            HeightRequest="130"
                             Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}"
                             VerticalOptions="Start" />
+                        <Label
+                            FontSize="35"
+                            Style="{StaticResource Key=TitlesTeamName}"
+                            Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     </StackLayout>
-                    <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
-                    <StackLayout
-                        HorizontalOptions="Center"
-                        Orientation="Horizontal"
-                        Spacing="30">
-                        <StackLayout>
-                            <Label Style="{StaticResource Key=Titles}" Text="Win" />
-                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Won, Mode=TwoWay}" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Label Style="{StaticResource Key=Titles}" Text="Draw" />
-                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Draw, Mode=TwoWay}" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Label Style="{StaticResource Key=Titles}" Text="Lost" />
-                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.Lost, Mode=TwoWay}" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Label Style="{StaticResource Key=Titles}" Text="Played Games" />
-                            <Label Style="{StaticResource Key=Content}" Text="{Binding Table.PlayedGames, Mode=TwoWay}" />
-                        </StackLayout>
+                </yummy:PancakeView>
+                <yummy:PancakeView VerticalOptions="Start">
+                    <StackLayout Spacing="20">
+                        <Label
+                            FontSize="22"
+                            HorizontalTextAlignment="Center"
+                            Text="Match Statictics"
+                            TextColor="Black" />
+                        <Micro1:ChartView
+                            Chart="{Binding RadielGaugeChartSample}"
+                            HeightRequest="200"
+                            Visual="Material"
+                            WidthRequest="400" />
+                        <Label
+                            FontSize="22"
+                            HorizontalTextAlignment="Center"
+                            Text="Goals in season"
+                            TextColor="Black" />
+                        <Micro1:ChartView
+                            Chart="{Binding RadielGaugeGoals}"
+                            HeightRequest="200"
+                            Visual="Material"
+                            WidthRequest="400" />
                     </StackLayout>
-                    <Button
-                        Command="{Binding Save}"
-                        Style="{StaticResource Key=ButtonTeamInfo}"
-                        Text="Add to favorites" />
-                </StackLayout>
-            </yummy:PancakeView>
+                </yummy:PancakeView>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
