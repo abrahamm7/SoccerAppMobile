@@ -27,10 +27,7 @@
                                             <Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="Center">
-                                            <Label
-                                                Style="{StaticResource ListLeagueLabel}"
-                                                Text="{Binding Name}"
-                                                Visual="Material" />
+                                            <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
                                         </StackLayout>
                                     </StackLayout>
                                     <Frame.GestureRecognizers>

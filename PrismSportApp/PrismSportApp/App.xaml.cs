@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using FormsControls.Base;
+using Prism;
 using Prism.Ioc;
 using Prism.Services;
 using Prism.Services.Dialogs;
@@ -31,6 +32,7 @@ namespace PrismSportApp
             var List = x.Query<User>("Select * From User");
             if (List.Any())
             {
+                
                 NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
             }
             else

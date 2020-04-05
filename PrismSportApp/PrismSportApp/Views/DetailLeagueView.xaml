@@ -31,7 +31,7 @@
                                             <ColumnDefinition Width="370" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
                                         <StackLayout Orientation="Horizontal">
                                             <Label

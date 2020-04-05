@@ -49,9 +49,10 @@ namespace PrismSportApp.ViewModels
                     ValueLabel = Table.PlayedGames.ToString(),
                 },
             },
-            LineSize = 30,            
-            LabelTextSize = 45,
-            MaxValue = Table.PlayedGames
+            LineSize = 25,            
+            LabelTextSize = 40,
+            MaxValue = Table.PlayedGames,
+           
         };
 
         public Chart RadielGaugeGoals => new RadialGaugeChart()
@@ -77,9 +78,10 @@ namespace PrismSportApp.ViewModels
                     ValueLabel = Table.GoalDifference.ToString(),
                 },               
             },
-            LineSize = 30,
-            LabelTextSize = 45,
-            MaxValue = Table.GoalsFor
+            LineSize = 25,
+            LabelTextSize = 40,
+            MaxValue = Table.GoalsFor,
+            
         };
 
         public ICommand Save { get; set; }

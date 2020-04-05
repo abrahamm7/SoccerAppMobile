@@ -16,11 +16,20 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
                 <yummy:PancakeView
+                    Grid.Row="0"
+                    Grid.Column="0"
                     BackgroundColor="#303F9F"
-                    CornerRadius="0,0,20,20"
-                    HeightRequest="200">
+                    CornerRadius="0,0,20,20">
                     <StackLayout>
                         <Svg:SvgCachedImage
                             Margin="0,0,0,0"
@@ -30,37 +39,26 @@
                             HeightRequest="130"
                             Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}"
                             VerticalOptions="Start" />
-                        <Label
-                            FontSize="35"
-                            Style="{StaticResource Key=TitlesTeamName}"
-                            Text="{Binding Table.Team.Name, Mode=TwoWay}" />
+                        <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     </StackLayout>
                 </yummy:PancakeView>
-                <yummy:PancakeView VerticalOptions="Start">
-                    <StackLayout Spacing="20">
-                        <Label
-                            FontSize="22"
-                            HorizontalTextAlignment="Center"
-                            Text="Match Statictics"
-                            TextColor="Black" />
-                        <Micro1:ChartView
-                            Chart="{Binding RadielGaugeChartSample}"
-                            HeightRequest="200"
-                            Visual="Material"
-                            WidthRequest="400" />
-                        <Label
-                            FontSize="22"
-                            HorizontalTextAlignment="Center"
-                            Text="Goals in season"
-                            TextColor="Black" />
-                        <Micro1:ChartView
-                            Chart="{Binding RadielGaugeGoals}"
-                            HeightRequest="200"
-                            Visual="Material"
-                            WidthRequest="400" />
-                    </StackLayout>
-                </yummy:PancakeView>
-            </StackLayout>
+                <StackLayout Grid.Row="1" Spacing="20">
+                    <Label Style="{StaticResource TitleCharts}" Text="Match Stats" />
+                    <Micro1:ChartView
+                        Chart="{Binding RadielGaugeChartSample}"
+                        HeightRequest="200"
+                        Visual="Material"
+                        WidthRequest="400" />
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Label Style="{StaticResource TitleCharts}" Text="Goals in season" />
+                    <Micro1:ChartView
+                        Chart="{Binding RadielGaugeGoals}"
+                        HeightRequest="200"
+                        Visual="Material"
+                        WidthRequest="400" />
+                </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
