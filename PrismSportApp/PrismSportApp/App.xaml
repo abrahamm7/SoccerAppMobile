@@ -59,15 +59,7 @@
             <!--#endregion-->
 
             <!--#region ListLeaguePage-->
-            <Style x:Key="ListLeagueFrames" TargetType="Frame">
-                <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="HasShadow" Value="True" />
-                <Setter Property="HeightRequest" Value="340" />
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="Visual" Value="Material" />
-            </Style>
             <Style x:Key="ListLeagueLabel" TargetType="Label">
-                <Setter Property="Margin" Value="12,15,0,20" />
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Visual" Value="Material" />
@@ -109,77 +101,10 @@
             </Style>
             <!--#endregion-->
 
-            <!--#region PlayedGames-->
-            <Style x:Key="DetailLeagueLabelTitle" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="Black" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabel" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Black" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Win-->
-            <Style x:Key="DetailLeagueLabelTitleW" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="ForestGreen" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelW" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="ForestGreen" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Draw-->
-            <Style x:Key="DetailLeagueLabelTitleD" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="Gray" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelD" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Gray" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Lost-->
-            <Style x:Key="DetailLeagueLabelTitleL" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="TextColor" Value="Red" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelL" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Red" />
-
-            </Style>
-            <!--#endregion-->
-
             <!--#region Points-->
             <Style x:Key="DetailLeagueLabelPTS" TargetType="Label">
-
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="14" />
-
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             <!--#endregion-->
             <!--#endregion-->
