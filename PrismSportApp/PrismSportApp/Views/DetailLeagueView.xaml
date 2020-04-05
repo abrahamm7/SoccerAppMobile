@@ -26,8 +26,8 @@
                                 <Frame>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="80" />
-                                            <ColumnDefinition Width="180" />
+                                            <ColumnDefinition Width="116" />
+                                            <ColumnDefinition Width="160" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />

@@ -86,7 +86,7 @@
 
             <!--#region Position and Team Name-->
             <Style x:Key="DetailLeagueLabelPosition" TargetType="Label">
-                <Setter Property="FontSize" Value="11" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
@@ -94,7 +94,7 @@
 
             <Style x:Key="DetailLeagueLabelName" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontSize" Value="15" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
