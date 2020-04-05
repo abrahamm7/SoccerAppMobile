@@ -59,17 +59,10 @@
             <!--#endregion-->
 
             <!--#region ListLeaguePage-->
-            <Style x:Key="ListLeagueFrames" TargetType="Frame">
-                <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="HasShadow" Value="True" />
-                <Setter Property="HeightRequest" Value="340" />
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="Visual" Value="Material" />
-            </Style>
             <Style x:Key="ListLeagueLabel" TargetType="Label">
-                <Setter Property="Margin" Value="12,15,0,20" />
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Visual" Value="Material" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
             <Style x:Key="ListLeagueBackGroundColor" TargetType="ContentPage">
@@ -93,7 +86,7 @@
 
             <!--#region Position and Team Name-->
             <Style x:Key="DetailLeagueLabelPosition" TargetType="Label">
-                <Setter Property="FontSize" Value="11" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
@@ -101,84 +94,17 @@
 
             <Style x:Key="DetailLeagueLabelName" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontSize" Value="15" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
             <!--#endregion-->
 
-            <!--#region PlayedGames-->
-            <Style x:Key="DetailLeagueLabelTitle" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="Black" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabel" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Black" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Win-->
-            <Style x:Key="DetailLeagueLabelTitleW" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="ForestGreen" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelW" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="ForestGreen" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Draw-->
-            <Style x:Key="DetailLeagueLabelTitleD" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="Gray" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelD" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Gray" />
-
-            </Style>
-            <!--#endregion-->
-
-            <!--#region Lost-->
-            <Style x:Key="DetailLeagueLabelTitleL" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="TextColor" Value="Red" />
-            </Style>
-
-            <Style x:Key="DetailLeagueLabelL" TargetType="Label">
-
-
-                <Setter Property="TextColor" Value="Red" />
-
-            </Style>
-            <!--#endregion-->
-
             <!--#region Points-->
             <Style x:Key="DetailLeagueLabelPTS" TargetType="Label">
-
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="14" />
-
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             <!--#endregion-->
             <!--#endregion-->
@@ -191,7 +117,7 @@
             </Style>
 
             <Style x:Key="TitlesTeamName" TargetType="Label">
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="35" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="Margin" Value="0,0,0,0" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -199,28 +125,11 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
-            <Style x:Key="Content" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-
-            <Style x:Key="FrameInfo" TargetType="Frame">
-                <Setter Property="Padding" Value="0" />
-                <Setter Property="BorderColor" Value="ForestGreen" />
+            <Style x:Key="TitleCharts" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="HasShadow" Value="True" />
-                <Setter Property="CornerRadius" Value="20" />
-            </Style>
-
-            <Style x:Key="ButtonTeamInfo" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="BorderColor" Value="ForestGreen" />
-                <Setter Property="BorderWidth" Value="2" />
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="FontSize" Value="22" />
                 <Setter Property="Visual" Value="Material" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
             <!--#endregion-->
 

@@ -13,35 +13,27 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Margin="0,120,0,0" Padding="15">
-                <CarouselView
-                    x:Name="ListLeague"
-                    ItemsSource="{Binding Leagues}"
-                    Style="{StaticResource ListLeagueCarousel}">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                <Frame Style="{StaticResource ListLeagueFrames}">
-                                    <StackLayout VerticalOptions="End">
-                                        <StackLayout>
-                                            <Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
-                                        </StackLayout>
-                                        <StackLayout HorizontalOptions="Center">
-                                            <Label
-                                                Style="{StaticResource ListLeagueLabel}"
-                                                Text="{Binding Name}"
-                                                Visual="Material" />
-                                        </StackLayout>
-                                    </StackLayout>
-                                    <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                    </Frame.GestureRecognizers>
-                                </Frame>
+            <CarouselView
+                x:Name="ListLeague"
+                ItemsSource="{Binding Leagues}"
+                Style="{StaticResource ListLeagueCarousel}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <StackLayout VerticalOptions="Center">
+                                <Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
+                                <Label
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ListLeagueLabel}"
+                                    Text="{Binding Name}" />
                             </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

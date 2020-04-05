@@ -1,21 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="PrismSportApp.Views.TeamInfoPage"
+    x:Class="PrismSportApp.Views.ChampionsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Micro1="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:Name="InfoPage"
-    BackgroundColor="White"
     mc:Ignorable="d">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="star" Text="Add to Favorites" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <Grid>
@@ -32,7 +24,12 @@
                     Grid.Column="0"
                     BackgroundColor="#303F9F"
                     CornerRadius="0,0,20,20">
-                    <StackLayout>
+                    <StackLayout Padding="15">
+                        <Picker
+                            Title="Select League"
+                            BackgroundColor="Transparent"
+                            TitleColor="White"
+                            Visual="Material" />
                         <Svg:SvgCachedImage
                             Margin="0,0,0,0"
                             Aspect="AspectFit"
@@ -44,22 +41,6 @@
                         <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     </StackLayout>
                 </yummy:PancakeView>
-                <StackLayout Grid.Row="1" Spacing="20">
-                    <Label Style="{StaticResource TitleCharts}" Text="Match Stats" />
-                    <Micro1:ChartView
-                        Chart="{Binding RadielGaugeChartSample}"
-                        HeightRequest="200"
-                        Visual="Material"
-                        WidthRequest="400" />
-                </StackLayout>
-                <StackLayout Grid.Row="2">
-                    <Label Style="{StaticResource TitleCharts}" Text="Goals in season" />
-                    <Micro1:ChartView
-                        Chart="{Binding RadielGaugeGoals}"
-                        HeightRequest="200"
-                        Visual="Material"
-                        WidthRequest="400" />
-                </StackLayout>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

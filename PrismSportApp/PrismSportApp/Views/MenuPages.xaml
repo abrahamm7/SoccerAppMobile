@@ -14,35 +14,56 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
             <yummy:PancakeView Style="{StaticResource GradientPageMenu}" WidthRequest="315">
-                <StackLayout Spacing="30">
-                    <StackLayout HeightRequest="120">
-                        <Label Style="{StaticResource UserStyleName}" Text="{Binding User.Name, Mode=TwoWay}" />
-                    </StackLayout>
-                    <StackLayout HeightRequest="320">
-                        <Button
-                            Command="{Binding onNavigate}"
-                            CommandParameter="NavigationPage/TeamFavoritePage"
-                            Style="{StaticResource Buttons}"
-                            Text="Favorite Teams"
-                            WidthRequest="150" />
-                        <Button
-                            Margin="5,0,0,0"
-                            Command="{Binding onNavigate}"
-                            CommandParameter="NavigationPage/ListLeaguesPage"
-                            Style="{StaticResource Buttons}"
-                            Text="Leagues" />
-                        <Button
-                            Command="{Binding onNavigate}"
-                            CommandParameter="NavigationPage/MatchesPage"
-                            Style="{StaticResource Buttons}"
-                            Text="Games" />
-                    </StackLayout>
+                <Grid RowSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource UserStyleName}"
+                        Text="{Binding User.Name, Mode=TwoWay}" />
+                    <Button
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Command="{Binding onNavigate}"
+                        CommandParameter="NavigationPage/TeamFavoritePage"
+                        Style="{StaticResource Buttons}"
+                        Text="Favorite Teams" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Command="{Binding onNavigate}"
+                        CommandParameter="NavigationPage/ListLeaguesPage"
+                        Style="{StaticResource Buttons}"
+                        Text="Leagues" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Command="{Binding onNavigate}"
+                        CommandParameter="NavigationPage/MatchesPage"
+                        Style="{StaticResource Buttons}"
+                        Text="Games" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Command="{Binding onNavigate}"
+                        CommandParameter="NavigationPage/ChampionsView"
+                        Style="{StaticResource Buttons}"
+                        Text="Champions" />
                     <lottie:AnimationView
+                        Grid.Row="5"
+                        Grid.Column="0"
                         Animation="cup.json"
                         AutoPlay="True"
                         HeightRequest="110"
                         Loop="True" />
-                </StackLayout>
+                </Grid>
             </yummy:PancakeView>
         </ContentPage>
     </MasterDetailPage.Master>
