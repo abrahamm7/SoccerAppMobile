@@ -41,7 +41,7 @@
                         <Label
                             FontSize="22"
                             HorizontalTextAlignment="Center"
-                            Text="Match Statictics"
+                            Text="Matches Stats"
                             TextColor="Black" />
                         <Micro1:ChartView
                             Chart="{Binding RadielGaugeChartSample}"
