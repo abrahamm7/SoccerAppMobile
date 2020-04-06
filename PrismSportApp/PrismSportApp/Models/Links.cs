@@ -11,6 +11,7 @@ namespace PrismSportApp.Models
         public string Champions { get; set; }
         public string Bundesliga { get; set; }       
         public string Leagues { get; set; }
+        public string LeaguesChampions { get; set; }
         public string Team { get; set; }
         public string LeagueStan { get; set; }
         public Links(int id)
@@ -19,6 +20,7 @@ namespace PrismSportApp.Models
             matches = $"http://api.football-data.org/v2/competitions/{id}/matches";                     
             Team = $"http://api.football-data.org/v2/teams/{id}";
             LeagueStan = $"https://api.football-data.org/v2/competitions/{id}/standings?standing";
+            LeaguesChampions = $"http://api.football-data.org/v2/competitions/{id}";
         }
         public Links()
         {

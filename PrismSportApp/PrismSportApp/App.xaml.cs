@@ -26,8 +26,7 @@ namespace PrismSportApp
             InitializeComponent();            
             var x = sqlite.GetConnection();
             x.CreateTable<User>();
-            x.CreateTable<Teamm>();
-            x.CreateTable<League>();
+            x.CreateTable<Teamm>();            
             var List = x.Query<User>("Select * From User");
             if (List.Any())
             {

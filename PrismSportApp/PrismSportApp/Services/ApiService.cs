@@ -29,7 +29,15 @@ namespace PrismSportApp
             httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
             var text = await httpClient.GetStringAsync(Links.Leagues);
             return JsonConvert.DeserializeObject<Competitions>(text);
+        }
 
+        public async Task<LeagueChampions> GetLeagues(int param)
+        {
+            Links = new Links(param);
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("x-auth-token", "78425d5d244f4ad4a4cb1d864b9ee167");
+            var text = await httpClient.GetStringAsync(Links.LeaguesChampions);
+            return JsonConvert.DeserializeObject<LeagueChampions>(text);
         }
         public async Task<Standings> GetStandings(int param)
         {
