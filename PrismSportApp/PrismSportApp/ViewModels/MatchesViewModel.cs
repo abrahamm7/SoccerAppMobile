@@ -98,8 +98,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetFixtures(id);
                 Fixture = response1;
-                this.Matches = Fixture.Matches;
-                
+                this.Matches = Fixture.Matches;              
 
             }
             catch (Exception ex)

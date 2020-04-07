@@ -76,6 +76,22 @@
                                             Grid.Column="2"
                                             Style="{StaticResource Key=Team}"
                                             Text="{Binding AwayTeam.Name, Mode=TwoWay}" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="2"
+                                            FontSize="14"
+                                            HorizontalTextAlignment="End"
+                                            Style="{StaticResource Key=Team}"
+                                            Text="{Binding Status, Mode=TwoWay}"
+                                            VerticalTextAlignment="End" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            FontSize="14"
+                                            HorizontalTextAlignment="Start"
+                                            Style="{StaticResource Key=Team}"
+                                            Text="{Binding UtcDate, Mode=TwoWay}"
+                                            VerticalTextAlignment="End" />
                                     </Grid>
                                 </Frame>
                             </ViewCell.View>
