@@ -81,7 +81,7 @@ namespace PrismSportApp.ViewModels
             {
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues(param);               
-                var show = response1;
+                var show = response1;                
                 this.Seasons = show.seasons;
             }
             catch (Exception e)
