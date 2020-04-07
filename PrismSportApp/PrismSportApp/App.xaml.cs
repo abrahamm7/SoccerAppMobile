@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using DLToolkit.Forms.Controls;
+using Prism;
 using Prism.Ioc;
 using Prism.Services;
 using Prism.Services.Dialogs;
@@ -18,7 +19,7 @@ namespace PrismSportApp
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }        
+        public App(IPlatformInitializer initializer = null) : base(initializer) { FlowListView.Init(); }        
         
         public ISqliteInterface sqlite = new SqliteModel();
         protected override void OnInitialized()
@@ -26,8 +27,7 @@ namespace PrismSportApp
             InitializeComponent();            
             var x = sqlite.GetConnection();
             x.CreateTable<User>();
-            x.CreateTable<Teamm>();
-            x.CreateTable<League>();
+            x.CreateTable<Teamm>();            
             var List = x.Query<User>("Select * From User");
             if (List.Any())
             {

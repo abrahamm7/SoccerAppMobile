@@ -41,15 +41,14 @@ namespace PrismSportApp.Models
     }
 
     public class League
-    {
-        [PrimaryKey,AutoIncrement]
+    {       
         public int Id { get; set; }
-        //public Areaas Area { get; set; }
+        public Areaas Area { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public string EmblemUrl { get; set; }
         public string Plan { get; set; }
-        //public CurrentSeason CurrentSeason { get; set; }
+        public CurrentSeason CurrentSeason { get; set; }
         public int NumberOfAvailableSeasons { get; set; }
         public DateTime LastUpdated { get; set; }
         public string Logo { get; set; }

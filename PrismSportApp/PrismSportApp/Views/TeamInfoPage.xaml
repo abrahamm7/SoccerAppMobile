@@ -13,9 +13,6 @@
     x:Name="InfoPage"
     BackgroundColor="White"
     mc:Ignorable="d">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="star" Text="Add to Favorites" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <Grid>
