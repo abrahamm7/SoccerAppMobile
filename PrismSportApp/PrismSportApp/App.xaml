@@ -65,8 +65,14 @@
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Visual" Value="Material" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
+
+            <Style x:Key="FirstStackLP" TargetType="StackLayout">
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
             <Style x:Key="ListLeagueBackGroundColor" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>

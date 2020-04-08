@@ -20,12 +20,9 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Frame>
-                            <StackLayout VerticalOptions="Center">
+                            <StackLayout Style="{StaticResource FirstStackLP}">
                                 <Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
-                                <Label
-                                    HorizontalTextAlignment="Center"
-                                    Style="{StaticResource ListLeagueLabel}"
-                                    Text="{Binding Name}" />
+                                <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
                             </StackLayout>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
