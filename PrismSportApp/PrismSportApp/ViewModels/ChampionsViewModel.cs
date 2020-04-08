@@ -15,11 +15,10 @@ namespace PrismSportApp.ViewModels
     public class ChampionsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;       
-        public IList<League> Leagues { get; set; } = new ObservableCollection<League>();       
-        public IList<LeagueChampions> LeaguesChampions { get; set; } = new ObservableCollection<LeagueChampions>();       
+        public IList<League> Leagues { get; set; } = new ObservableCollection<League>();            
         public IList<Seasons> Seasons { get; set; } = new ObservableCollection<Seasons>();       
-        Competitions League { get; set; } = new Competitions();       
-        LeagueChampions Champions { get; set; } = new LeagueChampions();       
+        Competitions League { get; set; } = new Competitions();         
+        public string Crest { get; set; }
         public Links Links { get; set; } = new Links();
         INavigationService navigation;
 
@@ -39,6 +38,16 @@ namespace PrismSportApp.ViewModels
                 Leaguess = value;
                 if (Leaguess != null)
                 {
+                    switch (Leaguess.Id)
+                    {
+                        case 2002:
+                            this.Crest = "Bundesliga.png";
+                            break;
+
+                        case 2021:
+                            this.Crest = "PremierLeague.png";
+                            break;
+                    }
                     GetLeaguesChampions(Leaguess.Id);
                 }
             }
@@ -58,15 +67,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues();
                 League = response1;
-                var show = League.competitions.Where(elemento => elemento.Id == 2000 ||
-                elemento.Id == 2001 ||
-                elemento.Id == 2021 ||
-                elemento.Id == 2015 ||
-                elemento.Id == 2019 ||
-                elemento.Id == 2017 ||
-                elemento.Id == 2003 ||
-                elemento.Id == 2002 ||
-                elemento.Id == 2014);
+                var show = League.competitions.Where(elemento => elemento.Id == 2002 || elemento.Id == 2021);
                 this.Leagues = show.ToList();
             }
             catch (Exception e)

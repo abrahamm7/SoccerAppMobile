@@ -20,8 +20,7 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         INavigationService navigationService;
         public DelegateCommand<string> onNavigate { get; set; }       
-        public User User { get; set; } = new User();        
-        public ICommand Tap { get; set; }   
+        public User User { get; set; } = new User();         
         ISqliteInterface sqlite;
         public MenuViewModel(INavigationService navigation, ISqliteInterface sqliteInterface)
         {

@@ -26,8 +26,9 @@
                                 <Frame>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="116" />
-                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="110" />
+                                            <ColumnDefinition Width="140" />
+                                            <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
@@ -48,16 +49,21 @@
                                             Grid.Column="1"
                                             Style="{StaticResource DetailLeagueLabelName}"
                                             Text="{Binding Team.Name, Mode=TwoWay}" />
-                                        <Label
+                                        <StackLayout
                                             Grid.Row="0"
-                                            Grid.Column="4"
-                                            Style="{StaticResource DetailLeagueLabelPTS}"
-                                            Text="{Binding Points}" />
-                                        <Label
-                                            Grid.Row="0"
-                                            Grid.Column="5"
-                                            Style="{StaticResource DetailLeagueLabelPTS}"
-                                            Text="Pts" />
+                                            Grid.Column="2"
+                                            Spacing="10">
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                Style="{StaticResource DetailLeagueLabelPTS}"
+                                                Text="Pts" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                Style="{StaticResource DetailLeagueLabelPTS}"
+                                                Text="{Binding Points}" />
+                                        </StackLayout>
                                     </Grid>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />

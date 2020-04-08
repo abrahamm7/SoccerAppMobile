@@ -23,7 +23,6 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;     
         public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();        
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
-        public Match Matchh { get; set; } = new Match();
         Competitions League { get; set; } = new Competitions();
         Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
@@ -86,9 +85,10 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2014);
                 this.Leagues = show.ToList();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                Debug.WriteLine($"Error en el metodo Leagues: {ex.Message}");
             }
         }
         async Task GetMatches(int id)
@@ -98,8 +98,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetFixtures(id);
                 Fixture = response1;
-                this.Matches = Fixture.Matches;
-                
+                this.Matches = Fixture.Matches;              
 
             }
             catch (Exception ex)

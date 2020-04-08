@@ -40,7 +40,9 @@ namespace PrismSportApp
             }
            
         }
+       
 
+        
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             //Pages//

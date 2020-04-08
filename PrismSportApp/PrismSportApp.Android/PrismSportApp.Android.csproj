@@ -125,6 +125,7 @@
     <AndroidAsset Include="Assets\spinning-ball.json" />
     <AndroidAsset Include="Assets\search-and-clear.json" />
     <AndroidAsset Include="Assets\cup.json" />
+    <AndroidAsset Include="Assets\Champion.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -206,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\trofeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\network_security_config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

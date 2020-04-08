@@ -5,13 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
             <yummy:PancakeView>
-                <Grid RowSpacing="20">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
@@ -25,15 +27,11 @@
                         BackgroundColor="#303F9F"
                         CornerRadius="0,0,20,20">
                         <StackLayout Padding="15">
-                            <Svg:SvgCachedImage
-                                Grid.Row="1"
-                                Aspect="AspectFit"
-                                BitmapOptimizations="True"
-                                FadeAnimationForCachedImages="True"
-                                HeightRequest="130"
-                                Source="{Binding winner.crestUrl, Mode=TwoWay}"
-                                VerticalOptions="Start" />
-                            <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
+                            <lottie:AnimationView
+                                Animation="Champion.json"
+                                AutoPlay="True"
+                                HeightRequest="250"
+                                Loop="True" />
                         </StackLayout>
                     </yummy:PancakeView>
                     <Picker
@@ -49,6 +47,7 @@
                     <ListView
                         Grid.Row="2"
                         Grid.Column="0"
+                        BackgroundColor="White"
                         ItemsSource="{Binding Seasons}"
                         RowHeight="100">
                         <ListView.ItemTemplate>
@@ -79,12 +78,11 @@
                                                 <Label
                                                     Grid.Row="2"
                                                     Grid.Column="0"
-                                                    FontSize="20"
+                                                    FontSize="15"
                                                     HorizontalOptions="CenterAndExpand"
                                                     Text="{Binding endDate, StringFormat='Year {0:N}'}" />
                                             </Grid>
                                         </Frame>
-
                                     </ViewCell.View>
                                 </ViewCell>
                             </DataTemplate>

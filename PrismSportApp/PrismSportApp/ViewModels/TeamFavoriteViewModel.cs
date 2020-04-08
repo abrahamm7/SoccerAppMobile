@@ -19,16 +19,12 @@ namespace PrismSportApp.ViewModels
         public IList<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
         public bool Visible { get; set; }
         public bool ListVisible { get; set; }      
-        public string Logo { get; set; }
         public string Delete { get; set; }
-        public ICommand Refresh { get; set; }
-        public ICommand Tap { get; set; }
         public ICommand DeleteItem { get; set; }
-        public SQLiteConnection conn;        
-
-        public TeamFavoriteViewModel()
+        ISqliteInterface sqlite;
+        public TeamFavoriteViewModel(ISqliteInterface sqliteInterface)
         {
-            conn = DependencyService.Get<ISqliteInterface>().GetConnection();            
+            sqlite = sqliteInterface;           
             Favorites();                     
             DeleteItem = new Command(Clear);
             Delete = "Delete";
@@ -36,6 +32,7 @@ namespace PrismSportApp.ViewModels
 
         async void Favorites()
         {
+            var conn = sqlite.GetConnection();
             var x = conn.Query<Teamm>("SELECT * From Teamm");
             if (x.Count == 0)
             {
@@ -58,6 +55,7 @@ namespace PrismSportApp.ViewModels
        
         async void Clear(object sender)
         {
+            var conn = sqlite.GetConnection();
             var x = sender as Teamm;
             conn.Query<Teamm>($"Delete From Teamm Where Id = {x.Id}");
             Teams = conn.Query<Teamm>("SELECT * From Teamm").ToList();
