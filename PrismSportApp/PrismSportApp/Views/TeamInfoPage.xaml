@@ -28,36 +28,19 @@
                 <yummy:PancakeView
                     Grid.Row="0"
                     Grid.Column="0"
-                    BackgroundColor="#303F9F"
-                    CornerRadius="0,0,20,20">
+                    Style="{StaticResource SpecialStack}">
                     <StackLayout>
-                        <Svg:SvgCachedImage
-                            Margin="0,0,0,0"
-                            Aspect="AspectFit"
-                            BitmapOptimizations="True"
-                            FadeAnimationForCachedImages="True"
-                            HeightRequest="130"
-                            Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}"
-                            VerticalOptions="Start" />
+                        <Svg:SvgCachedImage Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}" Style="{StaticResource SvgImage}" />
                         <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     </StackLayout>
                 </yummy:PancakeView>
                 <StackLayout Grid.Row="1" Spacing="20">
                     <Label Style="{StaticResource TitleCharts}" Text="Match Stats" />
-                    <Micro1:ChartView
-                        Chart="{Binding RadielGaugeChartSample}"
-                        HeightRequest="200"
-                        Visual="Material"
-                        WidthRequest="400" />
+                    <Micro1:ChartView Chart="{Binding RadielGaugeChartSample}" Style="{StaticResource Charts}" />
                 </StackLayout>
                 <StackLayout Grid.Row="2">
                     <Label Style="{StaticResource TitleCharts}" Text="Goals in season" />
-                    <Micro1:ChartView
-                        Grid.Row="2"
-                        Chart="{Binding RadielGaugeGoals}"
-                        HeightRequest="200"
-                        Visual="Material"
-                        WidthRequest="400" />
+                    <Micro1:ChartView Chart="{Binding RadielGaugeGoals}" Style="{StaticResource Charts}" />
                 </StackLayout>
             </Grid>
         </ScrollView>

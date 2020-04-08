@@ -3,6 +3,8 @@
     x:Class="PrismSportApp.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Micro1="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com"
@@ -131,6 +133,25 @@
                 <Setter Property="FontSize" Value="22" />
                 <Setter Property="Visual" Value="Material" />
                 <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="SpecialStack" TargetType="yummy:PancakeView">
+                <Setter Property="BackgroundColor" Value="#303F9F" />
+                <Setter Property="CornerRadius" Value="0,0,20,20" />
+            </Style>
+
+            <Style x:Key="Charts" TargetType="Micro1:ChartView">
+                <Setter Property="HeightRequest" Value="200" />
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="WidthRequest" Value="400" />
+            </Style>
+
+            <Style x:Key="SvgImage" TargetType="Svg:SvgCachedImage">
+                <Setter Property="HeightRequest" Value="130" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="BitmapOptimizations" Value="True" />
+                <Setter Property="VerticalOptions" Value="Start" />
             </Style>
             <!--#endregion-->
 
