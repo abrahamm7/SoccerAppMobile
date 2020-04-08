@@ -1,12 +1,13 @@
 #Screenshots
-#Phone
+
+-Phone
 
 ![picture](Login.png)
 ![picture](League.jpeg)
 ![picture](Table.jpeg)
 ![picture](Match.jpeg)
 
-#Tablet
+-Tablet
 ![picture](MatchT.jpeg)
 ![picture](LeagueT.jpeg)
 ![picture](FavoriteT.jpeg)
