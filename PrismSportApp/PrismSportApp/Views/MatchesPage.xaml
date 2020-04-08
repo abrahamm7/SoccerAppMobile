@@ -4,7 +4,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Gamepage"
@@ -13,22 +12,17 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="15" BackgroundColor="White">
+            <StackLayout Style="{StaticResource FirstStack}">
                 <Picker
-                    Title="Select League"
-                    BackgroundColor="White"
                     ItemDisplayBinding="{Binding Name}"
                     ItemsSource="{Binding Leagues}"
                     SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
-                    Visual="Material" />
+                    Style="{StaticResource PickerList}" />
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Matches}"
-                RowHeight="220"
-                SelectionMode="Single"
-                SeparatorColor="ForestGreen"
-                Visual="Material">
+                Style="{StaticResource List}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -59,14 +53,8 @@
                                         <Frame
                                             Grid.Row="1"
                                             Grid.Column="1"
-                                            BorderColor="ForestGreen"
-                                            CornerRadius="15"
-                                            HasShadow="True"
-                                            Visual="Material">
-                                            <StackLayout
-                                                Orientation="Horizontal"
-                                                Spacing="10"
-                                                VerticalOptions="Start">
+                                            Style="{StaticResource FrameScore}">
+                                            <StackLayout Style="{StaticResource MidStack}">
                                                 <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.HomeTeam}" />
                                                 <Label Style="{StaticResource Key=Score}" Text="-" />
                                                 <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.AwayTeam}" />

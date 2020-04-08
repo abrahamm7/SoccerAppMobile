@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using Prism.Services;
 using PrismSportApp.Models;
 using PrismSportApp.Services;
@@ -28,7 +29,7 @@ namespace PrismSportApp.ViewModels
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();        
-        public ICommand Tap { get; set; }        
+        public DelegateCommand<object> Tap { get; set; }        
 
         INavigationService navigation;
 
@@ -43,9 +44,8 @@ namespace PrismSportApp.ViewModels
         {
             apiServices = api;
             navigation = navigationService;
-            dialogService = pageDialog;
-                    
-            Tap = new Command(SelectLeague);            
+            dialogService = pageDialog;                    
+            Tap = new DelegateCommand<object>(SelectLeague);            
             TitlePage = "Leagues";
             GetLeagues();
             
