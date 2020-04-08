@@ -13,6 +13,9 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Microcharts.Forms;
 using Microcharts;
+using System.Linq;
+using Prism.Services.Dialogs;
+using Prism.Services;
 
 namespace PrismSportApp.ViewModels
 {
@@ -54,7 +57,6 @@ namespace PrismSportApp.ViewModels
             MaxValue = Table.PlayedGames,
            
         };
-
         public Chart RadielGaugeGoals => new RadialGaugeChart()
         {
             Entries = new[]
@@ -83,9 +85,9 @@ namespace PrismSportApp.ViewModels
             MaxValue = Table.GoalsFor,
             
         };
-
-        public ICommand Save { get; set; }
+        public DelegateCommand Favorite { get; set; }
         ISqliteInterface Sqlite;
+        IPageDialogService dialogService;
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
            
@@ -95,10 +97,32 @@ namespace PrismSportApp.ViewModels
         {
             Table = parameters.GetValue<Table>("Team");           
         }
-        public TeamInfoViewModel(ISqliteInterface sqliteInterface)
+        public TeamInfoViewModel(ISqliteInterface sqliteInterface, IPageDialogService dialogServices)
         {
-            
+            Favorite = new DelegateCommand(SaveTeam);
+            Sqlite = sqliteInterface;
+            dialogService = dialogServices;
         }
-        
+        //Save Team//
+        async void SaveTeam()  
+        {
+            var x = Sqlite.GetConnection();
+            var search = x.Query<Teamm>("Select * from Teamm");
+            var team = search.Where(elemento => elemento.Name == Table.Team.Name).ToList();
+            if (search.Count == 0)
+            {
+                x.Insert(Table.Team);               
+            }
+            else if(team.Count != 0)
+            {
+               await dialogService.DisplayAlertAsync("","This team exist in your favorites list","ok");
+            }
+            else
+            {
+                x.Insert(Table.Team);
+            }
+           
+           
+        }
     }
 }

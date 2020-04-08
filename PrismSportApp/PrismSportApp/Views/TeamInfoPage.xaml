@@ -13,6 +13,9 @@
     x:Name="InfoPage"
     BackgroundColor="White"
     mc:Ignorable="d">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding Favorite}" IconImageSource="star.png" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <Grid>

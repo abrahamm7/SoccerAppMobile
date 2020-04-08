@@ -3,6 +3,7 @@
     x:Class="PrismSportApp.Views.TeamFavoritePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
@@ -12,37 +13,50 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Margin="0,190,0,0">
+            <StackLayout Margin="0,190,0,0" IsVisible="{Binding Visible}">
                 <lottie:AnimationView
                     Animation="search-and-clear.json"
                     AutoPlay="True"
                     HeightRequest="110"
-                    IsVisible="{Binding Visible}"
                     Loop="True" />
                 <Label
                     FontSize="17"
                     HorizontalOptions="CenterAndExpand"
-                    IsVisible="{Binding Visible}"
                     Text="Teams not found"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <ListView
                 IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
-                RowHeight="70"
-                SelectionMode="Single">
+                RowHeight="80">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Padding="10">
                                     <Frame BackgroundColor="Transparent">
-                                        <StackLayout Orientation="Horizontal">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="200" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Svg:SvgCachedImage
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="1"
+                                                Aspect="AspectFit"
+                                                HorizontalOptions="Start"
+                                                Source="{Binding CrestUrl}" />
                                             <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
                                                 FontSize="20"
                                                 Text="{Binding Name}"
                                                 TextColor="Black" />
-                                        </StackLayout>
+                                        </Grid>
                                     </Frame>
                                 </StackLayout>
                             </ViewCell.View>
