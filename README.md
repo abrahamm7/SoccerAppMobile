@@ -7,7 +7,7 @@
 ![picture](Match.jpeg)
 
 #Tablet
-![picture](MatchT.png)
+![picture](MatchT.jpeg)
 ![picture](LeagueT.jpeg)
 ![picture](FavoriteT.jpeg)
 ![picture](ChartsT.jpeg)
