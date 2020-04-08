@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,6 +87,7 @@ namespace PrismSportApp.ViewModels
             catch (Exception e)
             {
                 await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                Debug.WriteLine(e.Message);
             }
         }
         async void SelectLeague(object sender)

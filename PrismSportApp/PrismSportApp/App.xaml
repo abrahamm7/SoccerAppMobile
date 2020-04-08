@@ -105,6 +105,7 @@
             <Style x:Key="DetailLeagueLabelPTS" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="End" />
             </Style>
             <!--#endregion-->
             <!--#endregion-->
@@ -147,14 +148,41 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
 
+            <Style x:Key="Status" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="Date" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
             <Style x:Key="Score" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="13" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <!--#endregion-->
+
+            <!--#region FavoriteTeamPage-->
+            <Style x:Key="LabelNotFound" TargetType="Label">
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="TeamName" TargetType="Label">
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
             <!--#endregion-->
 
         </ResourceDictionary>

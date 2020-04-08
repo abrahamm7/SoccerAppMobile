@@ -52,8 +52,8 @@ namespace PrismSportApp.ViewModels
                     ValueLabel = Table.PlayedGames.ToString(),
                 },
             },
-            LineSize = 25,            
-            LabelTextSize = 40,
+            LineSize = 15,            
+            LabelTextSize = 22,
             MaxValue = Table.PlayedGames,
            
         };
@@ -76,12 +76,12 @@ namespace PrismSportApp.ViewModels
                 new Microcharts.Entry(Table.GoalDifference)
                 {
                     Color = SkiaSharp.SKColor.Parse("#9C27B0"),
-                    Label = "Goals Difference",
+                    Label = "Goal Difference",
                     ValueLabel = Table.GoalDifference.ToString(),
                 },               
             },
-            LineSize = 25,
-            LabelTextSize = 40,
+            LineSize = 15,
+            LabelTextSize = 22,
             MaxValue = Table.GoalsFor,
             
         };

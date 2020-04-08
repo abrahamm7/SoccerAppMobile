@@ -16,6 +16,7 @@
             <StackLayout Padding="15" BackgroundColor="White">
                 <Picker
                     Title="Select League"
+                    BackgroundColor="White"
                     ItemDisplayBinding="{Binding Name}"
                     ItemsSource="{Binding Leagues}"
                     SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
@@ -79,19 +80,13 @@
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="2"
-                                            FontSize="14"
-                                            HorizontalTextAlignment="End"
-                                            Style="{StaticResource Key=Team}"
-                                            Text="{Binding Status, Mode=TwoWay}"
-                                            VerticalTextAlignment="End" />
+                                            Style="{StaticResource Status}"
+                                            Text="{Binding Status, Mode=TwoWay}" />
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="0"
-                                            FontSize="14"
-                                            HorizontalTextAlignment="Start"
-                                            Style="{StaticResource Key=Team}"
-                                            Text="{Binding UtcDate, Mode=TwoWay}"
-                                            VerticalTextAlignment="End" />
+                                            Style="{StaticResource Date}"
+                                            Text="{Binding UtcDate, Mode=TwoWay}" />
                                     </Grid>
                                 </Frame>
                             </ViewCell.View>

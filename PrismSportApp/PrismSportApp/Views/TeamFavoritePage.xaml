@@ -19,11 +19,7 @@
                     AutoPlay="True"
                     HeightRequest="110"
                     Loop="True" />
-                <Label
-                    FontSize="17"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Teams not found"
-                    VerticalOptions="CenterAndExpand" />
+                <Label Style="{StaticResource LabelNotFound}" Text="Teams not found" />
             </StackLayout>
             <ListView
                 IsVisible="{Binding ListVisible}"
@@ -33,32 +29,30 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Padding="10">
-                                    <Frame BackgroundColor="Transparent">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="50" />
-                                                <ColumnDefinition Width="200" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*" />
-                                            </Grid.RowDefinitions>
-                                            <Svg:SvgCachedImage
-                                                Grid.Row="0"
-                                                Grid.Column="0"
-                                                Grid.ColumnSpan="1"
-                                                Aspect="AspectFit"
-                                                HorizontalOptions="Start"
-                                                Source="{Binding CrestUrl}" />
-                                            <Label
-                                                Grid.Row="0"
-                                                Grid.Column="1"
-                                                FontSize="20"
-                                                Text="{Binding Name}"
-                                                TextColor="Black" />
-                                        </Grid>
-                                    </Frame>
-                                </StackLayout>
+                                <Frame>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="200" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Svg:SvgCachedImage
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="1"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="Start"
+                                            Source="{Binding CrestUrl}" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Style="{StaticResource TeamName}"
+                                            Text="{Binding Name}" />
+                                    </Grid>
+                                </Frame>
+
                             </ViewCell.View>
                             <ViewCell.ContextActions>
                                 <MenuItem

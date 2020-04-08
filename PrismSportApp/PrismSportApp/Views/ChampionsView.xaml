@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <ScrollView>
             <yummy:PancakeView>
-                <Grid RowSpacing="20">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
@@ -78,7 +78,7 @@
                                                 <Label
                                                     Grid.Row="2"
                                                     Grid.Column="0"
-                                                    FontSize="20"
+                                                    FontSize="15"
                                                     HorizontalOptions="CenterAndExpand"
                                                     Text="{Binding endDate, StringFormat='Year {0:N}'}" />
                                             </Grid>

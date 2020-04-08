@@ -55,6 +55,7 @@
                 <StackLayout Grid.Row="2">
                     <Label Style="{StaticResource TitleCharts}" Text="Goals in season" />
                     <Micro1:ChartView
+                        Grid.Row="2"
                         Chart="{Binding RadielGaugeGoals}"
                         HeightRequest="200"
                         Visual="Material"
