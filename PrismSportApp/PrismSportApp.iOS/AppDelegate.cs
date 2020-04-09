@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Platform;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
+using Lottie.Forms.iOS.Renderers;
 using Prism;
 using Prism.Ioc;
 using UIKit;
+using Xamarin.Forms;
 
 namespace PrismSportApp.iOS
 {
@@ -26,7 +29,10 @@ namespace PrismSportApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new IosInitializer()));
-
+            Forms.SetFlags("CarouselView_Experimental");
+            AnimationViewRenderer.Init();
+            ImageCircleRenderer.Init();
+            CachedImageRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
 

@@ -192,4 +192,52 @@
       <Name>PrismSportApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bundesliga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\estrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LaLiga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Liverpool_FC.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\players.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plusBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PremierLeague.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SeriaA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\soccer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Splashfutbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\taza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trofeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\worldcup.png" />
+  </ItemGroup>
 </Project>
