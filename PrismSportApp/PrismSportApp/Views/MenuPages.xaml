@@ -48,7 +48,7 @@
                         Command="{Binding onNavigate}"
                         CommandParameter="NavigationPage/MatchesPage"
                         Style="{StaticResource Buttons}"
-                        Text="Games" />
+                        Text="Matches" />
                     <Button
                         Grid.Row="4"
                         Grid.Column="0"
