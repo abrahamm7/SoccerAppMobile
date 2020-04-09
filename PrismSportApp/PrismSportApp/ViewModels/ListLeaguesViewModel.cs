@@ -31,7 +31,6 @@ namespace PrismSportApp.ViewModels
         public Links Links { get; set; } = new Links();        
         public DelegateCommand<object> Tap { get; set; }        
         public DelegateCommand GetLeaguesCommand { get; set; }        
-
         INavigationService navigation;
         IApiServices apiServices;
 

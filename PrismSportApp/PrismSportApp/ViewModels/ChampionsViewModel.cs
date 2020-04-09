@@ -23,9 +23,6 @@ namespace PrismSportApp.ViewModels
         public string Crest { get; set; }
         public Links Links { get; set; } = new Links();
         INavigationService navigation;
-
-        IPageDialogService dialogService;
-
         IApiServices apiServices;
         public DelegateCommand GetLeaguesCommand { get; set; }
         League Leaguess;
@@ -45,10 +42,9 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        public ChampionsViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
+        public ChampionsViewModel(IApiServices api, INavigationService navigationService)
         {
-            navigation = navigationService;
-            dialogService = pageDialog;
+            navigation = navigationService;            
             apiServices = api;
             GetLeaguesCommand = new DelegateCommand(async () => await GetLeagues());
             GetLeaguesCommand.Execute();

@@ -19,17 +19,12 @@ namespace PrismSportApp.ViewModels
         public DelegateCommand SignButton { get; set; }
     
         INavigationService navigation;
-
         IPageDialogService dialogService;
-
-        IApiServices apiServices;
-
         ISqliteInterface sqliteInterface;
-        public StartPageViewModel(INavigationService navigationService, IApiServices api, IPageDialogService pageDialog, ISqliteInterface sqlite)
+        public StartPageViewModel(INavigationService navigationService, IPageDialogService pageDialog, ISqliteInterface sqlite)
         {
             navigation = navigationService;
-            dialogService = pageDialog;
-            apiServices = api;
+            dialogService = pageDialog;           
             sqliteInterface = sqlite;           
             SignButton = new DelegateCommand(Entries);           
         }

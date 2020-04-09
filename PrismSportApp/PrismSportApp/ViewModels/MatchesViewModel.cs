@@ -28,15 +28,8 @@ namespace PrismSportApp.ViewModels
         public string Title { get; set; }
         Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
-        public DelegateCommand GetLeaguesCommand { get; set; }
-        INavigationService navigation;
-
-        IPageDialogService dialogService;
-        
+        public DelegateCommand GetLeaguesCommand { get; set; }        
         IApiServices apiServices;
-    
-
-       
         League Leaguess;
         Match Match;
         public League LeagueSelected //Select element in picker//
@@ -55,23 +48,15 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-       
- 
-
-      
-        public MatchesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
-        {
-            navigation = navigationService;
-            dialogService = pageDialog;
+        public MatchesViewModel(IApiServices api)
+        {           
             apiServices = api;
             Title = "Games";
             GetLeaguesCommand = new DelegateCommand(async () => await GetLeagues());
             GetLeaguesCommand.Execute();
 
         }
-   
 
-      
         async Task GetLeagues()
         {
             try
