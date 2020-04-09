@@ -69,7 +69,7 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2014);
                 this.Leagues = show;
                 var x = show.First().Id;
-                switch (x) //Check code
+                switch (x)
                 {
                     case 2001:
                         Logo = "LaLiga.png";
