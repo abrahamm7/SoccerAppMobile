@@ -35,3 +35,6 @@ Xport was built using the Xamarin Forms framework in conjuction with the Prism f
 * FFImageLoading.Forms.Svg
 * Xamarin.Forms.PancakeView
 * Com.Airbnb.Xamarin.Forms.Lottie
+* Microcharts.Forms
+* XForm.Plugin.AnimationNavigationPage
+* Xamarin.Forms.Visual.Material
