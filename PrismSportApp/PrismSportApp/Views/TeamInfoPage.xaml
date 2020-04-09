@@ -29,7 +29,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Style="{StaticResource SpecialStack}">
-                    <StackLayout>
+                    <StackLayout HorizontalOptions="Center">
                         <Svg:SvgCachedImage Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}" Style="{StaticResource SvgImage}" />
                         <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
                     </StackLayout>
