@@ -11,17 +11,13 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <yummy:PancakeView BackgroundGradientEndColor="#5C258D" BackgroundGradientStartColor="#303F9F">
-                <StackLayout
-                    Padding="30"
-                    Spacing="20"
-                    VerticalOptions="CenterAndExpand">
+            <yummy:PancakeView Style="{StaticResource GradientPage}">
+                <StackLayout Style="{StaticResource StackStart}">
                     <StackLayout>
                         <lottie:AnimationView
                             Animation="spinning-ball.json"
-                            AutoPlay="True"
-                            HeightRequest="110"
-                            Loop="True" />
+                            Loop="True"
+                            Style="{StaticResource AnimationMenu}" />
                     </StackLayout>
                     <Entry
                         x:Name="Usertxt"
