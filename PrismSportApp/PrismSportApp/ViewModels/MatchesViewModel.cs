@@ -26,6 +26,8 @@ namespace PrismSportApp.ViewModels
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
         Competitions League { get; set; } = new Competitions();
         public string Title { get; set; }
+        public bool Status { get; set; }
+        public bool Loading { get; set; }
         Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
         public DelegateCommand GetLeaguesCommand { get; set; }        
@@ -84,15 +86,20 @@ namespace PrismSportApp.ViewModels
         {
             try
             {
+                Loading = true;
+                Status = false;
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetFixtures(id);
                 Fixture = response1;
-                this.Matches = Fixture.Matches;              
-
+                this.Matches = Fixture.Matches;
+                Loading = false;
+                Status = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error en el metodo Matches: {ex.Message}");
+                Loading = true;
+                Status = false;
             }
 
         }        

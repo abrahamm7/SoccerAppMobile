@@ -23,8 +23,9 @@ namespace PrismSportApp.ViewModels
     public class ListLeaguesViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;       
-        public string Logo { get; set; }
         public string TitlePage { get; set; }
+        public bool Status { get; set; }
+        public bool Loading { get; set; }
         public IEnumerable<League> Leagues { get; set; } = new ObservableCollection<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
@@ -50,6 +51,8 @@ namespace PrismSportApp.ViewModels
         {
             try
             {
+                Loading = true;
+                Status = false;
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues();
                 League = response1;               
@@ -95,10 +98,13 @@ namespace PrismSportApp.ViewModels
                             break;
                     }
                 }
-                this.Leagues = show; 
+                this.Leagues = show;
+                Status = true;
+                Loading = false;
             }
             catch (Exception e)
             {
+                Status = false;
                 Debug.WriteLine($"Error en el metodo Leagues: {e.Message}");
             }
         }

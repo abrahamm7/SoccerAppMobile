@@ -126,6 +126,8 @@
     <AndroidAsset Include="Assets\search-and-clear.json" />
     <AndroidAsset Include="Assets\cup.json" />
     <AndroidAsset Include="Assets\Champion.json" />
+    <AndroidAsset Include="Assets\loading.json" />
+    <AndroidAsset Include="Assets\loading-round-loader-animation.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

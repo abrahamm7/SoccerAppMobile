@@ -6,14 +6,23 @@
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding League.Name}"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout IsVisible="{Binding Loading}" VerticalOptions="CenterAndExpand">
+                <lottie:AnimationView
+                    Animation="loading-round-loader-animation.json"
+                    AutoPlay="True"
+                    HeightRequest="90"
+                    Loop="True" />
+            </StackLayout>
             <ListView
                 x:Name="ListLeague"
                 CachingStrategy="RecycleElement"
+                IsVisible="{Binding Status}"
                 ItemsSource="{Binding Table}"
                 Style="{StaticResource ListTeams}">
                 <ListView.ItemTemplate>

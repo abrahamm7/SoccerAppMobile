@@ -39,9 +39,20 @@
                         ItemsSource="{Binding Leagues}"
                         SelectedItem="{Binding LeagueSelected}"
                         Style="{StaticResource PickerList}" />
+                    <StackLayout
+                        Grid.Row="2"
+                        IsVisible="{Binding Loading}"
+                        VerticalOptions="CenterAndExpand">
+                        <lottie:AnimationView
+                            Animation="loading-round-loader-animation.json"
+                            AutoPlay="True"
+                            HeightRequest="90"
+                            Loop="True" />
+                    </StackLayout>
                     <ListView
                         Grid.Row="2"
                         Grid.Column="0"
+                        IsVisible="{Binding Status}"
                         ItemsSource="{Binding Seasons}"
                         Style="{StaticResource ListChampions}">
                         <ListView.ItemTemplate>

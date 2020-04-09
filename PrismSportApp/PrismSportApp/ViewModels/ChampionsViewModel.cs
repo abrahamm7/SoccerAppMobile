@@ -18,7 +18,9 @@ namespace PrismSportApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;       
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();            
-        public IList<Seasons> Seasons { get; set; } = new ObservableCollection<Seasons>();       
+        public IList<Seasons> Seasons { get; set; } = new ObservableCollection<Seasons>();
+        public bool Status { get; set; }
+        public bool Loading { get; set; }
         Competitions League { get; set; } = new Competitions();         
         public string Crest { get; set; }
         public Links Links { get; set; } = new Links();
@@ -68,14 +70,20 @@ namespace PrismSportApp.ViewModels
         {
             try
             {
+                Loading = true;
+                Status = false;
                 RestService.For<IApiServices>(Links.url);
                 var response1 = await apiServices.GetLeagues(param);               
                 var show = response1;                
                 this.Seasons = show.seasons;
+                Loading = false;
+                Status = true;
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Error en el metodo LeaguesChampions: {e.Message}");
+                Loading = true;
+                Status = false;
             }
         }
     }

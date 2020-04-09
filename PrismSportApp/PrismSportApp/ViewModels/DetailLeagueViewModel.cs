@@ -20,6 +20,8 @@ namespace PrismSportApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public League League { get; set; } = new League();
+        public bool Status { get; set; }
+        public bool Loading { get; set; }
         public Standings LeagueStandings { get; set; } = new Standings();
         public IEnumerable<Table> Table { get; set; } = new ObservableCollection<Table>();
         public Table TeamTable { get; set; } = new Table();
@@ -55,15 +57,20 @@ namespace PrismSportApp.ViewModels
         {           
             try
             {
+                Loading = true;
+                Status = false;
                 RestService.For<IApiServices>(Links.url);
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;                          
-                this.Table = LeagueStandings.standings.First().table;                
+                this.Table = LeagueStandings.standings.First().table;
+                Loading = false;
+                Status = true;
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine($"Error en el metodo Table: {ex.Message}");
+                Loading = true;
+                Status = false;
             }
 
         }

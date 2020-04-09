@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Gamepage"
     Title="{Binding Title}"
@@ -19,8 +20,16 @@
                     SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
                     Style="{StaticResource PickerList}" />
             </StackLayout>
+            <StackLayout IsVisible="{Binding Loading}" VerticalOptions="CenterAndExpand">
+                <lottie:AnimationView
+                    Animation="loading-round-loader-animation.json"
+                    AutoPlay="True"
+                    HeightRequest="90"
+                    Loop="True" />
+            </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
+                IsVisible="{Binding Status}"
                 ItemsSource="{Binding Matches}"
                 Style="{StaticResource List}">
                 <ListView.ItemTemplate>
