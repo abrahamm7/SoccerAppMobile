@@ -82,7 +82,7 @@
                                                     Grid.Row="2"
                                                     Grid.Column="0"
                                                     Style="{StaticResource EndDate}"
-                                                    Text="{Binding endDate, StringFormat='Year {0:N}'}" />
+                                                    Text="{Binding endDate}" />
                                             </Grid>
                                         </Frame>
                                     </ViewCell.View>
