@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services;
 using PrismSportApp.Models;
 using PrismSportApp.Services;
 using PrismSportApp.Views;
@@ -15,16 +16,14 @@ using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class MenuViewModel: INotifyPropertyChanged
+    public class MenuViewModel: BaseViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        INavigationService navigationService;
         public DelegateCommand<string> onNavigate { get; set; }       
         public User User { get; set; } = new User();         
         ISqliteInterface sqlite;
-        public MenuViewModel(INavigationService navigation, ISqliteInterface sqliteInterface)
-        {
-            navigationService = navigation;
+        public MenuViewModel(INavigationService navigation, ISqliteInterface sqliteInterface, IPageDialogService pageDialog):base(pageDialog,navigation)
+        {           
             onNavigate = new DelegateCommand<string>(Navigate);
             sqlite = sqliteInterface;
             var x = sqlite.GetConnection();
@@ -34,7 +33,7 @@ namespace PrismSportApp.ViewModels
         }
         async void Navigate(string page)
         {
-            await navigationService.NavigateAsync(new Uri(page, UriKind.Relative));
+            await NavigationService.NavigateAsync(new Uri(page, UriKind.Relative));
         }      
     }
 }

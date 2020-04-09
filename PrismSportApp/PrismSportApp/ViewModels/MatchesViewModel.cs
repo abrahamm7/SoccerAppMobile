@@ -18,10 +18,8 @@ using Prism.Commands;
 
 namespace PrismSportApp.ViewModels
 {
-    public class MatchesViewModel: INotifyPropertyChanged
-    {        
-      
-        public event PropertyChangedEventHandler PropertyChanged;     
+    public class MatchesViewModel: BaseViewModel
+    {              
         public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();        
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
         Competitions League { get; set; } = new Competitions();
@@ -50,7 +48,7 @@ namespace PrismSportApp.ViewModels
             }
         }
 
-        public MatchesViewModel(IApiServices api)
+        public MatchesViewModel(IApiServices api, IPageDialogService pageDialog, INavigationService navigationService):base(pageDialog, navigationService)
         {           
             apiServices = api;
             Title = "Games";

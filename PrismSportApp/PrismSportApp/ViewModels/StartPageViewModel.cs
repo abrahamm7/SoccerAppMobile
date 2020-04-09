@@ -12,19 +12,13 @@ using Xamarin.Essentials;
 
 namespace PrismSportApp.ViewModels
 {
-    public class StartPageViewModel : INotifyPropertyChanged
+    public class StartPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public User User { get; set; } = new User();
         public DelegateCommand SignButton { get; set; }
-    
-        INavigationService navigation;
-        IPageDialogService dialogService;
         ISqliteInterface sqliteInterface;
-        public StartPageViewModel(INavigationService navigationService, IPageDialogService pageDialog, ISqliteInterface sqlite)
-        {
-            navigation = navigationService;
-            dialogService = pageDialog;           
+        public StartPageViewModel(INavigationService navigationService, IPageDialogService pageDialog, ISqliteInterface sqlite):base(pageDialog, navigationService)
+        {                   
             sqliteInterface = sqlite;           
             SignButton = new DelegateCommand(Entries);           
         }
@@ -33,13 +27,13 @@ namespace PrismSportApp.ViewModels
         {
             if (string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Email) || !User.Email.Contains("@") || !User.Email.Contains(".com"))
             {
-                await dialogService.DisplayAlertAsync("Advice","Empty fields","ok");
+                await PageDialogService.DisplayAlertAsync("Advice","Empty fields","ok");
             }
             else
             {
                 var x = sqliteInterface.GetConnection();
                 x.Insert(User);                
-                await navigation.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+                await NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
                 
             }
         }

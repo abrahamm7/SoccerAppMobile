@@ -16,7 +16,7 @@ namespace PrismSportApp.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public INavigationService NavigationService { get; set; }
         public IPageDialogService PageDialogService { get; set; }
-        public BaseViewModel(PageDialogService pageDialogService, INavigationService navigationService)
+        public BaseViewModel(IPageDialogService pageDialogService, INavigationService navigationService)
         {
             this.PageDialogService = pageDialogService;
             this.NavigationService = navigationService;

@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Prism.Navigation;
 using Prism.Services;
 using Prism.Services.Dialogs;
 using PrismSportApp.Models;
+using PrismSportApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,13 +14,13 @@ using Xamarin.Essentials;
 
 namespace PrismSportApp
 {
-    public class ApiService: IApiServices
+    public class ApiService: BaseViewModel, IApiServices
     {
         Links Links;
-        IPageDialogService PageDialog;
-        public ApiService(IPageDialogService pageDialogService)
+    
+        public ApiService(IPageDialogService pageDialogService, INavigationService navigationService): base(pageDialogService, navigationService)
         {
-            PageDialog = pageDialogService;
+            
         }
         public async Task<Fixtures> GetFixtures(int param) 
         {
@@ -34,7 +36,7 @@ namespace PrismSportApp
                 }
                 else
                 {              
-                    await PageDialog.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                    await PageDialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
                     return null;
                 }
             }
@@ -59,7 +61,7 @@ namespace PrismSportApp
                 }
                 else
                 {
-                    await PageDialog.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                    await PageDialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
                     return null;                   
                 }
             }
@@ -84,7 +86,7 @@ namespace PrismSportApp
                 }
                 else
                 {
-                    await PageDialog.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                    await PageDialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
                     return null;
                 }
             }
@@ -109,7 +111,7 @@ namespace PrismSportApp
                 }
                 else
                 {
-                    await PageDialog.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                    await PageDialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
                     return null;
                 }
             }   
