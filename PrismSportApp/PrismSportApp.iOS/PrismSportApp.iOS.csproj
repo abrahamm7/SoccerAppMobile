@@ -197,51 +197,63 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Bundesliga.png" />
+    <BundleResource Include="Bundesliga.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\estrella.png" />
+    <BundleResource Include="estrella.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\LaLiga.png" />
+    <BundleResource Include="LaLiga.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Liverpool_FC.svg" />
+    <BundleResource Include="Liverpool_FC.svg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\players.png" />
+    <BundleResource Include="players.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\plusBlack.png" />
+    <BundleResource Include="plusBlack.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\PremierLeague.png" />
+    <BundleResource Include="PremierLeague.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\remove.png" />
+    <BundleResource Include="remove.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\SeriaA.png" />
+    <BundleResource Include="SeriaA.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\soccer.png" />
+    <BundleResource Include="soccer.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Splashfutbol.png" />
+    <BundleResource Include="Splashfutbol.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="star.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\taza.png" />
+    <BundleResource Include="taza.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Trash.png" />
+    <BundleResource Include="Trash.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\trofeo.png" />
+    <BundleResource Include="trofeo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\worldcup.png" />
+    <BundleResource Include="worldcup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ligue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="portugal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="uefachampions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="eredivise.png" />
   </ItemGroup>
 </Project>

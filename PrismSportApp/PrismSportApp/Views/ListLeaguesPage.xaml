@@ -21,7 +21,8 @@
                     <DataTemplate>
                         <Frame>
                             <StackLayout Style="{StaticResource FirstStackLP}">
-                                <Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
+                                <!--<Image Source="{Binding Path=BindingContext.Logo, Source={x:Reference LeagueList}, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />-->
+                                <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
                                 <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
                             </StackLayout>
                             <Frame.GestureRecognizers>

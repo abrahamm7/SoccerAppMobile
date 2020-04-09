@@ -67,21 +67,42 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2003 ||
                 elemento.Id == 2002 ||
                 elemento.Id == 2014);
-                this.Leagues = show;
-                var x = show.First().Id;
-                switch (x)
+                foreach (var item in show)
                 {
-                    case 2001:
-                        Logo = "LaLiga.png";
-                        break;
-
-                    case 2021:
-                        Logo = "PremierLeague.png";
-                        break;
-                    case 2017:
-                        Logo = "Bundesliga.png";
-                        break;
+                    switch (item.Id)
+                    {
+                        case 2000:
+                            item.EmblemUrl = "worldcup.png";
+                            break;
+                        case 2001:
+                            item.EmblemUrl = "uefachampions.png";
+                            break;
+                        case 2021:
+                            item.EmblemUrl = "PremierLeague.png";
+                            break;
+                        case 2017:
+                            item.EmblemUrl = "portugal.png";
+                            break;
+                        case 2019:
+                            item.EmblemUrl = "SeriaA.png";
+                            break;
+                        case 2003:
+                            item.EmblemUrl = "eredivise.png";
+                            break;
+                        case 2015:
+                            item.EmblemUrl = "ligue1.png";
+                            break;
+                        case 2014:
+                            item.EmblemUrl = "LaLiga.png";
+                            break;
+                        case 2002:
+                            item.EmblemUrl = "Bundesliga.png";
+                            break;
+                    }
                 }
+                this.Leagues = show;
+             
+               
             }
             catch (Exception e)
             {
