@@ -36,7 +36,7 @@ namespace PrismSportApp.ViewModels
 
         async void Entries()
         {
-            if (string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Email))
+            if (string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Email) || !User.Email.Contains("@") || !User.Email.Contains(".com"))
             {
                 await dialogService.DisplayAlertAsync("Advice","Empty fields","ok");
             }

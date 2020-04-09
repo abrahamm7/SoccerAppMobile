@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using Prism.Commands;
 
 namespace PrismSportApp.ViewModels
 {
@@ -23,7 +24,7 @@ namespace PrismSportApp.ViewModels
         public IEnumerable<Table> Table { get; set; } = new ObservableCollection<Table>();
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
-        public ICommand Tap { get; set; }
+        public DelegateCommand<object> Tap { get; set; }
         INavigationService navigation;
 
         IPageDialogService dialogService;
@@ -34,7 +35,7 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             apiServices = api;            
-            Tap = new Command(SelectTeam);
+            Tap = new DelegateCommand<object>(SelectTeam);
         }        
 
 
