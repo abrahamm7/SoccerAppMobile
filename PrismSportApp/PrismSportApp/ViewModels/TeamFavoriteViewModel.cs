@@ -20,6 +20,9 @@ namespace PrismSportApp.ViewModels
         public bool Visible { get; set; }
         public bool ListVisible { get; set; }      
         public string Delete { get; set; }
+        public string Found { get; set; }
+        public string Trash { get; set; }
+        public string Title { get; set; }
         public ICommand DeleteItem { get; set; }
         ISqliteInterface sqlite;
         public TeamFavoriteViewModel(ISqliteInterface sqliteInterface)
@@ -28,6 +31,9 @@ namespace PrismSportApp.ViewModels
             Favorites();                     
             DeleteItem = new Command(Clear);
             Delete = "Delete";
+            Found = "Teams not found";
+            Title = "Favorite Teams";
+            Trash = "Trash.png";
         }
 
         async void Favorites()

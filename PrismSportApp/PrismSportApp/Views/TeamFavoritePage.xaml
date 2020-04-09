@@ -9,22 +9,21 @@
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
-    Title="Favorite Teams"
+    Title="{Binding Title}"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Margin="0,190,0,0" IsVisible="{Binding Visible}">
                 <lottie:AnimationView
                     Animation="search-and-clear.json"
-                    AutoPlay="True"
-                    HeightRequest="110"
-                    Loop="True" />
-                <Label Style="{StaticResource LabelNotFound}" Text="Teams not found" />
+                    Loop="True"
+                    Style="{StaticResource animationfav}" />
+                <Label Style="{StaticResource LabelNotFound}" Text="{Binding Found}" />
             </StackLayout>
             <ListView
                 IsVisible="{Binding ListVisible}"
                 ItemsSource="{Binding Teams}"
-                RowHeight="80">
+                Style="{StaticResource ListFav}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -42,9 +41,8 @@
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             Grid.ColumnSpan="1"
-                                            Aspect="AspectFit"
-                                            HorizontalOptions="Start"
-                                            Source="{Binding CrestUrl}" />
+                                            Source="{Binding CrestUrl}"
+                                            Style="{StaticResource Image}" />
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="1"
@@ -52,13 +50,12 @@
                                             Text="{Binding Name}" />
                                     </Grid>
                                 </Frame>
-
                             </ViewCell.View>
                             <ViewCell.ContextActions>
                                 <MenuItem
                                     Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
                                     CommandParameter="{Binding .}"
-                                    IconImageSource="Trash.png" />
+                                    IconImageSource="{Binding Trash}" />
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

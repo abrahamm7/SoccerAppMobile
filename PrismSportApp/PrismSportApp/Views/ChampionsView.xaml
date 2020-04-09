@@ -24,32 +24,26 @@
                     <yummy:PancakeView
                         Grid.Row="0"
                         Grid.Column="0"
-                        BackgroundColor="#303F9F"
-                        CornerRadius="0,0,20,20">
+                        Style="{StaticResource SpecialStack}">
                         <StackLayout Padding="15">
                             <lottie:AnimationView
                                 Animation="Champion.json"
-                                AutoPlay="True"
-                                HeightRequest="250"
-                                Loop="True" />
+                                Loop="True"
+                                Style="{StaticResource AnimationChampions}" />
                         </StackLayout>
                     </yummy:PancakeView>
                     <Picker
-                        Title="Select League"
                         Grid.Row="1"
                         Grid.Column="0"
-                        BackgroundColor="Transparent"
                         ItemDisplayBinding="{Binding Name}"
                         ItemsSource="{Binding Leagues}"
                         SelectedItem="{Binding LeagueSelected}"
-                        TitleColor="Black"
-                        Visual="Material" />
+                        Style="{StaticResource PickerList}" />
                     <ListView
                         Grid.Row="2"
                         Grid.Column="0"
-                        BackgroundColor="White"
                         ItemsSource="{Binding Seasons}"
-                        RowHeight="100">
+                        Style="{StaticResource ListChampions}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -66,20 +60,17 @@
                                                 <Svg:SvgCachedImage
                                                     Grid.Row="0"
                                                     Grid.Column="0"
-                                                    Aspect="AspectFit"
-                                                    HeightRequest="30"
-                                                    Source="{Binding winner.crestUrl}" />
+                                                    Source="{Binding winner.crestUrl}"
+                                                    Style="{StaticResource ImageChampions}" />
                                                 <Label
                                                     Grid.Row="1"
                                                     Grid.Column="0"
-                                                    HorizontalOptions="CenterAndExpand"
-                                                    Text="{Binding winner.name}"
-                                                    TextColor="Black" />
+                                                    Style="{StaticResource WinnerName}"
+                                                    Text="{Binding winner.name}" />
                                                 <Label
                                                     Grid.Row="2"
                                                     Grid.Column="0"
-                                                    FontSize="15"
-                                                    HorizontalOptions="CenterAndExpand"
+                                                    Style="{StaticResource EndDate}"
                                                     Text="{Binding endDate, StringFormat='Year {0:N}'}" />
                                             </Grid>
                                         </Frame>
