@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace PrismSportApp.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged, IActiveAware, INavigatedAware
+    public class BaseViewModel : INotifyPropertyChanged, INavigatedAware
     {
-        public bool IsActive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public event EventHandler IsActiveChanged;
         public event PropertyChangedEventHandler PropertyChanged;

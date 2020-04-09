@@ -20,7 +20,7 @@ namespace PrismSportApp.ViewModels
 {
     public class MatchesViewModel: INotifyPropertyChanged
     {        
-        #region Class
+      
         public event PropertyChangedEventHandler PropertyChanged;     
         public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();        
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
@@ -34,9 +34,9 @@ namespace PrismSportApp.ViewModels
         IPageDialogService dialogService;
         
         IApiServices apiServices;
-        #endregion
+    
 
-        #region Commands and Properties
+       
         League Leaguess;
         Match Match;
         public League LeagueSelected //Select element in picker//
@@ -56,9 +56,9 @@ namespace PrismSportApp.ViewModels
         }
 
        
-        #endregion
+ 
 
-        #region Constructor
+      
         public MatchesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
             navigation = navigationService;
@@ -69,9 +69,9 @@ namespace PrismSportApp.ViewModels
             GetLeaguesCommand.Execute();
 
         }
-        #endregion
+   
 
-        #region Metodos
+      
         async Task GetLeagues()
         {
             try
@@ -91,8 +91,7 @@ namespace PrismSportApp.ViewModels
                 this.Leagues = show.ToList();
             }
             catch (Exception ex)
-            {
-                await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+            {                
                 Debug.WriteLine($"Error en el metodo Leagues: {ex.Message}");
             }
         }
@@ -112,7 +111,7 @@ namespace PrismSportApp.ViewModels
             }
 
         }        
-        #endregion
+     
     }
 }
 

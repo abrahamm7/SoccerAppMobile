@@ -65,8 +65,7 @@ namespace PrismSportApp.ViewModels
             }
             catch (Exception e)
             {
-                await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
-                Debug.WriteLine($"Error: {e.Message}");
+                Debug.WriteLine($"Error en el metodo Leagues: {e.Message}");
             }
         }
         async void GetLeaguesChampions(int param)
@@ -80,8 +79,7 @@ namespace PrismSportApp.ViewModels
             }
             catch (Exception e)
             {
-                await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
-                Debug.WriteLine($"Error: {e.Message}");
+                Debug.WriteLine($"Error en el metodo LeaguesChampions: {e.Message}");
             }
         }
     }

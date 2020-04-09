@@ -33,16 +33,12 @@ namespace PrismSportApp.ViewModels
         public DelegateCommand GetLeaguesCommand { get; set; }        
 
         INavigationService navigation;
-
-        IPageDialogService dialogService;
-
         IApiServices apiServices;
 
-        public ListLeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
+        public ListLeaguesViewModel(IApiServices api, INavigationService navigationService)
         {
             apiServices = api;
-            navigation = navigationService;
-            dialogService = pageDialog;                    
+            navigation = navigationService;              
             Tap = new DelegateCommand<object>(SelectLeague);            
             TitlePage = "Leagues";
             GetLeaguesCommand = new DelegateCommand(async() => await GetLeagues());
@@ -100,14 +96,11 @@ namespace PrismSportApp.ViewModels
                             break;
                     }
                 }
-                this.Leagues = show;
-             
-               
+                this.Leagues = show; 
             }
             catch (Exception e)
             {
-                await dialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
-                Debug.WriteLine(e.Message);
+                Debug.WriteLine($"Error en el metodo Leagues: {e.Message}");
             }
         }
         async void SelectLeague(object sender)
