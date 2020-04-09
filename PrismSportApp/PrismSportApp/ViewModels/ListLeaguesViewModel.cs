@@ -30,15 +30,13 @@ namespace PrismSportApp.ViewModels
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();        
         public DelegateCommand<object> Tap { get; set; }        
+        public DelegateCommand GetLeaguesCommand { get; set; }        
 
         INavigationService navigation;
 
         IPageDialogService dialogService;
 
         IApiServices apiServices;
-
-
-
 
         public ListLeaguesViewModel(IApiServices api, INavigationService navigationService, IPageDialogService pageDialog)
         {
@@ -47,7 +45,8 @@ namespace PrismSportApp.ViewModels
             dialogService = pageDialog;                    
             Tap = new DelegateCommand<object>(SelectLeague);            
             TitlePage = "Leagues";
-            GetLeagues();
+            GetLeaguesCommand = new DelegateCommand(async() => await GetLeagues());
+            GetLeaguesCommand.Execute();
             
         }
 

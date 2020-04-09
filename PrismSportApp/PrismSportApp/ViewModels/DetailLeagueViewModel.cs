@@ -25,6 +25,7 @@ namespace PrismSportApp.ViewModels
         public Table TeamTable { get; set; } = new Table();
         public Links Links { get; set; } = new Links();
         public DelegateCommand<object> Tap { get; set; }
+
         INavigationService navigation;
 
         IPageDialogService dialogService;

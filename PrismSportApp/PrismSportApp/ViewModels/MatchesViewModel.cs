@@ -14,6 +14,7 @@ using Xamarin.Essentials;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Runtime.CompilerServices;
+using Prism.Commands;
 
 namespace PrismSportApp.ViewModels
 {
@@ -27,6 +28,7 @@ namespace PrismSportApp.ViewModels
         public string Title { get; set; }
         Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
+        public DelegateCommand GetLeaguesCommand { get; set; }
         INavigationService navigation;
 
         IPageDialogService dialogService;
@@ -63,13 +65,14 @@ namespace PrismSportApp.ViewModels
             dialogService = pageDialog;
             apiServices = api;
             Title = "Games";
-            GetLeagues();
-            
+            GetLeaguesCommand = new DelegateCommand(async () => await GetLeagues());
+            GetLeaguesCommand.Execute();
+
         }
         #endregion
 
         #region Metodos
-        async void GetLeagues()
+        async Task GetLeagues()
         {
             try
             {

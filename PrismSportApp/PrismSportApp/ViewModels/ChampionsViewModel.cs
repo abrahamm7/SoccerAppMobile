@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using Prism.Services;
 using PrismSportApp.Models;
 using Refit;
@@ -9,6 +10,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PrismSportApp.ViewModels
 {
@@ -25,7 +27,7 @@ namespace PrismSportApp.ViewModels
         IPageDialogService dialogService;
 
         IApiServices apiServices;
-
+        public DelegateCommand GetLeaguesCommand { get; set; }
         League Leaguess;
         public League LeagueSelected //Select element in picker//
         {
@@ -37,17 +39,7 @@ namespace PrismSportApp.ViewModels
             {
                 Leaguess = value;
                 if (Leaguess != null)
-                {
-                    switch (Leaguess.Id)
-                    {
-                        case 2002:
-                            this.Crest = "Bundesliga.png";
-                            break;
-
-                        case 2021:
-                            this.Crest = "PremierLeague.png";
-                            break;
-                    }
+                {                   
                     GetLeaguesChampions(Leaguess.Id);
                 }
             }
@@ -58,9 +50,10 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;
             dialogService = pageDialog;
             apiServices = api;
-            GetLeagues();
+            GetLeaguesCommand = new DelegateCommand(async () => await GetLeagues());
+            GetLeaguesCommand.Execute();
         }
-        async void GetLeagues()
+        async Task GetLeagues()
         {
             try
             {
