@@ -15,10 +15,7 @@
                 x:Name="ListLeague"
                 CachingStrategy="RecycleElement"
                 ItemsSource="{Binding Table}"
-                RowHeight="100"
-                SelectionMode="Single"
-                SeparatorColor="ForestGreen"
-                Visual="Material">
+                Style="{StaticResource ListTeams}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -42,8 +39,8 @@
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             Grid.ColumnSpan="1"
-                                            Aspect="AspectFit"
-                                            Source="{Binding Team.CrestUrl}" />
+                                            Source="{Binding Team.CrestUrl}"
+                                            Style="{StaticResource ImageTeam}" />
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="1"

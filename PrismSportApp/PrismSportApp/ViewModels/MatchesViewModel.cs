@@ -24,6 +24,7 @@ namespace PrismSportApp.ViewModels
         public IList<Match> Matches { get; set; } = new ObservableCollection<Match>();        
         public IList<League> Leagues { get; set; } = new ObservableCollection<League>();
         Competitions League { get; set; } = new Competitions();
+        public string Title { get; set; }
         Fixtures Fixture { get; set; } = new Fixtures();         
         public Links Links { get; set; } = new Links();
         INavigationService navigation;
@@ -60,7 +61,8 @@ namespace PrismSportApp.ViewModels
         {
             navigation = navigationService;
             dialogService = pageDialog;
-            apiServices = api;            
+            apiServices = api;
+            Title = "Games";
             GetLeagues();
             
         }

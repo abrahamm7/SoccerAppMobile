@@ -13,7 +13,7 @@
     mc:Ignorable="d">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
-            <yummy:PancakeView Style="{StaticResource GradientPageMenu}" WidthRequest="315">
+            <yummy:PancakeView Style="{StaticResource GradientPageMenu}">
                 <Grid RowSpacing="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />

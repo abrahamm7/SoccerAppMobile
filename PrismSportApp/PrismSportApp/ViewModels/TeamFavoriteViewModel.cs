@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using PrismSportApp.Models;
 using PrismSportApp.Services;
 using SQLite;
@@ -19,21 +20,17 @@ namespace PrismSportApp.ViewModels
         public IList<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
         public bool Visible { get; set; }
         public bool ListVisible { get; set; }      
-        public string Delete { get; set; }
         public string Found { get; set; }
-        public string Trash { get; set; }
         public string Title { get; set; }
-        public ICommand DeleteItem { get; set; }
+        public DelegateCommand<object> DeleteItem { get; set; }
         ISqliteInterface sqlite;
         public TeamFavoriteViewModel(ISqliteInterface sqliteInterface)
         {
             sqlite = sqliteInterface;           
             Favorites();                     
-            DeleteItem = new Command(Clear);
-            Delete = "Delete";
+            DeleteItem = new DelegateCommand<object>(Clear);
             Found = "Teams not found";
             Title = "Favorite Teams";
-            Trash = "Trash.png";
         }
 
         async void Favorites()

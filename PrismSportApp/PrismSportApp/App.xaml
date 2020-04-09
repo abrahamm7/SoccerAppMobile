@@ -27,7 +27,7 @@
                 <Setter Property="Visual" Value="Material" />
             </Style>
 
-            <Style x:Key="Stack" TargetType="StackLayout">
+            <Style x:Key="StackStart" TargetType="StackLayout">
                 <Setter Property="Padding" Value="30" />
                 <Setter Property="Spacing" Value="20" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -52,6 +52,12 @@
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="AnimationMenu" TargetType="lottie:AnimationView">
+                <Setter Property="AutoPlay" Value="True" />
+                <Setter Property="HeightRequest" Value="110" />
+                
             </Style>
 
             <Style x:Key="UserStyleName" TargetType="Label">
@@ -91,6 +97,17 @@
             <Style x:Key="DetailLeagueFrame" TargetType="Frame">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="WidthRequest" Value="400" />
+            </Style>
+
+            <Style x:Key="ListTeams" TargetType="ListView">
+                <Setter Property="RowHeight" Value="100" />
+                <Setter Property="SelectionMode" Value="Single" />
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="SeparatorColor" Value="ForestGreen" />
+            </Style>
+
+            <Style x:Key="ImageTeam" TargetType="Svg:SvgCachedImage">
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <!--#region Position and Team Name-->

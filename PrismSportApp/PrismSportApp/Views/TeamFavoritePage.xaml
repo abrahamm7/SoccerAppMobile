@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
@@ -55,7 +54,7 @@
                                 <MenuItem
                                     Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
                                     CommandParameter="{Binding .}"
-                                    IconImageSource="{Binding Trash}" />
+                                    IconImageSource="Trash.png" />
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
