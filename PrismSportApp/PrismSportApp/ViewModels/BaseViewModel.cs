@@ -23,12 +23,12 @@ namespace PrismSportApp.ViewModels
         }
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+           
         }
         public async Task ShowMessage(string title, string message, string cancel, string accept = null)
         {
