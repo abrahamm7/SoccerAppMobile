@@ -7,7 +7,7 @@ namespace PrismSportApp.Models
 {
     public class Filters
     {
-        public string Stage { get; set; } //Matchday
+        public string Stage { get; set; } 
     }
 
     public class Area
