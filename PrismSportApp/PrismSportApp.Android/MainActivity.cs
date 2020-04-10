@@ -12,6 +12,8 @@ using FFImageLoading.Svg.Forms;
 using Xamarin.Forms;
 using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
+using CarouselView.FormsPlugin.Android;
+using PanCardView.Droid;
 
 namespace PrismSportApp.Droid
 {
@@ -29,10 +31,11 @@ namespace PrismSportApp.Droid
          
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);            
+            CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
-            CachedImageRenderer.Init(true);
+            CachedImageRenderer.Init(true);            
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
