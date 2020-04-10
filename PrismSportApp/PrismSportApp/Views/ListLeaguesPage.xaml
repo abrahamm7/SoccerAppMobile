@@ -3,6 +3,8 @@
     x:Class="PrismSportApp.Views.ListLeaguesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+    xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -12,6 +14,17 @@
     BackgroundColor="White"
     Visual="Material"
     mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Red" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="OutlineColor" Value="Red" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout
@@ -25,14 +38,18 @@
                     Loop="True" />
             </StackLayout>
             <ScrollView>
-                <CarouselView
+                <cards:CarouselView
                     x:Name="ListLeague"
                     IsVisible="{Binding Status}"
-                    ItemsSource="{Binding Leagues}"
-                    Style="{StaticResource ListLeagueCarousel}">
-                    <CarouselView.ItemTemplate>
+                    ItemsSource="{Binding Leagues}">
+                    <cards:CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <Frame>
+                            <Frame
+                                BackgroundColor="White"
+                                BorderColor="White"
+                                HeightRequest="400"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
                                 <StackLayout Style="{StaticResource FirstStackLP}">
                                     <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
                                     <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
@@ -42,8 +59,12 @@
                                 </Frame.GestureRecognizers>
                             </Frame>
                         </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                    </cards:CarouselView.ItemTemplate>
+                    <controls:IndicatorsControl
+                        SelectedIndicatorStyle="{StaticResource ActiveIndicator}"
+                        ToFadeDuration="2000"
+                        UnselectedIndicatorStyle="{StaticResource InactiveIndicator}" />
+                </cards:CarouselView>
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>
