@@ -14,16 +14,17 @@ Xport was built using the Xamarin Forms framework in conjuction with the Prism f
 
 ## Pictures from Phone
 
-![picture](Login.png)
-![picture](League.jpeg)
-![picture](Table.jpeg)
-![picture](Match.jpeg)
+
+<img src="Login.png" width="40%">
+<img src="League.jpeg" width="40%">
+<img src="Match.jpeg" width="40%">
+<img src="Table.jpeg" width="40%">
 
 ## Pictures from Tablet
-![picture](MatchT.jpeg)
-![picture](LeagueT.jpeg)
-![picture](FavoriteT.jpeg)
-![picture](ChartsT.jpeg)
+<img src="MatchT.jpeg" width="40%">
+<img src="LeagueT.jpeg" width="40%">
+<img src="FavoriteT.jpeg" width="40%">
+<img src="ChartsT.jpeg" width="40%">
 
 ## Libraries and Dependencies
 * Xamarin.Forms
