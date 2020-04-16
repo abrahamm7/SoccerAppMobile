@@ -31,8 +31,21 @@
                     Style="{StaticResource SpecialStack}">
                     <StackLayout HorizontalOptions="Center">
                         <Svg:SvgCachedImage Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}" Style="{StaticResource SvgImage}" />
-                        <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}" />
+                        <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}">
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="UWP" Value="Black" />
+                                    <On Platform="Android" Value="White" />
+                                </OnPlatform>
+                            </Label.TextColor>
+                        </Label>
                     </StackLayout>
+                    <yummy:PancakeView.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="UWP" Value="White" />
+                            <On Platform="Android" Value="#303F9F" />
+                        </OnPlatform>
+                    </yummy:PancakeView.BackgroundColor>
                 </yummy:PancakeView>
                 <StackLayout Grid.Row="1" Spacing="20">
                     <Label Style="{StaticResource TitleCharts}" Text="Match Stats" />
