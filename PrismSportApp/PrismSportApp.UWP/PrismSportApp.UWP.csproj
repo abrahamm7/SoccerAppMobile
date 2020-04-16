@@ -199,6 +199,9 @@
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.6.292</Version>
     </PackageReference>
+    <PackageReference Include="SQLite.uwp">
+      <Version>3.31.1</Version>
+    </PackageReference>
     <PackageReference Include="TinySvgHelper">
       <Version>1.0.266</Version>
     </PackageReference>
@@ -241,6 +244,21 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Assets\spinning-ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Champion.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\cup.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\loading-round-loader-animation.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\loading.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\search-and-clear.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

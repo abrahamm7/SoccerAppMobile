@@ -24,20 +24,28 @@ namespace PrismSportApp
         public ISqliteInterface sqlite = new SqliteModel();
         protected override void OnInitialized()
         {
-            InitializeComponent();            
-            var x = sqlite.GetConnection();
-            x.CreateTable<User>();
-            x.CreateTable<Teamm>();            
-            var List = x.Query<User>("Select * From User");
-            if (List.Any())
+            InitializeComponent();
+            if (Device.RuntimePlatform == Device.UWP)
             {
-                
-                NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+                NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Relative));
             }
-            else
-            {                
-                NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
+            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+            {
+                var x = sqlite.GetConnection();
+                x.CreateTable<User>();
+                x.CreateTable<Teamm>();
+                var List = x.Query<User>("Select * From User");
+                if (List.Any())
+                {
+
+                    NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+                }
+                else
+                {
+                    NavigationService.NavigateAsync(new Uri(NavConstants.StartPage, UriKind.Relative));
+                }
             }
+           
            
         }
        

@@ -25,10 +25,18 @@ namespace PrismSportApp.ViewModels
         public MenuViewModel(INavigationService navigation, ISqliteInterface sqliteInterface, IPageDialogService pageDialog):base(pageDialog,navigation)
         {           
             onNavigate = new DelegateCommand<string>(Navigate);
-            sqlite = sqliteInterface;
-            var x = sqlite.GetConnection();
-            var list = x.Query<User>("select * from User");
-            User.Name = list.First().Name;
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                User.Name = "User";
+            }
+            else if(Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+            {
+                sqlite = sqliteInterface;
+                var x = sqlite.GetConnection();
+                var list = x.Query<User>("select * from User");
+                User.Name = list.First().Name;
+            }
+           
             
         }
         async void Navigate(string page)

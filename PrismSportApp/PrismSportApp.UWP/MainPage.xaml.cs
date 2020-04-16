@@ -1,4 +1,7 @@
-﻿using Prism;
+﻿using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using Lottie.Forms.UWP.Renderers;
+using Prism;
 using Prism.Ioc;
 using System;
 using System.Collections.Generic;
@@ -22,7 +25,9 @@ namespace PrismSportApp.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
+            AnimationViewRenderer.Init();
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
             LoadApplication(new PrismSportApp.App(new UwpInitializer()));
         }
 
