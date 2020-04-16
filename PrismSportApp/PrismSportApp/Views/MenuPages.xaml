@@ -14,6 +14,21 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
             <yummy:PancakeView Style="{StaticResource GradientPageMenu}">
+                <yummy:PancakeView.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="UWP" Value="#021D26" />
+                    </OnPlatform>
+                </yummy:PancakeView.BackgroundColor>
+                <yummy:PancakeView.BackgroundGradientStartColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="Android" Value="#303F9F" />
+                    </OnPlatform>
+                </yummy:PancakeView.BackgroundGradientStartColor>
+                <yummy:PancakeView.BackgroundGradientEndColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="Android" Value="#5C258D" />
+                    </OnPlatform>
+                </yummy:PancakeView.BackgroundGradientEndColor>
                 <Grid RowSpacing="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -34,7 +49,15 @@
                         Command="{Binding onNavigate}"
                         CommandParameter="NavigationPage/TeamFavoritePage"
                         Style="{StaticResource Buttons}"
-                        Text="Favorite Teams" />
+                        Text="Favorite Teams">
+                        <Button.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="UWP" Value="False" />
+                                <On Platform="ios" Value="True" />
+                                <On Platform="Android" Value="True" />
+                            </OnPlatform>
+                        </Button.IsVisible>
+                    </Button>
                     <Button
                         Grid.Row="2"
                         Grid.Column="0"
