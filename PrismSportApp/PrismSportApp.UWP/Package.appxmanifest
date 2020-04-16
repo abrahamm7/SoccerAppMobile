@@ -32,10 +32,10 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="PrismSportApp.UWP.App">
       <uap:VisualElements
-        DisplayName="PrismSportApp.UWP"
+        DisplayName="Xport"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="PrismSportApp.UWP"
+        Description="App to show information about leagues soccer and teams."
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
@@ -45,6 +45,11 @@
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscapeFlipped"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
