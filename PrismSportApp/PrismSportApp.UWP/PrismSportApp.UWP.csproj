@@ -103,12 +103,26 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Assets\Bundesliga.png" />
+    <BundleResource Include="Assets\eredivise.png" />
+    <BundleResource Include="Assets\estrella.png" />
+    <BundleResource Include="Assets\LaLiga.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <BundleResource Include="Assets\ligue1.png" />
+    <BundleResource Include="Assets\Liverpool_FC.svg" />
+    <BundleResource Include="Assets\players.png" />
+    <BundleResource Include="Assets\plusBlack.png" />
+    <BundleResource Include="Assets\portugal.png" />
+    <BundleResource Include="Assets\PremierLeague.png" />
+    <BundleResource Include="Assets\remove.png" />
+    <BundleResource Include="Assets\SeriaA.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
+    <BundleResource Include="Assets\soccer.png" />
+    <BundleResource Include="Assets\Splashfutbol.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-400.png" />
@@ -124,12 +138,18 @@
     <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <BundleResource Include="Assets\star.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <BundleResource Include="Assets\taza.png" />
+    <BundleResource Include="Assets\Trash.png" />
+    <BundleResource Include="Assets\trofeo.png" />
+    <BundleResource Include="Assets\uefachampions.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <BundleResource Include="Assets\worldcup.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +238,9 @@
       <Project>{2AE7E4C1-1235-4A71-B711-E4D3AC92910D}</Project>
       <Name>PrismSportApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Assets\spinning-ball.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
