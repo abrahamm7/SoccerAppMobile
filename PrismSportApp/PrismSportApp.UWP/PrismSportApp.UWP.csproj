@@ -103,23 +103,23 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Assets\Bundesliga.png" />
-    <BundleResource Include="Assets\eredivise.png" />
+    <Content Include="Assets\Bundesliga.png" />
+    <Content Include="Assets\eredivise.png" />
     <BundleResource Include="Assets\estrella.png" />
-    <BundleResource Include="Assets\LaLiga.png" />
+    <Content Include="Assets\LaLiga.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
-    <BundleResource Include="Assets\ligue1.png" />
+    <Content Include="Assets\ligue1.png" />
     <BundleResource Include="Assets\Liverpool_FC.svg" />
     <BundleResource Include="Assets\players.png" />
     <BundleResource Include="Assets\plusBlack.png" />
-    <BundleResource Include="Assets\portugal.png" />
-    <BundleResource Include="Assets\PremierLeague.png" />
+    <Content Include="Assets\portugal.png" />
+    <Content Include="Assets\PremierLeague.png" />
     <BundleResource Include="Assets\remove.png" />
-    <BundleResource Include="Assets\SeriaA.png" />
+    <Content Include="Assets\SeriaA.png" />
     <Content Include="Assets\premio %282%29.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
@@ -162,13 +162,13 @@
     <BundleResource Include="Assets\taza.png" />
     <BundleResource Include="Assets\Trash.png" />
     <BundleResource Include="Assets\trofeo.png" />
-    <BundleResource Include="Assets\uefachampions.png" />
+    <Content Include="Assets\uefachampions.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <BundleResource Include="Assets\worldcup.png" />
+    <Content Include="Assets\worldcup.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>

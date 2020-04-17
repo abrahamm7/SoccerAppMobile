@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using FFImageLoading.Work;
+using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using PrismSportApp.Models;
@@ -69,32 +70,104 @@ namespace PrismSportApp.ViewModels
                 {
                     switch (item.Id)
                     {
-                        case 2000:
-                            item.EmblemUrl = "worldcup.png";
+                        case 2000:                            
+                            if (Device.RuntimePlatform == Device.UWP) 
+                            {
+                                item.EmblemUrl = "Assets/worldcup.png";
+                               
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "worldcup.png";
+                            }
                             break;
-                        case 2001:
-                            item.EmblemUrl = "uefachampions.png";
+                        case 2001:                            
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/uefachampions.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "uefachampions.png";
+                            }
                             break;
-                        case 2021:
-                            item.EmblemUrl = "PremierLeague.png";
+                        case 2021:                            
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/PremierLeague.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "PremierLeague.png";
+                            }
                             break;
-                        case 2017:
-                            item.EmblemUrl = "portugal.png";
+                        case 2017:                          
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/portugal.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "portugal.png";
+                            }
                             break;
-                        case 2019:
-                            item.EmblemUrl = "SeriaA.png";
+                        case 2019:                           
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/SeriaA.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "SeriaA.png";
+                            }
                             break;
-                        case 2003:
-                            item.EmblemUrl = "eredivise.png";
+                        case 2003:                            
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/eredivise.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "eredivise.png";
+                            }
                             break;
-                        case 2015:
-                            item.EmblemUrl = "ligue1.png";
+                        case 2015:                          
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/ligue1.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "ligue1.png";
+                            }
                             break;
-                        case 2014:
-                            item.EmblemUrl = "LaLiga.png";
-                            break;
+                        case 2014:                           
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/LaLiga.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "LaLiga.png";
+                            }
+                            break;                         
                         case 2002:
-                            item.EmblemUrl = "Bundesliga.png";
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                item.EmblemUrl = "Assets/Bundesliga.png";
+
+                            }
+                            else if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                            {
+                                item.EmblemUrl = "Bundesliga.png";
+                            }
                             break;
                     }
                 }
