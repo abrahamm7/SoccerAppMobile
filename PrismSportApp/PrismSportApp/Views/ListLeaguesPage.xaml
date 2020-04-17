@@ -61,11 +61,11 @@
                     <cards:CarouselView.ItemTemplate>
                         <DataTemplate>
                             <Frame
+                                Margin="{OnPlatform UWP='0,160,0,0'}"
                                 BackgroundColor="White"
                                 BorderColor="White"
                                 HeightRequest="400"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
+                                HorizontalOptions="Center">
                                 <StackLayout Style="{StaticResource FirstStackLP}">
                                     <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
                                     <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
