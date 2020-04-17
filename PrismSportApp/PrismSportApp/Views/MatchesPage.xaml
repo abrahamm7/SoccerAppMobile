@@ -25,7 +25,24 @@
                     Animation="loading-round-loader-animation.json"
                     AutoPlay="True"
                     HeightRequest="90"
-                    Loop="True" />
+                    Loop="True">
+                    <lottie:AnimationView.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="UWP" Value="False" />
+                            <On Platform="ios" Value="True" />
+                            <On Platform="Android" Value="True" />
+                        </OnPlatform>
+                    </lottie:AnimationView.IsVisible>
+                </lottie:AnimationView>
+                <ActivityIndicator IsRunning="{Binding Loading}" Color="Accent">
+                    <ActivityIndicator.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="UWP" Value="True" />
+                            <On Platform="ios" Value="False" />
+                            <On Platform="Android" Value="False" />
+                        </OnPlatform>
+                    </ActivityIndicator.IsVisible>
+                </ActivityIndicator>
             </StackLayout>
             <ListView
                 CachingStrategy="RecycleElement"
