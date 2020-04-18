@@ -47,7 +47,15 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         Aspect="AspectFit"
-                        Source="Assets/premio (2).png" />
+                        Source="Assets/premio (2).png">
+                        <Image.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="UWP" Value="True" />
+                                <On Platform="ios" Value="False" />
+                                <On Platform="Android" Value="False" />
+                            </OnPlatform>
+                        </Image.IsVisible>
+                    </Image>
                     <Button
                         Grid.Row="1"
                         Grid.Column="0"

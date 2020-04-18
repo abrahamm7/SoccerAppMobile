@@ -215,6 +215,9 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>3.2.6</Version>
     </PackageReference>
+    <PackageReference Include="SkiaSharp">
+      <Version>1.68.1.1</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.6.292</Version>
     </PackageReference>
@@ -268,7 +271,7 @@
     <AndroidAsset Include="Assets\Champion.json" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\cup.json" />
+    <Content Include="Assets\cup.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\loading-round-loader-animation.json" />

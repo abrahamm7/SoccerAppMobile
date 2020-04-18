@@ -71,11 +71,15 @@
                                             Grid.ColumnSpan="2">
                                             <Label Style="{StaticResource Key=GroupLabel}" Text="{Binding Group}" />
                                         </StackLayout>
-                                        <Label
+                                        <StackLayout
                                             Grid.Row="1"
                                             Grid.Column="0"
-                                            Style="{StaticResource Key=Team}"
-                                            Text="{Binding HomeTeam.Name, Mode=TwoWay}" />
+                                            HorizontalOptions="Center"
+                                            Orientation="Horizontal"
+                                            VerticalOptions="Center">
+                                            <Svg:SvgCachedImage Source="{Binding LogoHome, Mode=TwoWay}" Style="{StaticResource ImageTeam}" />
+                                            <Label Style="{StaticResource Key=Team}" Text="{Binding HomeTeam.Name, Mode=TwoWay}" />
+                                        </StackLayout>
                                         <Frame
                                             Grid.Row="1"
                                             Grid.Column="1"
@@ -86,11 +90,15 @@
                                                 <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.AwayTeam}" />
                                             </StackLayout>
                                         </Frame>
-                                        <Label
+                                        <StackLayout
                                             Grid.Row="1"
                                             Grid.Column="2"
-                                            Style="{StaticResource Key=Team}"
-                                            Text="{Binding AwayTeam.Name, Mode=TwoWay}" />
+                                            HorizontalOptions="Center"
+                                            Orientation="Horizontal"
+                                            VerticalOptions="Center">
+                                            <Svg:SvgCachedImage Source="{Binding LogoAway, Mode=TwoWay}" Style="{StaticResource ImageTeam}" />
+                                            <Label Style="{StaticResource Key=Team}" Text="{Binding AwayTeam.Name, Mode=TwoWay}" />
+                                        </StackLayout>
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="2"

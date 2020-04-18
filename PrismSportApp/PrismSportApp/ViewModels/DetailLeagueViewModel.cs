@@ -62,7 +62,7 @@ namespace PrismSportApp.ViewModels
                 RestService.For<IApiServices>(Links.url);
                 var response = await apiServices.GetStandings(param);
                 LeagueStandings = response;                          
-                this.Table = LeagueStandings.standings.First().table;
+                this.Table = LeagueStandings.standings.First().table;           
                 Loading = false;
                 Status = true;
             }

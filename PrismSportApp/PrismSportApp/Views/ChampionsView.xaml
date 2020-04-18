@@ -31,6 +31,13 @@
                                 Loop="True"
                                 Style="{StaticResource AnimationChampions}" />
                         </StackLayout>
+                        <yummy:PancakeView.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android" Value="True" />
+                                <On Platform="UWP" Value="False" />
+                                <On Platform="Ios" Value="True" />
+                            </OnPlatform>
+                        </yummy:PancakeView.IsVisible>
                     </yummy:PancakeView>
                     <Picker
                         Grid.Row="1"
