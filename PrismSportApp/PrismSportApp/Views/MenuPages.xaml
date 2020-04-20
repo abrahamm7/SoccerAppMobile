@@ -91,7 +91,15 @@
                         Command="{Binding onNavigate}"
                         CommandParameter="NavigationPage/ChampionsView"
                         Style="{StaticResource Buttons}"
-                        Text="Champions" />
+                        Text="Champions">
+                        <Button.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="UWP" Value="False" />
+                                <On Platform="ios" Value="True" />
+                                <On Platform="Android" Value="True" />
+                            </OnPlatform>
+                        </Button.IsVisible>
+                    </Button>
                     <lottie:AnimationView
                         Grid.Row="5"
                         Grid.Column="0"
