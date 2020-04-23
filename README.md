@@ -27,7 +27,7 @@ Xport was built using the Xamarin Forms framework in conjuction with the Prism f
 <img src="ChartsT.jpeg" width="50%">
 
 ## Pictures from Desktop
-<img src="ScreenUWP.PNG" width="60%">
+<img src="ScreenUWP.PNG" width="50%">
 <img src="TableSoccerUWP.PNG" width="60%">
 <img src="MatchesUWP.PNG" width="60%">
 
