@@ -107,7 +107,7 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.7.944</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Xamarin.Forms.BehaviorsPack">
       <Version>2.1.1</Version>
@@ -119,7 +119,7 @@
       <Version>1.3.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Visual.Material">
-      <Version>4.5.0.495</Version>
+      <Version>4.6.0.800</Version>
     </PackageReference>
     <PackageReference Include="XForms.Plugin.AnimationNavigationPage">
       <Version>1.0.8</Version>

@@ -19,6 +19,10 @@
                     ItemsSource="{Binding Leagues}"
                     SelectedItem="{Binding LeagueSelected, Mode=TwoWay}"
                     Style="{StaticResource PickerList}" />
+                <SearchBar
+                    Placeholder="Search"
+                    SearchCommand="{Binding CommandSearch}"
+                    Text="{Binding Filter, Mode=TwoWay}" />
             </StackLayout>
             <StackLayout IsVisible="{Binding Loading}" VerticalOptions="CenterAndExpand">
                 <lottie:AnimationView
