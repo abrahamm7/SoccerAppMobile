@@ -14,17 +14,23 @@ using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.AppShortcuts;
+using Plugin.AppShortcuts.Icons;
 
 namespace PrismSportApp
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { FlowListView.Init(); }        
-        
+        public App(IPlatformInitializer initializer = null) : base(initializer) { FlowListView.Init(); }
+
+       
+
         public ISqliteInterface sqlite = new SqliteModel();
         protected override void OnInitialized()
         {
+            
             InitializeComponent();
+            Shorts();
             if (Device.RuntimePlatform == Device.UWP)
             {
                 NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Relative));
@@ -49,6 +55,17 @@ namespace PrismSportApp
            
         }
        
+        async void Shorts()
+        {
+            var shortcut = new Shortcut()
+            {
+                Label = "Shortcut 1",
+                Description = "Matches",
+                Icon = new FavoriteIcon(),
+                Uri = "asc://Xport/MatchesPage"
+            };
+            await CrossAppShortcuts.Current.AddShortcut(shortcut);
+        }
 
         
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

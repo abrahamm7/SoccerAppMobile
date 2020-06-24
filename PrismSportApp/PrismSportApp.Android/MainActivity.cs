@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 using Prism;
 using Prism.Ioc;
 using ImageCircle.Forms.Plugin.Droid;
@@ -14,10 +15,16 @@ using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
 using CarouselView.FormsPlugin.Android;
 using PanCardView.Droid;
+using Plugin.AppShortcuts;
 
 namespace PrismSportApp.Droid
 {
     [Activity(Label = "Xport", Icon = "@mipmap/futbol", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [IntentFilter(new[] { Intent.ActionView },
+              Categories = new[] { Intent.CategoryDefault },
+              DataScheme = "asc",
+              DataHost = "Xport",
+              AutoVerify = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,7 +42,8 @@ namespace PrismSportApp.Droid
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
-            CachedImageRenderer.Init(true);            
+            CachedImageRenderer.Init(true);
+            CrossAppShortcuts.Current.Init();
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

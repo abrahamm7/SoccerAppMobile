@@ -54,34 +54,42 @@
                 </ActivityIndicator>
             </StackLayout>
             <ScrollView>
-                <cards:CarouselView
+                <CollectionView
                     x:Name="ListLeague"
-                    IsCyclical="True"
                     IsVisible="{Binding Status}"
                     ItemsSource="{Binding Leagues}">
-                    <cards:CarouselView.ItemTemplate>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame
-                                Margin="{OnPlatform UWP='0,160,0,0'}"
-                                BackgroundColor="White"
-                                BorderColor="White"
-                                HeightRequest="400"
-                                HorizontalOptions="Center">
-                                <StackLayout Style="{StaticResource FirstStackLP}">
-                                    <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
-                                    <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
-                                </StackLayout>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                </Frame.GestureRecognizers>
-                            </Frame>
+                            <Grid Margin="1" Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Frame
+                                    Margin="{OnPlatform UWP='0,160,0,0'}"
+                                    BackgroundColor="White"
+                                    BorderColor="White"
+                                    HasShadow="True"
+                                    CornerRadius="5"
+                                    HeightRequest="400"
+                                    HorizontalOptions="Center">
+                                    <StackLayout Style="{StaticResource FirstStackLP}">
+                                        <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
+                                        <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
+                                    </StackLayout>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Grid>                          
                         </DataTemplate>
-                    </cards:CarouselView.ItemTemplate>
-                    <controls:IndicatorsControl
-                        SelectedIndicatorStyle="{StaticResource ActiveIndicator}"
-                        ToFadeDuration="2000"
-                        UnselectedIndicatorStyle="{StaticResource InactiveIndicator}" />
-                </cards:CarouselView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>

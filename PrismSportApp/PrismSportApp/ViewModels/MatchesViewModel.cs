@@ -51,6 +51,8 @@ namespace PrismSportApp.ViewModels
             }
         }
 
+    
+
         public MatchesViewModel(IApiServices api, IPageDialogService pageDialog, INavigationService navigationService):base(pageDialog, navigationService)
         {           
             apiServices = api;
@@ -59,6 +61,8 @@ namespace PrismSportApp.ViewModels
             GetLeaguesCommand.Execute();
 
         }
+
+        
 
         async Task GetLeagues()
         {
