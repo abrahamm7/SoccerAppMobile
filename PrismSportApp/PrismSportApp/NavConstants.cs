@@ -13,6 +13,7 @@ namespace PrismSportApp
        public static string TeamInfo = "TeamInfoPage";
        public static string FavoriteLeague = "LeagueFavoritePage";
        public static string StartPage = "StartPageView";
+       
         
       
 

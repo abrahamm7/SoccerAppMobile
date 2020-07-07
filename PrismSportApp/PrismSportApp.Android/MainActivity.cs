@@ -36,7 +36,7 @@ namespace PrismSportApp.Droid
             base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
          
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#303F9F"));
+           
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);            
             CardsViewRenderer.Preserve();

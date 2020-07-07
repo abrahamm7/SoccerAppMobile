@@ -74,8 +74,8 @@
                                     Margin="{OnPlatform UWP='0,160,0,0'}"
                                     BackgroundColor="White"
                                     BorderColor="White"
-                                    HasShadow="True"
                                     CornerRadius="5"
+                                    HasShadow="True"
                                     HeightRequest="400"
                                     HorizontalOptions="Center">
                                     <StackLayout Style="{StaticResource FirstStackLP}">
@@ -86,7 +86,7 @@
                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
                                     </Frame.GestureRecognizers>
                                 </Frame>
-                            </Grid>                          
+                            </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
