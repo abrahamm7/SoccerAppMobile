@@ -38,7 +38,7 @@ namespace PrismSportApp.Droid
          
            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);            
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
