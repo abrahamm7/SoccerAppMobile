@@ -41,6 +41,7 @@
                 CachingStrategy="RecycleElement"
                 IsVisible="{Binding Status}"
                 ItemsSource="{Binding Table}"
+                SeparatorVisibility="None"
                 Style="{StaticResource ListTeams}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
