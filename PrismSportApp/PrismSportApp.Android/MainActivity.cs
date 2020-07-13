@@ -20,11 +20,11 @@ using Plugin.AppShortcuts;
 namespace PrismSportApp.Droid
 {
     [Activity(Label = "Xport", Icon = "@mipmap/futbol", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    [IntentFilter(new[] { Intent.ActionView },
-              Categories = new[] { Intent.CategoryDefault },
-              DataScheme = "asc",
-              DataHost = "Xport",
-              AutoVerify = true)]
+    //[IntentFilter(new[] { Intent.ActionView },
+    //          Categories = new[] { Intent.CategoryDefault },
+    //          DataScheme = "asc",
+    //          DataHost = "Xport",
+    //          AutoVerify = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,15 +35,16 @@ namespace PrismSportApp.Droid
             
             base.OnCreate(savedInstanceState);                  
             Forms.SetFlags("CarouselView_Experimental");
-         
-           
+            Forms.SetFlags("SwipeView_Experimental");
+
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
             CachedImageRenderer.Init(true);
-            CrossAppShortcuts.Current.Init();
+            //CrossAppShortcuts.Current.Init();
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

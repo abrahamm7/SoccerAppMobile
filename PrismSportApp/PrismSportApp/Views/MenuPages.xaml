@@ -12,7 +12,10 @@
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d">
     <MasterDetailPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ajustar.png" />
+        <ToolbarItem
+            Command="{Binding onNavigate}"
+            CommandParameter="NavigationPage/SettingsPage"
+            IconImageSource="ajustar.png" />
     </MasterDetailPage.ToolbarItems>
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">

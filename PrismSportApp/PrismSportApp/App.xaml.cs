@@ -30,7 +30,7 @@ namespace PrismSportApp
         {
             
             InitializeComponent();
-            Shorts();
+            //Shorts();
             if (Device.RuntimePlatform == Device.UWP)
             {
                 NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Relative));
@@ -55,17 +55,17 @@ namespace PrismSportApp
            
         }
        
-        async void Shorts()
-        {
-            var shortcut = new Shortcut()
-            {
-                Label = "Shortcut 1",
-                Description = "Matches",
-                Icon = new FavoriteIcon(),
-                Uri = "asc://Xport/MatchesPage"
-            };
-            await CrossAppShortcuts.Current.AddShortcut(shortcut);
-        }
+        //async void Shorts()
+        //{
+        //    var shortcut = new Shortcut()
+        //    {
+        //        Label = "Shortcut 1",
+        //        Description = "Matches",
+        //        Icon = new FavoriteIcon(),
+        //        Uri = "asc://Xport/MatchesPage"
+        //    };
+        //    await CrossAppShortcuts.Current.AddShortcut(shortcut);
+        //}
 
         
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -80,6 +80,7 @@ namespace PrismSportApp
             containerRegistry.RegisterForNavigation<MatchesPage, MatchesViewModel>();
             containerRegistry.RegisterForNavigation<StartPageView, StartPageViewModel>();            
             containerRegistry.RegisterForNavigation<ChampionsView, ChampionsViewModel>();              
+            containerRegistry.RegisterForNavigation<SettingsPage, SettingsViewModel>();              
             containerRegistry.RegisterForNavigation<NavigationPage>();
             
             //Services//

@@ -54,7 +54,8 @@
                                 <MenuItem
                                     Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
                                     CommandParameter="{Binding .}"
-                                    IconImageSource="Trash.png" />
+                                    IconImageSource="Trash.png"
+                                    Text="Delete" />
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
