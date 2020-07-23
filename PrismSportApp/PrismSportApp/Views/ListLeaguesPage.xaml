@@ -3,7 +3,6 @@
     x:Class="PrismSportApp.Views.ListLeaguesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:FrameSharp="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
     xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -71,7 +70,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <FrameSharp:MaterialFrame
+                                <Frame
                                     Margin="{OnPlatform UWP='0,160,0,0'}"
                                     BackgroundColor="White"
                                     BorderColor="White"
@@ -86,7 +85,7 @@
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
                                     </Frame.GestureRecognizers>
-                                </FrameSharp:MaterialFrame>
+                                </Frame>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
