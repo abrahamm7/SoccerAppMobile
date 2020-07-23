@@ -11,12 +11,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d">
-    <MasterDetailPage.ToolbarItems>
+    <!--<MasterDetailPage.ToolbarItems>
         <ToolbarItem
             Command="{Binding onNavigate}"
             CommandParameter="NavigationPage/SettingsPage"
             IconImageSource="ajustar.png" />
-    </MasterDetailPage.ToolbarItems>
+    </MasterDetailPage.ToolbarItems>-->
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" FlowDirection="LeftToRight">
             <yummy:PancakeView Style="{StaticResource GradientPageMenu}">
