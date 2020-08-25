@@ -14259,6 +14259,7 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapsedTitleGravity = global::PrismSportApp.Droid.Resource.Attribute.collapsedTitleGravity;
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapsedTitleTextAppearance = global::PrismSportApp.Droid.Resource.Attribute.collapsedTitleTextAppearance;
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.collapseIcon = global::PrismSportApp.Droid.Resource.Attribute.collapseIcon;
+			global::Xamarin.Forms.Material.Android.Resource.Attribute.collectionViewStyle = global::PrismSportApp.Droid.Resource.Attribute.collectionViewStyle;
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.color = global::PrismSportApp.Droid.Resource.Attribute.color;
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorAccent = global::PrismSportApp.Droid.Resource.Attribute.colorAccent;
 			global::Xamarin.Forms.Material.Android.Resource.Attribute.colorBackgroundFloating = global::PrismSportApp.Droid.Resource.Attribute.colorBackgroundFloating;
@@ -15412,6 +15413,7 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Material.Android.Resource.String.fab_transformation_sheet_behavior = global::PrismSportApp.Droid.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Material.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::PrismSportApp.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::Xamarin.Forms.Material.Android.Resource.String.mtrl_chip_close_icon_content_description = global::PrismSportApp.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Material.Android.Resource.String.overflow_tab_title = global::PrismSportApp.Droid.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Material.Android.Resource.String.password_toggle_content_description = global::PrismSportApp.Droid.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Material.Android.Resource.String.path_password_eye = global::PrismSportApp.Droid.Resource.String.path_password_eye;
 			global::Xamarin.Forms.Material.Android.Resource.String.path_password_eye_mask_strike_through = global::PrismSportApp.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -15617,6 +15619,8 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Material.Android.Resource.Style.CardView = global::PrismSportApp.Droid.Resource.Style.CardView;
 			global::Xamarin.Forms.Material.Android.Resource.Style.CardView_Dark = global::PrismSportApp.Droid.Resource.Style.CardView_Dark;
 			global::Xamarin.Forms.Material.Android.Resource.Style.CardView_Light = global::PrismSportApp.Droid.Resource.Style.CardView_Light;
+			global::Xamarin.Forms.Material.Android.Resource.Style.collectionViewScrollBars = global::PrismSportApp.Droid.Resource.Style.collectionViewScrollBars;
+			global::Xamarin.Forms.Material.Android.Resource.Style.collectionViewTheme = global::PrismSportApp.Droid.Resource.Style.collectionViewTheme;
 			global::Xamarin.Forms.Material.Android.Resource.Style.MainTheme = global::PrismSportApp.Droid.Resource.Style.MainTheme;
 			global::Xamarin.Forms.Material.Android.Resource.Style.MainTheme_Base = global::PrismSportApp.Droid.Resource.Style.MainTheme_Base;
 			global::Xamarin.Forms.Material.Android.Resource.Style.Platform_AppCompat = global::PrismSportApp.Droid.Resource.Style.Platform_AppCompat;
@@ -16356,6 +16360,8 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_startY = global::PrismSportApp.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_tileMode = global::PrismSportApp.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.GradientColor_android_type = global::PrismSportApp.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ItemsViewRendererTheme = global::PrismSportApp.Droid.Resource.Styleable.ItemsViewRendererTheme;
+			global::Xamarin.Forms.Material.Android.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle = global::PrismSportApp.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle;
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat = global::PrismSportApp.Droid.Resource.Styleable.LinearLayoutCompat;
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::PrismSportApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::Xamarin.Forms.Material.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::PrismSportApp.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -17986,6 +17992,7 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_sheet_behavior = global::PrismSportApp.Droid.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::PrismSportApp.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_chip_close_icon_content_description = global::PrismSportApp.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.overflow_tab_title = global::PrismSportApp.Droid.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::PrismSportApp.Droid.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::PrismSportApp.Droid.Resource.String.path_password_eye;
 			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_strike_through = global::PrismSportApp.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -20555,6 +20562,7 @@ namespace PrismSportApp.Droid
 			global::Xamarin.Forms.Platform.Resource.String.fab_transformation_sheet_behavior = global::PrismSportApp.Droid.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.hide_bottom_view_on_scroll_behavior = global::PrismSportApp.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.mtrl_chip_close_icon_content_description = global::PrismSportApp.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.overflow_tab_title = global::PrismSportApp.Droid.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Resource.String.password_toggle_content_description = global::PrismSportApp.Droid.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.path_password_eye = global::PrismSportApp.Droid.Resource.String.path_password_eye;
 			global::Xamarin.Forms.Platform.Resource.String.path_password_eye_mask_strike_through = global::PrismSportApp.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -27142,25 +27150,28 @@ namespace PrismSportApp.Droid
 			public const int mtrl_chip_close_icon_content_description = 2131558447;
 			
 			// aapt resource value: 0x7F0D0030
-			public const int password_toggle_content_description = 2131558448;
+			public const int overflow_tab_title = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int path_password_eye = 2131558449;
+			public const int password_toggle_content_description = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int path_password_eye_mask_strike_through = 2131558450;
+			public const int path_password_eye = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int path_password_eye_mask_visible = 2131558451;
+			public const int path_password_eye_mask_strike_through = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int path_password_strike_through = 2131558452;
+			public const int path_password_eye_mask_visible = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int search_menu_title = 2131558453;
+			public const int path_password_strike_through = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int status_bar_notification_info_overflow = 2131558454;
+			public const int search_menu_title = 2131558454;
+			
+			// aapt resource value: 0x7F0D0037
+			public const int status_bar_notification_info_overflow = 2131558455;
 			
 			static String()
 			{

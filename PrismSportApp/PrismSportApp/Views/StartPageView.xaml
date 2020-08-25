@@ -9,32 +9,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d">
-    <ContentPage.Content>
-        <ScrollView>
-            <yummy:PancakeView Style="{StaticResource GradientPage}">
-                <StackLayout Style="{StaticResource StackStart}">
-                    <StackLayout>
-                        <lottie:AnimationView
-                            Animation="spinning-ball.json"
-                            Loop="True"
-                            Style="{StaticResource AnimationMenu}" />
-                    </StackLayout>
-                    <Entry
-                        x:Name="Usertxt"
-                        Placeholder="Name"
-                        Style="{StaticResource StartPageEntry}"
-                        Text="{Binding User.Name}" />
-                    <Entry
-                        x:Name="Emailtxt"
-                        Placeholder="Email"
-                        Style="{StaticResource StartPageEntry}"
-                        Text="{Binding User.Email}" />
-                    <Button
-                        Command="{Binding SignButton}"
-                        Style="{StaticResource StartPageButton}"
-                        Text="Sign Up" />
+    <ScrollView>
+        <yummy:PancakeView Style="{StaticResource GradientPage}">
+            <StackLayout Style="{StaticResource StackStart}">
+                <StackLayout>
+                    <lottie:AnimationView
+                        Animation="spinning-ball.json"
+                        Loop="True"
+                        Style="{StaticResource AnimationMenu}" />
                 </StackLayout>
-            </yummy:PancakeView>
-        </ScrollView>
-    </ContentPage.Content>
+                <Entry
+                    x:Name="Usertxt"
+                    Placeholder="Name"
+                    Style="{StaticResource StartPageEntry}"
+                    Text="{Binding User.Name}" />
+                <Entry
+                    x:Name="Emailtxt"
+                    Placeholder="Email"
+                    Style="{StaticResource StartPageEntry}"
+                    Text="{Binding User.Email}" />
+                <Button
+                    Command="{Binding SignButton}"
+                    FontFamily="Monserrat"
+                    Style="{StaticResource StartPageButton}"
+                    Text="Sign Up">
+                    <Button.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference Usertxt}, Path=Text.Length}"
+                            TargetType="Button"
+                            Value="0">
+                            <Setter Property="Text" Value="Enter credentials" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+        </yummy:PancakeView>
+
+    </ScrollView>
 </ContentPage>
