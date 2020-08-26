@@ -20,11 +20,6 @@ using Plugin.AppShortcuts;
 namespace PrismSportApp.Droid
 {
     [Activity(Label = "Xport", Icon = "@mipmap/futbol", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    //[IntentFilter(new[] { Intent.ActionView },
-    //          Categories = new[] { Intent.CategoryDefault },
-    //          DataScheme = "asc",
-    //          DataHost = "Xport",
-    //          AutoVerify = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

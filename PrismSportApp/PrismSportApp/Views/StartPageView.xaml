@@ -7,6 +7,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:triggers="clr-namespace:PrismSportApp.Behaviors;assembly=PrismSportApp"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     mc:Ignorable="d">
     <ScrollView>
@@ -27,19 +28,31 @@
                     x:Name="Emailtxt"
                     Placeholder="Email"
                     Style="{StaticResource StartPageEntry}"
-                    Text="{Binding User.Email}" />
+                    Text="{Binding User.Email}">
+                    <Entry.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference Usertxt}, Path=Text.Length}"
+                            TargetType="Entry"
+                            Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
                 <Button
                     Command="{Binding SignButton}"
                     FontFamily="Monserrat"
                     Style="{StaticResource StartPageButton}"
                     Text="Sign Up">
                     <Button.Triggers>
-                        <DataTrigger
-                            Binding="{Binding Source={x:Reference Usertxt}, Path=Text.Length}"
-                            TargetType="Button"
-                            Value="0">
-                            <Setter Property="Text" Value="Enter credentials" />
-                        </DataTrigger>
+                        <MultiTrigger TargetType="Button">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{Binding Source={x:Reference Usertxt}, Path=Text.Length}" Value="0" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="False" />
+                        </MultiTrigger>
+                        <EventTrigger Event="Clicked">
+                            <triggers:ButtonEfects />
+                        </EventTrigger>
                     </Button.Triggers>
                 </Button>
             </StackLayout>

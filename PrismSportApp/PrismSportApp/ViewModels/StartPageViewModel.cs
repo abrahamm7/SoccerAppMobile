@@ -25,16 +25,11 @@ namespace PrismSportApp.ViewModels
 
         async void Entries()
         {
-            if (string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Email) || !User.Email.Contains("@") || !User.Email.Contains(".com"))
-            {
-                await PageDialogService.DisplayAlertAsync("Advice","Empty fields","ok");
-            }
-            else
+            if (!string.IsNullOrEmpty(User.Name) && !string.IsNullOrEmpty(User.Email) && User.Email.Contains("@") && User.Email.Contains(".com"))
             {
                 var x = sqliteInterface.GetConnection();
-                x.Insert(User);                
+                x.Insert(User);
                 await NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
-                
             }
         }
         
