@@ -29,7 +29,7 @@ namespace PrismSportApp.ViewModels
             {
                 var x = sqliteInterface.GetConnection();
                 x.Insert(User);
-                await NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+                await NavigationService.NavigateAsync(new Uri(NavConstants.TabbedPage, UriKind.Relative));
             }
         }
         

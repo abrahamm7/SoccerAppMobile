@@ -15,14 +15,14 @@
         <ResourceDictionary>
             <!--#region StartPage-->
             <Style x:Key="StartPageEntry" TargetType="Entry">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="PlaceholderColor" Value="White" />
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="PlaceholderColor" Value="#000000" />
                 <Setter Property="Visual" Value="Material" />
             </Style>
 
             <Style x:Key="StartPageButton" TargetType="Button">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
                 <Setter Property="Visual" Value="Material" />
             </Style>
 
@@ -33,8 +33,7 @@
             </Style>
 
             <Style x:Key="GradientPage" TargetType="yummy:PancakeView">
-                <Setter Property="BackgroundGradientStartColor" Value="#303F9F" />
-                <Setter Property="BackgroundGradientEndColor" Value="#5C258D" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
             </Style>
             <!--#endregion-->
 
