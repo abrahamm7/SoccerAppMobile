@@ -80,7 +80,7 @@ namespace PrismSportApp
             containerRegistry.RegisterForNavigation<MatchesPage, MatchesViewModel>();
             containerRegistry.RegisterForNavigation<StartPageView, StartPageViewModel>();            
             containerRegistry.RegisterForNavigation<ChampionsView, ChampionsViewModel>();              
-            containerRegistry.RegisterForNavigation<SettingsPage, SettingsViewModel>();              
+            containerRegistry.RegisterForNavigation<ProfilePageView, ProfileViewModel>();              
             containerRegistry.RegisterForNavigation<NavigationPage>();
             
             //Services//

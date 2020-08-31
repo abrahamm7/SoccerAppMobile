@@ -18,4 +18,5 @@
     <TabbedPages:ListLeaguesPage Title="Leagues" IconImageSource="@drawable/icons8_leaderboard.ico" />
     <TabbedPages:MatchesPage Title="Matches" IconImageSource="@drawable/icons8_stadium.ico" />
     <TabbedPages:TeamFavoritePage Title="Favorites" IconImageSource="@drawable/icons8_star.ico" />
+    <TabbedPages:ProfilePageView Title="Profile" IconImageSource="@drawable/icons8_male_user.ico" />
 </TabbedPage>
