@@ -10,57 +10,58 @@
     x:Name="FavoriteTeam"
     Title="{Binding Title}"
     mc:Ignorable="d">
-    <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Margin="0,190,0,0" IsVisible="{Binding Visible}">
-                <lottie:AnimationView
-                    Animation="search-and-clear.json"
-                    Loop="True"
-                    Style="{StaticResource animationfav}" />
-                <Label Style="{StaticResource LabelNotFound}" Text="{Binding Found}" />
-            </StackLayout>
-            <ListView
-                IsVisible="{Binding ListVisible}"
-                ItemsSource="{Binding Teams}"
-                Style="{StaticResource ListFav}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Frame>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="200" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <Svg:SvgCachedImage
-                                            Grid.Row="0"
-                                            Grid.Column="0"
-                                            Grid.ColumnSpan="1"
-                                            Source="{Binding CrestUrl}"
-                                            Style="{StaticResource Image}" />
-                                        <Label
-                                            Grid.Row="0"
-                                            Grid.Column="1"
-                                            Style="{StaticResource TeamName}"
-                                            Text="{Binding Name}" />
-                                    </Grid>
-                                </Frame>
-                            </ViewCell.View>
-                            <ViewCell.ContextActions>
-                                <MenuItem
-                                    Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
-                                    CommandParameter="{Binding .}"
-                                    IconImageSource="Trash.png"
-                                    Text="Delete" />
-                            </ViewCell.ContextActions>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="@drawable/icons8_plus.ico" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <StackLayout Margin="0,190,0,0" IsVisible="{Binding Visible}">
+            <lottie:AnimationView
+                Animation="search-and-clear.json"
+                Loop="True"
+                Style="{StaticResource animationfav}" />
+            <Label Style="{StaticResource LabelNotFound}" Text="{Binding Found}" />
         </StackLayout>
-    </ContentPage.Content>
+        <ListView
+            IsVisible="{Binding ListVisible}"
+            ItemsSource="{Binding Teams}"
+            Style="{StaticResource ListFav}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Frame>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="200" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Svg:SvgCachedImage
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="1"
+                                        Source="{Binding CrestUrl}"
+                                        Style="{StaticResource Image}" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Style="{StaticResource TeamName}"
+                                        Text="{Binding Name}" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell.View>
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
+                                CommandParameter="{Binding .}"
+                                IconImageSource="Trash.png"
+                                Text="Delete" />
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

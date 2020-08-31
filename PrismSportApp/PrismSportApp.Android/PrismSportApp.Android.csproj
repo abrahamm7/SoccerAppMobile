@@ -285,5 +285,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icons8_male_user.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_plus.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
