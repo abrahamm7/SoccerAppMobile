@@ -25,17 +25,29 @@
             <TabbedPages:ListLeaguesPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Matches" IconImageSource="@drawable/icons8_stadium.ico">
+    <NavigationPage
+        Title="Matches"
+        BarBackgroundColor="#FFFFFF"
+        BarTextColor="#000000"
+        IconImageSource="@drawable/icons8_stadium.ico">
         <x:Arguments>
             <TabbedPages:MatchesPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Favorites" IconImageSource="@drawable/icons8_star.ico">
+    <NavigationPage
+        Title="Favorites"
+        BarBackgroundColor="#FFFFFF"
+        BarTextColor="#000000"
+        IconImageSource="@drawable/icons8_star.ico">
         <x:Arguments>
             <TabbedPages:TeamFavoritePage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Profile" IconImageSource="@drawable/icons8_male_user.ico">
+    <NavigationPage
+        Title="Profile"
+        BarBackgroundColor="#FFFFFF"
+        BarTextColor="#000000"
+        IconImageSource="@drawable/icons8_male_user.ico">
         <x:Arguments>
             <TabbedPages:ProfilePageView />
         </x:Arguments>
