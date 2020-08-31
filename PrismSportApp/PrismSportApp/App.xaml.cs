@@ -55,18 +55,6 @@ namespace PrismSportApp
            
         }
        
-        //async void Shorts()
-        //{
-        //    var shortcut = new Shortcut()
-        //    {
-        //        Label = "Shortcut 1",
-        //        Description = "Matches",
-        //        Icon = new FavoriteIcon(),
-        //        Uri = "asc://Xport/MatchesPage"
-        //    };
-        //    await CrossAppShortcuts.Current.AddShortcut(shortcut);
-        //}
-
         
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {

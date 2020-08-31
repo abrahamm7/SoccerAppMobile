@@ -27,12 +27,13 @@ namespace PrismSportApp.ViewModels
         public string TitlePage { get; set; }
         public bool Status { get; set; }
         public bool Loading { get; set; }
-        public IEnumerable<League> Leagues { get; set; } = new ObservableCollection<League>();
+        public List<League> Leagues { get; set; } = new List<League>();
         public League league { get; set; } = new League();
         Competitions League { get; set; } = new Competitions();
         public Links Links { get; set; } = new Links();        
         public DelegateCommand<object> Tap { get; set; }        
         public DelegateCommand GetLeaguesCommand { get; set; }        
+        public DelegateCommand<string> SearchLeagueCommand { get; set; }        
         INavigationService navigation;
         IApiServices apiServices;
 
@@ -42,6 +43,7 @@ namespace PrismSportApp.ViewModels
             navigation = navigationService;              
             Tap = new DelegateCommand<object>(SelectLeague);            
             TitlePage = "Leagues";
+            SearchLeagueCommand = new DelegateCommand<string>(SearchLeague);
             GetLeaguesCommand = new DelegateCommand(async() => await GetLeagues());
             GetLeaguesCommand.Execute();
             
@@ -65,7 +67,7 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2017 ||
                 elemento.Id == 2003 ||
                 elemento.Id == 2002 ||
-                elemento.Id == 2014);
+                elemento.Id == 2014).ToList();
                 foreach (var item in show)
                 {
                     switch (item.Id)
@@ -192,5 +194,24 @@ namespace PrismSportApp.ViewModels
                 await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.Relative), parameters);
             }
         }
+        async void SearchLeague(string text)
+        {
+            if (text.Length >= 1)
+            {                
+                var suggestions = Leagues.Where(elem => elem.Name == text/*.StartsWith(text.ToUpper())*/).ToList();
+                Leagues.Clear();
+                Leagues = suggestions;
+            }
+
+            //else
+            //{
+            //    Recipes.Clear();
+            //    Init();
+            //    ListViewVisible = true;
+            //    SuggestionsListViewVisible = false;
+            //}
+
+        }
+
     }
 }
