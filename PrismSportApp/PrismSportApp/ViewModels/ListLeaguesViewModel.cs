@@ -191,7 +191,7 @@ namespace PrismSportApp.ViewModels
             {
                 var parameters = new NavigationParameters();
                 parameters.Add("League", league);               
-                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.Relative), parameters);
+                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.RelativeOrAbsolute), parameters);
             }
         }
         async void SearchLeague(string text)
