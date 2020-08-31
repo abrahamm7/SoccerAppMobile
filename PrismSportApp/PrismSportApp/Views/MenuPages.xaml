@@ -14,8 +14,13 @@
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     BarBackgroundColor="#FFFFFF"
     BarTextColor="#0e3e55"
+    SelectedTabColor="#1d3557"
     mc:Ignorable="d">
-    <NavigationPage Title="Leagues" IconImageSource="@drawable/icons8_leaderboard.ico">
+    <NavigationPage
+        Title="Leagues"
+        BarBackgroundColor="#FFFFFF"
+        BarTextColor="#000000"
+        IconImageSource="@drawable/icons8_leaderboard.ico">
         <x:Arguments>
             <TabbedPages:ListLeaguesPage />
         </x:Arguments>
