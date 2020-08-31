@@ -3,14 +3,16 @@
     x:Class="PrismSportApp.Views.ListLeaguesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
     xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:materialFrame="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
     x:Name="LeagueList"
     Title="Leagues"
-    BackgroundColor="White"
     Visual="Material"
     mc:Ignorable="d">
     <ContentPage.Resources>
@@ -70,22 +72,24 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <Frame
+                                <materialFrame:MaterialFrame
                                     Margin="{OnPlatform UWP='0,160,0,0'}"
-                                    BackgroundColor="White"
-                                    BorderColor="White"
                                     CornerRadius="5"
-                                    HasShadow="True"
-                                    HeightRequest="400"
+                                    Elevation="50"
+                                    HasShadow="False"
+                                    HeightRequest="260"
                                     HorizontalOptions="Center">
                                     <StackLayout Style="{StaticResource FirstStackLP}">
                                         <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
                                         <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
                                     </StackLayout>
-                                    <Frame.GestureRecognizers>
+                                    <materialFrame:MaterialFrame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
-                                    </Frame.GestureRecognizers>
-                                </Frame>
+                                    </materialFrame:MaterialFrame.GestureRecognizers>
+                                    <materialFrame:MaterialFrame.Behaviors>
+                                        <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                                    </materialFrame:MaterialFrame.Behaviors>
+                                </materialFrame:MaterialFrame>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

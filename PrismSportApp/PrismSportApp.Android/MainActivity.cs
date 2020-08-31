@@ -16,6 +16,8 @@ using FFImageLoading.Forms.Platform;
 using CarouselView.FormsPlugin.Android;
 using PanCardView.Droid;
 using Plugin.AppShortcuts;
+using IconEntry.FormsPlugin.Android;
+using Sharpnado.Presentation.Forms.Droid;
 
 namespace PrismSportApp.Droid
 {
@@ -32,13 +34,16 @@ namespace PrismSportApp.Droid
             Forms.SetFlags("CarouselView_Experimental");
             Forms.SetFlags("SwipeView_Experimental");
 
+ 
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            IconEntryRenderer.Init();
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
             ImageCircleRenderer.Init();
             CachedImageRenderer.Init(true);
+            SharpnadoInitializer.Initialize();
             //CrossAppShortcuts.Current.Init();
             LoadApplication(new App(new AndroidInitialize()));
         }
@@ -47,7 +52,9 @@ namespace PrismSportApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
         }
+
 
         public class AndroidInitialize : IPlatformInitializer
         {

@@ -20,13 +20,17 @@
     <PackageReference Include="MvvmLight" Version="5.4.1.1" />
     <PackageReference Include="PhotoBrowser.Forms" Version="0.1.4" />
     <PackageReference Include="Plugin.AppShortcuts" Version="1.0.0.3" />
+    <PackageReference Include="Plugin.GoogleClient" Version="1.1.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.6" />
     <PackageReference Include="Refit" Version="5.0.23" />
+    <PackageReference Include="Sharpnado.MaterialFrame" Version="1.1.2" />
+    <PackageReference Include="Sharpnado.Presentation.Forms" Version="1.7.1" />
     <PackageReference Include="SkiaSharp" Version="1.68.1.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="TinySvgHelper" Version="1.0.266" />
+    <PackageReference Include="Xam.FormsPlugin.IconEntry" Version="1.1.1" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.7.944" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.7.944" />

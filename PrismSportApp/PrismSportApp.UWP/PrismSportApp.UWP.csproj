@@ -219,6 +219,9 @@
     <PackageReference Include="Plugin.AppShortcuts">
       <Version>1.0.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.GoogleClient">
+      <Version>1.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.Share">
       <Version>7.1.1</Version>
     </PackageReference>
@@ -227,6 +230,12 @@
     </PackageReference>
     <PackageReference Include="PropertyChanged.Fody">
       <Version>3.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Sharpnado.MaterialFrame">
+      <Version>1.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Sharpnado.Presentation.Forms">
+      <Version>1.7.1</Version>
     </PackageReference>
     <PackageReference Include="SkiaSharp">
       <Version>1.68.1.1</Version>
@@ -239,6 +248,9 @@
     </PackageReference>
     <PackageReference Include="TinySvgHelper">
       <Version>1.0.266</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.FormsPlugin.IconEntry">
+      <Version>1.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.0.0.5</Version>

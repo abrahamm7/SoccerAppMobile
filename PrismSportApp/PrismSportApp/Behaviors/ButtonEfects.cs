@@ -11,7 +11,6 @@ namespace PrismSportApp.Behaviors
         {
 
             await sender.FadeTo(0, 2000, Easing.CubicIn);
-
             await sender.FadeTo(1, 2000, Easing.CubicOut);
 
         }

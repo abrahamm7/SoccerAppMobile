@@ -21,7 +21,7 @@ namespace PrismSportApp
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { FlowListView.Init(); }
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
        
 
@@ -44,7 +44,7 @@ namespace PrismSportApp
                 if (List.Any())
                 {
 
-                    NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Absolute));
+                    NavigationService.NavigateAsync(new Uri(NavConstants.TabbedPage, UriKind.Relative));
                 }
                 else
                 {

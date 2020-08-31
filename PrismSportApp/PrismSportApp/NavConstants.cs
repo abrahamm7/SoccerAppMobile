@@ -9,6 +9,7 @@ namespace PrismSportApp
     {
 
        public static string MasterMenu = "/MenuPages/NavigationPage/ListLeaguesPage";
+       public static string TabbedPage = "MenuPages";
        public static string DetailLeague = "DetailLeagueView";
        public static string TeamInfo = "TeamInfoPage";
        public static string FavoriteLeague = "LeagueFavoritePage";

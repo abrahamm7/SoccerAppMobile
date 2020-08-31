@@ -23,7 +23,6 @@
 
             <Style x:Key="StartPageButton" TargetType="Button">
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="CornerRadius" Value="15" />
                 <Setter Property="Visual" Value="Material" />
             </Style>
 

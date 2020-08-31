@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage
+<TabbedPage
     x:Class="PrismSportApp.Views.MenuPages"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:TabbedPages="clr-namespace:PrismSportApp.Views;assembly=PrismSportApp"
     xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -11,111 +12,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:view="clr-namespace:Xamarin.Toolkit.Effects;assembly=Xamarin.Toolkit.Effects"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    BarBackgroundColor="#FFFFFF"
+    BarTextColor="#0e3e55"
     mc:Ignorable="d">
-    <!--<MasterDetailPage.ToolbarItems>
-        <ToolbarItem
-            Command="{Binding onNavigate}"
-            CommandParameter="NavigationPage/SettingsPage"
-            IconImageSource="ajustar.png" />
-    </MasterDetailPage.ToolbarItems>-->
-    <MasterDetailPage.Master>
-        <ContentPage Title="Menu" FlowDirection="LeftToRight">
-            <yummy:PancakeView Style="{StaticResource GradientPageMenu}">
-                <yummy:PancakeView.BackgroundColor>
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="UWP" Value="#021D26" />
-                    </OnPlatform>
-                </yummy:PancakeView.BackgroundColor>
-                <yummy:PancakeView.BackgroundGradientStartColor>
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="Android" Value="#303F9F" />
-                    </OnPlatform>
-                </yummy:PancakeView.BackgroundGradientStartColor>
-                <yummy:PancakeView.BackgroundGradientEndColor>
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="Android" Value="#5C258D" />
-                    </OnPlatform>
-                </yummy:PancakeView.BackgroundGradientEndColor>
-                <Grid RowSpacing="20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Style="{StaticResource UserStyleName}"
-                        Text="{Binding User.Name, Mode=TwoWay}" />
-                    <Image
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Aspect="AspectFit"
-                        Source="Assets/premio (2).png">
-                        <Image.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                                <On Platform="UWP" Value="True" />
-                                <On Platform="ios" Value="False" />
-                                <On Platform="Android" Value="False" />
-                            </OnPlatform>
-                        </Image.IsVisible>
-                    </Image>
-                    <Button
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/TeamFavoritePage"
-                        Style="{StaticResource Buttons}"
-                        Text="Favorite Teams">
-                        <Button.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                                <On Platform="UWP" Value="False" />
-                                <On Platform="ios" Value="True" />
-                                <On Platform="Android" Value="True" />
-                            </OnPlatform>
-                        </Button.IsVisible>
-                    </Button>
-                    <Button
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/ListLeaguesPage"
-                        Style="{StaticResource Buttons}"
-                        Text="Leagues" />
-                    <Button
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/MatchesPage"
-                        Style="{StaticResource Buttons}"
-                        Text="Matches" />
-                    <Button
-                        Grid.Row="4"
-                        Grid.Column="0"
-                        Command="{Binding onNavigate}"
-                        CommandParameter="NavigationPage/ChampionsView"
-                        Style="{StaticResource Buttons}"
-                        Text="Champions">
-                        <Button.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                                <On Platform="UWP" Value="False" />
-                                <On Platform="ios" Value="True" />
-                                <On Platform="Android" Value="True" />
-                            </OnPlatform>
-                        </Button.IsVisible>
-                    </Button>
-                    <lottie:AnimationView
-                        Grid.Row="5"
-                        Grid.Column="0"
-                        Animation="cup.json"
-                        AutoPlay="True"
-                        HeightRequest="110"
-                        Loop="True" />
-                </Grid>
-            </yummy:PancakeView>
-        </ContentPage>
-    </MasterDetailPage.Master>
-</MasterDetailPage>
+    <TabbedPages:ListLeaguesPage Title="Leagues" IconImageSource="@drawable/icons8_leaderboard.ico" />
+    <TabbedPages:MatchesPage Title="Matches" IconImageSource="@drawable/icons8_stadium.ico" />
+    <TabbedPages:TeamFavoritePage Title="Favorites" IconImageSource="@drawable/icons8_star.ico" />
+</TabbedPage>
