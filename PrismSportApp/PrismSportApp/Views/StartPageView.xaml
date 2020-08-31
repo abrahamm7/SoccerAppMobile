@@ -58,6 +58,5 @@
                 </Button>
             </StackLayout>
         </yummy:PancakeView>
-
     </ScrollView>
 </ContentPage>
