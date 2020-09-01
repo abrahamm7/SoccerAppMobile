@@ -17,7 +17,7 @@ namespace PrismSportApp.ViewModels
     public class TeamFavoriteViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public IList<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
+        public ObservableCollection<Teamm> Teams { get; set; } = new ObservableCollection<Teamm>();
         public bool Visible { get; set; }
         public bool ListVisible { get; set; }      
         public string Found { get; set; }
@@ -28,7 +28,7 @@ namespace PrismSportApp.ViewModels
         {
             sqlite = sqliteInterface;           
             Favorites();                     
-            DeleteItem = new DelegateCommand<object>(Clear);
+            //DeleteItem = new DelegateCommand<object>(Clear);
             Found = "Teams not found";
             Title = "Favorite Teams";
         }
@@ -56,18 +56,18 @@ namespace PrismSportApp.ViewModels
         }
 
        
-        async void Clear(object sender)
-        {
-            var conn = sqlite.GetConnection();
-            var x = sender as Teamm;
-            conn.Query<Teamm>($"Delete From Teamm Where Id = {x.Id}");
-            Teams = conn.Query<Teamm>("SELECT * From Teamm").ToList();
-            if (Teams.Count == 0)
-            {
-                Visible = true;
-                ListVisible = false;
-            }
+        //async void Clear(object sender)
+        //{
+        //    var conn = sqlite.GetConnection();
+        //    var x = sender as Teamm;
+        //    conn.Query<Teamm>($"Delete From Teamm Where Id = {x.Id}");
+        //    Teams = conn.Query<Teamm>("SELECT * From Teamm").ToList();
+        //    if (Teams.Count == 0)
+        //    {
+        //        Visible = true;
+        //        ListVisible = false;
+        //    }
 
-        }
+        //}
     }
 }

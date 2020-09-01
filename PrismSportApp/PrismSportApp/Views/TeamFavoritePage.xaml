@@ -4,8 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:behaviors="clr-namespace:PrismSportApp.Behaviors"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:materialFrame="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="FavoriteTeam"
     Title="{Binding Title}"
@@ -21,47 +23,53 @@
                 Style="{StaticResource animationfav}" />
             <Label Style="{StaticResource LabelNotFound}" Text="{Binding Found}" />
         </StackLayout>
-        <ListView
+        <CollectionView
+            x:Name="ListLeague"
             IsVisible="{Binding ListVisible}"
-            ItemsSource="{Binding Teams}"
-            Style="{StaticResource ListFav}">
-            <ListView.ItemTemplate>
+            ItemsSource="{Binding Teams}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="3" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Frame>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="200" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Svg:SvgCachedImage
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Grid.ColumnSpan="1"
-                                        Source="{Binding CrestUrl}"
-                                        Style="{StaticResource Image}" />
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        Style="{StaticResource TeamName}"
-                                        Text="{Binding Name}" />
-                                </Grid>
-                            </Frame>
-                        </ViewCell.View>
-                        <ViewCell.ContextActions>
-                            <MenuItem
-                                Command="{Binding Path=BindingContext.DeleteItem, Source={x:Reference FavoriteTeam}}"
-                                CommandParameter="{Binding .}"
-                                IconImageSource="Trash.png"
-                                Text="Delete" />
-                        </ViewCell.ContextActions>
-                    </ViewCell>
+                    <Grid Margin="1" Padding="25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <materialFrame:MaterialFrame
+                            Margin="{OnPlatform UWP='0,160,0,0'}"
+                            CornerRadius="10"
+                            Elevation="25"
+                            HasShadow="False"
+                            HeightRequest="110"
+                            HorizontalOptions="Center"
+                            LightThemeBackgroundColor="#FFFFFF "
+                            WidthRequest="120">
+                            <StackLayout>
+                                <Svg:SvgCachedImage
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Source="{Binding CrestUrl}" />
+                                <Label
+                                    FontFamily="sans-serif-condensed"
+                                    FontSize="8"
+                                    Style="{StaticResource ListLeagueLabel}"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="EndAndExpand" />
+                            </StackLayout>
+                            <materialFrame:MaterialFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference ListLeague}}" CommandParameter="{Binding .}" />
+                            </materialFrame:MaterialFrame.GestureRecognizers>
+                            <materialFrame:MaterialFrame.Behaviors>
+                                <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
+                            </materialFrame:MaterialFrame.Behaviors>
+                        </materialFrame:MaterialFrame>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>

@@ -79,7 +79,10 @@
                                 LightThemeBackgroundColor="#FFFFFF ">
                                 <StackLayout Style="{StaticResource FirstStackLP}">
                                     <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
-                                    <Label Style="{StaticResource ListLeagueLabel}" Text="{Binding Name}" />
+                                    <Label
+                                        FontSize="13"
+                                        Style="{StaticResource ListLeagueLabel}"
+                                        Text="{Binding Name}" />
                                 </StackLayout>
                                 <materialFrame:MaterialFrame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
