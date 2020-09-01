@@ -79,10 +79,6 @@
                                 LightThemeBackgroundColor="#FFFFFF ">
                                 <StackLayout Style="{StaticResource FirstStackLP}">
                                     <Image Source="{Binding EmblemUrl, Mode=TwoWay}" Style="{StaticResource ListLeagueImage}" />
-                                    <Label
-                                        FontSize="13"
-                                        Style="{StaticResource ListLeagueLabel}"
-                                        Text="{Binding Name}" />
                                 </StackLayout>
                                 <materialFrame:MaterialFrame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.Tap, Source={x:Reference LeagueList}}" CommandParameter="{Binding .}" />
@@ -91,6 +87,13 @@
                                     <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
                                 </materialFrame:MaterialFrame.Behaviors>
                             </materialFrame:MaterialFrame>
+                            <Label
+                                Margin="0,0,0,20"
+                                FontFamily="sans-serif-condensed"
+                                FontSize="13"
+                                Style="{StaticResource ListLeagueLabel}"
+                                Text="{Binding Name}"
+                                VerticalTextAlignment="End" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
