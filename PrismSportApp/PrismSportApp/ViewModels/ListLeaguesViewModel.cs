@@ -198,18 +198,12 @@ namespace PrismSportApp.ViewModels
         {
             if (text.Length >= 1)
             {                
-                var suggestions = Leagues.Where(elem => elem.Name == text/*.StartsWith(text.ToUpper())*/).ToList();
+                var suggestions = Leagues.Where(elem => elem.Name == text).ToList();
                 Leagues.Clear();
                 Leagues = suggestions;
             }
 
-            //else
-            //{
-            //    Recipes.Clear();
-            //    Init();
-            //    ListViewVisible = true;
-            //    SuggestionsListViewVisible = false;
-            //}
+            
 
         }
 
