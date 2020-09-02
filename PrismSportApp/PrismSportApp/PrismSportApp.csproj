@@ -21,6 +21,7 @@
     <PackageReference Include="NewsAPI" Version="0.5.0" />
     <PackageReference Include="PhotoBrowser.Forms" Version="0.1.4" />
     <PackageReference Include="Plugin.AppShortcuts" Version="1.0.0.3" />
+    <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
     <PackageReference Include="Plugin.GoogleClient" Version="1.1.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />

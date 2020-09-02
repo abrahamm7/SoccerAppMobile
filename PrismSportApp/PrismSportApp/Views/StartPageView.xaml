@@ -22,11 +22,13 @@
                 </StackLayout>
                 <Entry
                     x:Name="Usertxt"
+                    FontFamily="sans-serif-condensed"
                     Placeholder="Name"
                     Style="{StaticResource StartPageEntry}"
                     Text="{Binding User.Name}" />
                 <Entry
                     x:Name="Emailtxt"
+                    FontFamily="sans-serif-condensed"
                     Placeholder="Email"
                     Style="{StaticResource StartPageEntry}"
                     Text="{Binding User.Email}">
@@ -41,7 +43,7 @@
                 </Entry>
                 <Button
                     Command="{Binding SignButton}"
-                    FontFamily="Monserrat"
+                    FontFamily="sans-serif-condensed"
                     Style="{StaticResource StartPageButton}"
                     Text="Sign Up">
                     <Button.Triggers>
@@ -56,6 +58,26 @@
                         </EventTrigger>
                     </Button.Triggers>
                 </Button>
+                <Button
+                    BackgroundColor="#ffffff"
+                    BorderColor="#023e8a"
+                    BorderWidth="1"
+                    FontFamily="sans-serif-condensed"
+                    HeightRequest="40"
+                    ImageSource="@drawable/facebook_it.png"
+                    Text="Login with Facebook"
+                    TextColor="#000000"
+                    Visual="Material" />
+                <Button
+                    BackgroundColor="#ffffff"
+                    BorderColor="#023e8a"
+                    BorderWidth="1"
+                    FontFamily="sans-serif-condensed"
+                    HeightRequest="40"
+                    ImageSource="@drawable/instagram.png"
+                    Text="Login with Instagram"
+                    TextColor="#000000"
+                    Visual="Material" />
             </StackLayout>
         </yummy:PancakeView>
     </ScrollView>

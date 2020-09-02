@@ -222,6 +222,9 @@
     <PackageReference Include="Plugin.AppShortcuts">
       <Version>1.0.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.FacebookClient">
+      <Version>2.2.1</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.GoogleClient">
       <Version>1.1.1</Version>
     </PackageReference>
