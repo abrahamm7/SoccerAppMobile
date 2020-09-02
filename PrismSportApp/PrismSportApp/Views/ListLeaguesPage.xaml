@@ -94,7 +94,6 @@
                                     <behaviors:ViewTappedButtonBehavior AnimationType="Scale" />
                                 </materialFrame:MaterialFrame.Behaviors>
                             </materialFrame:MaterialFrame>
-
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

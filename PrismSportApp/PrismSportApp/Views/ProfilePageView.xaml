@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PrismSportApp.Views.ProfilePageView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+<ContentPage
+    x:Class="PrismSportApp.Views.ProfilePageView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <Grid RowSpacing="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:CircleImage
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,80,0,0"
+            BorderColor="#000000"
+            Source="@drawable/user" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            FontSize="22"
+            HorizontalOptions="CenterAndExpand"
+            Text="Abraham Morillo Figuereo"
+            TextColor="#000000" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,90,5,0"
+            BackgroundColor="#023e8a"
+            BorderColor="#023e8a"
+            BorderWidth="1"
+            HorizontalOptions="FillAndExpand"
+            Text="Facebook"
+            TextColor="#ffffff"
+            Visual="Material" />
+    </Grid>
 </ContentPage>
