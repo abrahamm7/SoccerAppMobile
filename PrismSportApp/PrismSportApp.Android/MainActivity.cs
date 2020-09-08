@@ -18,6 +18,7 @@ using PanCardView.Droid;
 using Plugin.AppShortcuts;
 using IconEntry.FormsPlugin.Android;
 using Sharpnado.Presentation.Forms.Droid;
+using Plugin.FacebookClient;
 
 namespace PrismSportApp.Droid
 {
@@ -44,7 +45,8 @@ namespace PrismSportApp.Droid
             ImageCircleRenderer.Init();
             CachedImageRenderer.Init(true);
             SharpnadoInitializer.Initialize();
-            //CrossAppShortcuts.Current.Init();
+            FacebookClientManager.Initialize(this);
+
             LoadApplication(new App(new AndroidInitialize()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

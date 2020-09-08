@@ -45,7 +45,7 @@
                     Command="{Binding SignButton}"
                     FontFamily="sans-serif-condensed"
                     Style="{StaticResource StartPageButton}"
-                    Text="Sign Up">
+                    Text="Sign In">
                     <Button.Triggers>
                         <MultiTrigger TargetType="Button">
                             <MultiTrigger.Conditions>
@@ -58,26 +58,6 @@
                         </EventTrigger>
                     </Button.Triggers>
                 </Button>
-                <Button
-                    BackgroundColor="#ffffff"
-                    BorderColor="#023e8a"
-                    BorderWidth="1"
-                    FontFamily="sans-serif-condensed"
-                    HeightRequest="40"
-                    ImageSource="@drawable/facebook_it.png"
-                    Text="Login with Facebook"
-                    TextColor="#000000"
-                    Visual="Material" />
-                <Button
-                    BackgroundColor="#ffffff"
-                    BorderColor="#023e8a"
-                    BorderWidth="1"
-                    FontFamily="sans-serif-condensed"
-                    HeightRequest="40"
-                    ImageSource="@drawable/instagram.png"
-                    Text="Login with Instagram"
-                    TextColor="#000000"
-                    Visual="Material" />
             </StackLayout>
         </yummy:PancakeView>
     </ScrollView>

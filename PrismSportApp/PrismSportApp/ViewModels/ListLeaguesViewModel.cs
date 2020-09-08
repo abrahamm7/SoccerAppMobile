@@ -23,20 +23,32 @@ namespace PrismSportApp.ViewModels
 {
     public class ListLeaguesViewModel: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;       
+        public event PropertyChangedEventHandler PropertyChanged;   
+        
+        //Properties//
         public string TitlePage { get; set; }
         public bool Status { get; set; }
         public bool Loading { get; set; }
-        public List<League> Leagues { get; set; } = new List<League>();
-        public League league { get; set; } = new League();
-        Competitions League { get; set; } = new Competitions();
+
+        //List model//
+        public List<League> ListLeagues { get; set; } = new List<League>();
+
+        //Models//
+        public League LeagueModel { get; set; } = new League();
+        Competitions Competitions { get; set; } = new Competitions();
+        //Links for navigation//
         public Links Links { get; set; } = new Links();        
+
+        //Commands//
         public DelegateCommand<object> Tap { get; set; }        
         public DelegateCommand GetLeaguesCommand { get; set; }        
-        public DelegateCommand<string> SearchLeagueCommand { get; set; }        
+        public DelegateCommand<string> SearchLeagueCommand { get; set; }   
+        
+        //Interfaces//
         INavigationService navigation;
         IApiServices apiServices;
 
+        //Constructor//
         public ListLeaguesViewModel(IApiServices api, INavigationService navigationService)
         {
             apiServices = api;
@@ -49,7 +61,7 @@ namespace PrismSportApp.ViewModels
             
         }
 
-
+        //Method to retrieve Leagues//
         async Task GetLeagues()
         {
             try
@@ -57,9 +69,10 @@ namespace PrismSportApp.ViewModels
                 Loading = true;
                 Status = false;
                 RestService.For<IApiServices>(Links.url);
-                var response1 = await apiServices.GetLeagues();
-                League = response1;               
-                var show = League.competitions.Where(elemento => elemento.Id == 2000 ||
+                var obtainleagues = await apiServices.GetLeagues();
+                Competitions = obtainleagues;
+                
+                var findleague = Competitions.competitions.Where(elemento => elemento.Id == 2000 ||
                 elemento.Id == 2001 ||
                 elemento.Id == 2021 ||
                 elemento.Id == 2015 ||
@@ -68,7 +81,7 @@ namespace PrismSportApp.ViewModels
                 elemento.Id == 2003 ||
                 elemento.Id == 2002 ||
                 elemento.Id == 2014).ToList();
-                foreach (var item in show)
+                foreach (var item in findleague)
                 {
                     switch (item.Id)
                     {
@@ -173,7 +186,7 @@ namespace PrismSportApp.ViewModels
                             break;
                     }
                 }
-                this.Leagues = show;
+                this.ListLeagues = findleague;
                 Status = true;
                 Loading = false;
             }
@@ -183,28 +196,31 @@ namespace PrismSportApp.ViewModels
                 Debug.WriteLine($"Error en el metodo Leagues: {e.Message}");
             }
         }
+
+        //Method for select a competition//
         async void SelectLeague(object sender)
-        {            
-            this.league = (League)sender;
-            var search = League.competitions.Where(elemento => elemento.Id == league.Id);
+        {
+            this.LeagueModel = sender as League;
+
+            var search = Competitions.competitions.Where(elemento => elemento.Id == LeagueModel.Id).ToList();
+
             if (search.Any())
             {
                 var parameters = new NavigationParameters();
-                parameters.Add("League", league);               
+                parameters.Add("League", LeagueModel);               
                 await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.RelativeOrAbsolute), parameters);
             }
         }
+
+        //Method for Search a competition by name//
         async void SearchLeague(string text)
         {
             if (text.Length >= 1)
             {                
-                var suggestions = Leagues.Where(elem => elem.Name == text).ToList();
-                Leagues.Clear();
-                Leagues = suggestions;
+                var suggestions = ListLeagues.Where(elem => elem.Name == text).ToList();
+                ListLeagues.Clear();
+                ListLeagues = suggestions;
             }
-
-            
-
         }
 
     }
