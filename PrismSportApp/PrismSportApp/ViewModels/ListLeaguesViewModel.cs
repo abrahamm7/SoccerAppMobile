@@ -52,9 +52,13 @@ namespace PrismSportApp.ViewModels
         public ListLeaguesViewModel(IApiServices api, INavigationService navigationService)
         {
             apiServices = api;
-            navigation = navigationService;              
-            Tap = new DelegateCommand<object>(SelectLeague);            
+            navigation = navigationService;  
+            
+
             TitlePage = "Leagues";
+
+
+            Tap = new DelegateCommand<object>(SelectLeague);            
             SearchLeagueCommand = new DelegateCommand<string>(SearchLeague);
             GetLeaguesCommand = new DelegateCommand(async() => await GetLeagues());
             GetLeaguesCommand.Execute();
@@ -67,12 +71,14 @@ namespace PrismSportApp.ViewModels
             try
             {
                 Loading = true;
+
                 Status = false;
+
                 RestService.For<IApiServices>(Links.url);
-                var obtainleagues = await apiServices.GetLeagues();
-                Competitions = obtainleagues;
+
+                var obtainleagues = await apiServices.GetLeagues(); //Request to api//
                 
-                var findleague = Competitions.competitions.Where(elemento => elemento.Id == 2000 ||
+                var findleague = obtainleagues.competitions.Where(elemento => elemento.Id == 2000 ||
                 elemento.Id == 2001 ||
                 elemento.Id == 2021 ||
                 elemento.Id == 2015 ||
@@ -186,29 +192,33 @@ namespace PrismSportApp.ViewModels
                             break;
                     }
                 }
-                this.ListLeagues = findleague;
+                this.ListLeagues = findleague; //Fill list about competitions//
+
                 Status = true;
+
                 Loading = false;
             }
             catch (Exception e)
             {
                 Status = false;
-                Debug.WriteLine($"Error en el metodo Leagues: {e.Message}");
+                Debug.WriteLine($"Error en el metodo Leagues: {e.Message}"); //Error message//
             }
         }
 
         //Method for select a competition//
         async void SelectLeague(object sender)
         {
-            this.LeagueModel = sender as League;
+            this.LeagueModel = sender as League; //Cast object//
 
             var search = Competitions.competitions.Where(elemento => elemento.Id == LeagueModel.Id).ToList();
 
             if (search.Any())
             {
                 var parameters = new NavigationParameters();
-                parameters.Add("League", LeagueModel);               
-                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.RelativeOrAbsolute), parameters);
+                
+                parameters.Add("League", LeagueModel);  //Parameters for passing to another page//
+                
+                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.RelativeOrAbsolute), parameters); //Navigate to another page//
             }
         }
 
@@ -218,7 +228,9 @@ namespace PrismSportApp.ViewModels
             if (text.Length >= 1)
             {                
                 var suggestions = ListLeagues.Where(elem => elem.Name == text).ToList();
+
                 ListLeagues.Clear();
+
                 ListLeagues = suggestions;
             }
         }

@@ -6,6 +6,7 @@
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:materialFrame="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Gamepage"
     Title="{Binding Title}"
@@ -48,70 +49,82 @@
                 CachingStrategy="RecycleElement"
                 IsVisible="{Binding Status}"
                 ItemsSource="{Binding Matches}"
-                SeparatorVisibility="None"
-                Style="{StaticResource List}">
+                RowHeight="180"
+                SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Frame>
-                                    <Grid>
+                                <materialFrame:MaterialFrame>
+                                    <Grid RowSpacing="20">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="100" />
+                                        </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="300" />
                                             <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <StackLayout
+                                        <Label
                                             Grid.Row="0"
                                             Grid.Column="0"
-                                            Grid.ColumnSpan="2">
-                                            <Label Style="{StaticResource Key=GroupLabel}" Text="{Binding Group}" />
-                                        </StackLayout>
-                                        <StackLayout
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding HomeTeam.Name, Mode=TwoWay}"
+                                            TextColor="Black" />
+                                        <Label
                                             Grid.Row="1"
                                             Grid.Column="0"
-                                            HorizontalOptions="Center"
-                                            Orientation="Horizontal"
-                                            VerticalOptions="Center">
-                                            <Svg:SvgCachedImage Source="{Binding LogoHome, Mode=TwoWay}" Style="{StaticResource ImageTeam}" />
-                                            <Label Style="{StaticResource Key=Team}" Text="{Binding HomeTeam.Name, Mode=TwoWay}" />
-                                        </StackLayout>
-                                        <Frame
-                                            Grid.Row="1"
-                                            Grid.Column="1"
-                                            Style="{StaticResource FrameScore}">
-                                            <StackLayout Style="{StaticResource MidStack}">
-                                                <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.HomeTeam}" />
-                                                <Label Style="{StaticResource Key=Score}" Text="-" />
-                                                <Label Style="{StaticResource Key=Score}" Text="{Binding Score.FullTime.AwayTeam}" />
-                                            </StackLayout>
-                                        </Frame>
-                                        <StackLayout
-                                            Grid.Row="1"
-                                            Grid.Column="2"
-                                            HorizontalOptions="Center"
-                                            Orientation="Horizontal"
-                                            VerticalOptions="Center">
-                                            <Svg:SvgCachedImage Source="{Binding LogoAway, Mode=TwoWay}" Style="{StaticResource ImageTeam}" />
-                                            <Label Style="{StaticResource Key=Team}" Text="{Binding AwayTeam.Name, Mode=TwoWay}" />
-                                        </StackLayout>
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding AwayTeam.Name, Mode=TwoWay}"
+                                            TextColor="Black" />
                                         <Label
-                                            Grid.Row="2"
+                                            Grid.Row="0"
                                             Grid.Column="2"
-                                            Style="{StaticResource Status}"
-                                            Text="{Binding Status, Mode=TwoWay}" />
+                                            Text="{Binding Score.FullTime.HomeTeam}"
+                                            TextColor="Black" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Text="{Binding Score.FullTime.AwayTeam}"
+                                            TextColor="Black" />
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="0"
-                                            Style="{StaticResource Date}"
-                                            Text="{Binding UtcDate, Mode=TwoWay}" />
+                                            FontSize="11"
+                                            Text="{Binding UtcDate, StringFormat='{0:MMMM dd yyyy, HH:mm:ss}'}"
+                                            TextColor="Black" />
+                                        <Label
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            FontSize="11"
+                                            Text="{Binding Status}"
+                                            TextColor="Black">
+                                            <Label.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding Status}"
+                                                    TargetType="Label"
+                                                    Value="FINISHED">
+                                                    <Setter Property="TextColor" Value="#90be6d" />
+                                                </DataTrigger>
+                                                <DataTrigger
+                                                    Binding="{Binding Status}"
+                                                    TargetType="Label"
+                                                    Value="POSTPONED">
+                                                    <Setter Property="TextColor" Value="#f94144" />
+                                                </DataTrigger>
+                                                <DataTrigger
+                                                    Binding="{Binding Status}"
+                                                    TargetType="Label"
+                                                    Value="SCHEDULED">
+                                                    <Setter Property="TextColor" Value="#ffbe0b" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
                                     </Grid>
-                                </Frame>
+                                </materialFrame:MaterialFrame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>

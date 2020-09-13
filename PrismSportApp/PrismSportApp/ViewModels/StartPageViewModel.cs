@@ -38,7 +38,7 @@ namespace PrismSportApp.ViewModels
         async Task LoginButton() 
         {
             try
-            {                
+            {               
                 if (!string.IsNullOrEmpty(User.Name) && !string.IsNullOrEmpty(User.Email) && User.Email.Contains("@") && User.Email.Contains(".com"))
                 {
                     sqliteInterface.GetConnection().Insert(User); //Insert user into local db//

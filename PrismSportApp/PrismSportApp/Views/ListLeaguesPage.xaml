@@ -56,7 +56,7 @@
             <CollectionView
                 x:Name="ListLeague"
                 IsVisible="{Binding Status}"
-                ItemsSource="{Binding Leagues}">
+                ItemsSource="{Binding ListLeagues}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>

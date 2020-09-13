@@ -120,8 +120,7 @@ namespace PrismSportApp.ViewModels
             else
             {
                 x.Insert(Table.Team);
-            }
-           
+            }           
            
         }
     }

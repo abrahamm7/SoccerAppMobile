@@ -45,7 +45,7 @@ namespace PrismSportApp.Droid
             ImageCircleRenderer.Init();
             CachedImageRenderer.Init(true);
             SharpnadoInitializer.Initialize();
-            FacebookClientManager.Initialize(this);
+
 
             LoadApplication(new App(new AndroidInitialize()));
         }

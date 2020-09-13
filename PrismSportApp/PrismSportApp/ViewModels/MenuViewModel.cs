@@ -32,9 +32,8 @@ namespace PrismSportApp.ViewModels
             else if(Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
             {
                 sqlite = sqliteInterface;
-                var x = sqlite.GetConnection();
-                var list = x.Query<User>("select * from User");
-                User.Name = list.First().Name;
+                var profile = sqlite.GetConnection().Query<User>("select * from User");               
+                User.Name = profile.First().Name;
             }
            
             
