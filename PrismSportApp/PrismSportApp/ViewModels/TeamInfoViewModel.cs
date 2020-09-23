@@ -63,9 +63,7 @@ namespace PrismSportApp.ViewModels
             GetNews();
 
 
-            //GetTeams();
-            //Follow = new DelegateCommand(SetFavorite);
-            //UnFollow = new DelegateCommand(RemoveFavorite);
+           
       
         }
         
@@ -83,67 +81,5 @@ namespace PrismSportApp.ViewModels
                 Debug.WriteLine(e.Message);
             }
         }
-        //async void GetTeams()
-        //{
-        //    try
-        //    {
-        //        var teamswap = Table.Team.Name;
-
-        //        var localdb = Sqlite.GetConnection();
-        //        var retrieve = localdb.Query<Teamm>($"Select * from Teamm where Name = '{teamswap}'");
-        //        var obtainteam = retrieve.Where(elem => elem.Name == Table.Team.Name).ToList(); //Retrieve data from local db//
-
-        //        if (obtainteam.Count > 0)
-        //        {
-        //            UnFollowVisible = true;
-        //            FollowVisible = false;
-        //        }
-        //        else
-        //        {
-        //            UnFollowVisible = false;
-        //            FollowVisible = true;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debug.WriteLine($"{e.Message}");
-        //    }
-        //}
-
-        ////Save Team into local db//
-        //async void SetFavorite()  
-        //{
-        //    try
-        //    {
-        //        var obtainteams = Sqlite.GetConnection().Query<Teamm>($"Select * from Teamm where Name = '{Table.Team.Name}'"); //Retrieve data from local db//
-
-        //        if (obtainteams.Count == 0)
-        //        {
-        //            Sqlite.GetConnection().Insert(Table.Team);  //Insert team into local db//           
-        //            UnFollowVisible = true;
-        //            FollowVisible = false;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debug.WriteLine($"{e.Message}");
-        //    }
-        //}
-
-        ////Delete team from local db//
-        //async void RemoveFavorite()
-        //{
-        //    try
-        //    {
-
-        //        Sqlite.GetConnection().Query<Teamm>($"Delete from Teamm where Name = '{Table.Team.Name}'"); //Delete data from local db//
-        //        UnFollowVisible = false;
-        //        FollowVisible = true;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debug.WriteLine($"{e.Message}");
-        //    }
-        //}
     }
 }

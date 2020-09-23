@@ -77,30 +77,6 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <!--<Button
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    BackgroundColor="#ffffff"
-                    BorderColor="#000000"
-                    Command="{Binding Follow}"
-                    CornerRadius="10"
-                    FontFamily="sans-serif-condensed"
-                    IsVisible="{Binding FollowVisible}"
-                    Text="Follow"
-                    TextColor="#000000"
-                    Visual="Material" />
-                <Button
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    BackgroundColor="#55a630"
-                    BorderColor="#55a630"
-                    Command="{Binding UnFollow}"
-                    CornerRadius="10"
-                    FontFamily="sans-serif-condensed"
-                    IsVisible="{Binding UnFollowVisible}"
-                    Text="Unfollow"
-                    TextColor="#ffffff"
-                    Visual="Material" />-->
             </Grid>
         </ScrollView>
     </ContentPage.Content>
