@@ -62,9 +62,6 @@ namespace PrismSportApp.ViewModels
             apiServices = api;
             GetNews();
 
-
-           
-      
         }
         
         async Task GetNews()
