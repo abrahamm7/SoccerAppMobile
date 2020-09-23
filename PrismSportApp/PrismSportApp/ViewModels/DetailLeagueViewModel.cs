@@ -79,8 +79,9 @@ namespace PrismSportApp.ViewModels
         {            
             TeamTable = (Table)sender;
             var parameters = new NavigationParameters();
-            parameters.Add("Team", TeamTable);                            
+            parameters.Add("Team", TeamTable);
             await navigation.NavigateAsync(new Uri(NavConstants.TeamInfo, UriKind.Relative), parameters);
+            
         }
     }
 }

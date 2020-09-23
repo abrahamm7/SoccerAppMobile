@@ -55,7 +55,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <materialFrame:MaterialFrame>
+                                <materialFrame:MaterialFrame Elevation="30">
                                     <Grid RowSpacing="20">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="20" />

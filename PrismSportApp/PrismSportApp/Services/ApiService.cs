@@ -122,6 +122,30 @@ namespace PrismSportApp
             }
 
         }
+
+        public async Task<FeedNews> GetNews(string teamname)
+        {
+            try
+            {
+                Links = new Links(teamname);
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                {                    
+                    HttpClient httpClient = new HttpClient();                    
+                    var text = await httpClient.GetStringAsync(Links.NewsApi);
+                    return JsonConvert.DeserializeObject<FeedNews>(text);
+                }
+                else
+                {
+                    await PageDialogService.DisplayAlertAsync("Advice", "Not connection to internet", "Ok");
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }
 

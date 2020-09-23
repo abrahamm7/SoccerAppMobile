@@ -23,14 +23,12 @@ namespace PrismSportApp
     {
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-       
-
         public ISqliteInterface sqlite = new SqliteModel();
+        
         protected override void OnInitialized()
         {
             
             InitializeComponent();
-            //Shorts();
             if (Device.RuntimePlatform == Device.UWP)
             {
                 NavigationService.NavigateAsync(new Uri(NavConstants.MasterMenu, UriKind.Relative));

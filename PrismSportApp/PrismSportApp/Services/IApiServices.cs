@@ -14,7 +14,8 @@ namespace PrismSportApp
         Task<Competitions> GetLeagues();        
         Task<LeagueChampions> GetLeagues(int id);        
         Task<Standings> GetStandings(int id);
-        Task<Fixtures> GetFixtures(int id);        
+        Task<Fixtures> GetFixtures(int id);
+        Task<FeedNews> GetNews(string teamname);
         
     }
 }

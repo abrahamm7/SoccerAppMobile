@@ -35,7 +35,7 @@ namespace PrismSportApp.ViewModels
 
         //Models//
         public League LeagueModel { get; set; } = new League();
-        Competitions Competitions { get; set; } = new Competitions();
+
         //Links for navigation//
         public Links Links { get; set; } = new Links();        
 
@@ -210,16 +210,11 @@ namespace PrismSportApp.ViewModels
         {
             this.LeagueModel = sender as League; //Cast object//
 
-            var search = Competitions.competitions.Where(elemento => elemento.Id == LeagueModel.Id).ToList();
+            var parameters = new NavigationParameters();
 
-            if (search.Any())
-            {
-                var parameters = new NavigationParameters();
-                
-                parameters.Add("League", LeagueModel);  //Parameters for passing to another page//
-                
-                await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague , UriKind.RelativeOrAbsolute), parameters); //Navigate to another page//
-            }
+            parameters.Add("League", LeagueModel);  //Parameters for passing to another page//
+
+            await navigation.NavigateAsync(new Uri(NavConstants.DetailLeague, UriKind.RelativeOrAbsolute), parameters); //Navigate to another page//
         }
 
         //Method for Search a competition by name//

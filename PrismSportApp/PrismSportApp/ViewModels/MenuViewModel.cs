@@ -16,7 +16,7 @@ using Xamarin.Forms;
 
 namespace PrismSportApp.ViewModels
 {
-    public class MenuViewModel: BaseViewModel
+    public class MenuViewModel: BaseViewModel, INavigatedAware
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public DelegateCommand<string> onNavigate { get; set; }       

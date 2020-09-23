@@ -14,6 +14,7 @@ namespace PrismSportApp.Models
         public string LeaguesChampions { get; set; }
         public string Team { get; set; }
         public string LeagueStan { get; set; }
+        public string NewsApi { get; set; }
         public Links(int id)
         {
             url = "https://www.football-data.org/";
@@ -21,6 +22,7 @@ namespace PrismSportApp.Models
             Team = $"http://api.football-data.org/v2/teams/{id}";
             LeagueStan = $"https://api.football-data.org/v2/competitions/{id}/standings?standing";
             LeaguesChampions = $"http://api.football-data.org/v2/competitions/{id}";
+           
         }
         public Links()
         {
@@ -29,6 +31,10 @@ namespace PrismSportApp.Models
             Champions = $"http://api.football-data.org/v2/competitions/2001/matches?matchday";
             Bundesliga = $"http://api.football-data.org/v2/competitions/2002/matches?matchday";
             Leagues = $"http://api.football-data.org/v2/competitions";
+        }
+        public Links(string name)
+        {
+            NewsApi = $"https://newsapi.org/v2/everything?q={name}&apiKey=2b6d74babe00414b91370d5e0bd85b35";
         }
        
 

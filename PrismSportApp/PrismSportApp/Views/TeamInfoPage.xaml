@@ -6,55 +6,101 @@
     xmlns:Micro1="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     xmlns:Svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:materialFrame="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="InfoPage"
+    Title="News"
     BackgroundColor="White"
     mc:Ignorable="d">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding Favorite}" IconImageSource="star.png" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <Grid>
+            <Grid RowSpacing="5">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="135" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="600" />
                 </Grid.RowDefinitions>
-                <yummy:PancakeView
+                <Svg:SvgCachedImage
                     Grid.Row="0"
-                    Grid.Column="0"
-                    Style="{StaticResource SpecialStack}">
-                    <StackLayout HorizontalOptions="Center">
-                        <Svg:SvgCachedImage Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}" Style="{StaticResource SvgImage}" />
-                        <Label Style="{StaticResource Key=TitlesTeamName}" Text="{Binding Table.Team.Name, Mode=TwoWay}">
-                            <Label.TextColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="UWP" Value="Black" />
-                                    <On Platform="Android" Value="White" />
-                                </OnPlatform>
-                            </Label.TextColor>
-                        </Label>
-                    </StackLayout>
-                    <yummy:PancakeView.BackgroundColor>
+                    Grid.RowSpan="1"
+                    Grid.Column="1"
+                    Aspect="AspectFit"
+                    HeightRequest="100"
+                    Source="{Binding Table.Team.CrestUrl, Mode=TwoWay}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontFamily="sans-serif-condensed"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Table.Team.Name, Mode=TwoWay}">
+                    <Label.TextColor>
                         <OnPlatform x:TypeArguments="Color">
-                            <On Platform="UWP" Value="White" />
-                            <On Platform="Android" Value="#303F9F" />
+                            <On Platform="UWP" Value="#000000" />
+                            <On Platform="Android" Value="#000000" />
                         </OnPlatform>
-                    </yummy:PancakeView.BackgroundColor>
-                </yummy:PancakeView>
-                <StackLayout Grid.Row="1" Spacing="20">
-                    <Label Style="{StaticResource TitleCharts}" Text="Match Stats" />
-                    <Micro1:ChartView Chart="{Binding RadielGaugeChartSample}" Style="{StaticResource Charts}" />
-                </StackLayout>
-                <StackLayout Grid.Row="2">
-                    <Label Style="{StaticResource TitleCharts}" Text="Goals in season" />
-                    <Micro1:ChartView Chart="{Binding RadielGaugeGoals}" Style="{StaticResource Charts}" />
-                </StackLayout>
+                    </Label.TextColor>
+                </Label>
+                <CollectionView
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    ItemsSource="{Binding FeedNews}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="1" Padding="15">
+                                <materialFrame:MaterialFrame
+                                    CornerRadius="10"
+                                    Elevation="25"
+                                    HeightRequest="280"
+                                    LightThemeBackgroundColor="#ffffff">
+                                    <StackLayout>
+                                        <Svg:SvgCachedImage
+                                            Aspect="AspectFill"
+                                            HeightRequest="200"
+                                            Source="{Binding UrlToImage}" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding Title}"
+                                            TextColor="#000000" />
+                                    </StackLayout>
+                                </materialFrame:MaterialFrame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!--<Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    BackgroundColor="#ffffff"
+                    BorderColor="#000000"
+                    Command="{Binding Follow}"
+                    CornerRadius="10"
+                    FontFamily="sans-serif-condensed"
+                    IsVisible="{Binding FollowVisible}"
+                    Text="Follow"
+                    TextColor="#000000"
+                    Visual="Material" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    BackgroundColor="#55a630"
+                    BorderColor="#55a630"
+                    Command="{Binding UnFollow}"
+                    CornerRadius="10"
+                    FontFamily="sans-serif-condensed"
+                    IsVisible="{Binding UnFollowVisible}"
+                    Text="Unfollow"
+                    TextColor="#ffffff"
+                    Visual="Material" />-->
             </Grid>
         </ScrollView>
     </ContentPage.Content>
