@@ -26968,13 +26968,16 @@ namespace PrismSportApp.Droid
 			public const int icons8_plus = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int icons8_stadium_16 = 2131165375;
+			public const int icons8_stadium = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int icons8_stadium_32 = 2131165376;
+			public const int icons8_stadium_16 = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int icons8_star = 2131165377;
+			public const int icons8_stadium_32 = 2131165377;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int icons8_star = 2131165378;
 			
 			// aapt resource value: 0x7F070099
 			public const int ic_mtrl_chip_checked_black = 2131165337;
@@ -27075,158 +27078,158 @@ namespace PrismSportApp.Droid
 			// aapt resource value: 0x7F0700B9
 			public const int ic_plugin_sc_update = 2131165369;
 			
-			// aapt resource value: 0x7F0700C2
-			public const int instagram = 2131165378;
-			
 			// aapt resource value: 0x7F0700C3
-			public const int LaLiga = 2131165379;
+			public const int instagram = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int ligue1 = 2131165380;
+			public const int LaLiga = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int Liverpool_FC = 2131165381;
+			public const int ligue1 = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int MaterialActivityIndicatorBackground = 2131165382;
+			public const int Liverpool_FC = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int MaterialProgressBar = 2131165383;
+			public const int MaterialActivityIndicatorBackground = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int messenger_bubble_large_blue = 2131165384;
+			public const int MaterialProgressBar = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int messenger_bubble_large_white = 2131165385;
+			public const int messenger_bubble_large_blue = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int messenger_bubble_small_blue = 2131165386;
+			public const int messenger_bubble_large_white = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int messenger_bubble_small_white = 2131165387;
+			public const int messenger_bubble_small_blue = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int messenger_button_blue_bg_round = 2131165388;
+			public const int messenger_bubble_small_white = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int messenger_button_blue_bg_selector = 2131165389;
+			public const int messenger_button_blue_bg_round = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int messenger_button_send_round_shadow = 2131165390;
+			public const int messenger_button_blue_bg_selector = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int messenger_button_white_bg_round = 2131165391;
+			public const int messenger_button_send_round_shadow = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int messenger_button_white_bg_selector = 2131165392;
+			public const int messenger_button_white_bg_round = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int mtrl_snackbar_background = 2131165393;
+			public const int messenger_button_white_bg_selector = 2131165393;
 			
 			// aapt resource value: 0x7F0700D2
-			public const int mtrl_tabs_default_indicator = 2131165394;
+			public const int mtrl_snackbar_background = 2131165394;
 			
 			// aapt resource value: 0x7F0700D3
-			public const int navigation_empty_icon = 2131165395;
+			public const int mtrl_tabs_default_indicator = 2131165395;
 			
 			// aapt resource value: 0x7F0700D4
-			public const int Next = 2131165396;
+			public const int navigation_empty_icon = 2131165396;
 			
 			// aapt resource value: 0x7F0700D5
-			public const int notification_action_background = 2131165397;
+			public const int Next = 2131165397;
 			
 			// aapt resource value: 0x7F0700D6
-			public const int notification_bg = 2131165398;
+			public const int notification_action_background = 2131165398;
 			
 			// aapt resource value: 0x7F0700D7
-			public const int notification_bg_low = 2131165399;
+			public const int notification_bg = 2131165399;
 			
 			// aapt resource value: 0x7F0700D8
-			public const int notification_bg_low_normal = 2131165400;
+			public const int notification_bg_low = 2131165400;
 			
 			// aapt resource value: 0x7F0700D9
-			public const int notification_bg_low_pressed = 2131165401;
+			public const int notification_bg_low_normal = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int notification_bg_normal = 2131165402;
+			public const int notification_bg_low_pressed = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int notification_bg_normal_pressed = 2131165403;
+			public const int notification_bg_normal = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int notification_icon_background = 2131165404;
+			public const int notification_bg_normal_pressed = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int notification_template_icon_bg = 2131165405;
+			public const int notification_icon_background = 2131165405;
 			
 			// aapt resource value: 0x7F0700DE
-			public const int notification_template_icon_low_bg = 2131165406;
+			public const int notification_template_icon_bg = 2131165406;
 			
 			// aapt resource value: 0x7F0700DF
-			public const int notification_tile_bg = 2131165407;
+			public const int notification_template_icon_low_bg = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int notify_panel_notification_icon_bg = 2131165408;
+			public const int notification_tile_bg = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int players = 2131165409;
+			public const int notify_panel_notification_icon_bg = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int plusBlack = 2131165410;
+			public const int players = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int portugal = 2131165411;
+			public const int plusBlack = 2131165411;
 			
 			// aapt resource value: 0x7F0700E4
-			public const int PremierLeague = 2131165412;
+			public const int portugal = 2131165412;
 			
 			// aapt resource value: 0x7F0700E5
-			public const int Prev = 2131165413;
+			public const int PremierLeague = 2131165413;
 			
 			// aapt resource value: 0x7F0700E6
-			public const int remove = 2131165414;
+			public const int Prev = 2131165414;
 			
 			// aapt resource value: 0x7F0700E7
-			public const int SeriaA = 2131165415;
+			public const int remove = 2131165415;
 			
 			// aapt resource value: 0x7F0700E8
-			public const int setti = 2131165416;
+			public const int SeriaA = 2131165416;
 			
 			// aapt resource value: 0x7F0700E9
-			public const int share = 2131165417;
-			
-			// aapt resource value: 0x7F0700EB
-			public const int Splashfutbol = 2131165419;
+			public const int setti = 2131165417;
 			
 			// aapt resource value: 0x7F0700EA
-			public const int splash_background = 2131165418;
+			public const int share = 2131165418;
 			
 			// aapt resource value: 0x7F0700EC
-			public const int star = 2131165420;
+			public const int Splashfutbol = 2131165420;
+			
+			// aapt resource value: 0x7F0700EB
+			public const int splash_background = 2131165419;
 			
 			// aapt resource value: 0x7F0700ED
-			public const int taza = 2131165421;
+			public const int star = 2131165421;
 			
 			// aapt resource value: 0x7F0700EE
-			public const int tooltip_frame_dark = 2131165422;
+			public const int taza = 2131165422;
 			
 			// aapt resource value: 0x7F0700EF
-			public const int tooltip_frame_light = 2131165423;
+			public const int tooltip_frame_dark = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int uefachampions = 2131165424;
+			public const int tooltip_frame_light = 2131165424;
 			
 			// aapt resource value: 0x7F0700F1
-			public const int Up = 2131165425;
+			public const int uefachampions = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int user = 2131165426;
+			public const int Up = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int user16px = 2131165427;
+			public const int user = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int worldcup = 2131165428;
+			public const int user16px = 2131165428;
+			
+			// aapt resource value: 0x7F0700F5
+			public const int worldcup = 2131165429;
 			
 			static Drawable()
 			{

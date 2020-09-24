@@ -33,6 +33,7 @@ namespace PrismSportApp.ViewModels
         //Commands//
         public DelegateCommand Follow { get; set; }
         public DelegateCommand UnFollow { get; set; }
+        public DelegateCommand ShareNews { get; set; }
 
         //Properties//   
         public bool UnFollowVisible { get; set; }
@@ -53,23 +54,24 @@ namespace PrismSportApp.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             Table = parameters.GetValue<Table>("Team");
+            GetNews(Table.Team.Name);
         }
 
         //Constructor//
         public TeamInfoViewModel(ISqliteInterface sqliteInterface, IApiServices api)
         {
             Sqlite = sqliteInterface;
-            apiServices = api;
-            GetNews();
+            apiServices = api;           
 
         }
         
-        async Task GetNews()
+        //Get the latest news about team//
+        async Task GetNews(string teamname)
         {
             try
             {
                 RestService.For<IApiServices>(Links.url);
-                var news = await apiServices.GetNews("Barca");
+                var news = await apiServices.GetNews(teamname);
                 FeedNews = news.Articles.ToList();
                 
             }

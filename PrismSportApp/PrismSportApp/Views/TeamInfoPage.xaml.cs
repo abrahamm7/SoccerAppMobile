@@ -14,7 +14,7 @@ namespace PrismSportApp.Views
     {
         public TeamInfoPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
     }
 }
