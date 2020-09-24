@@ -2,10 +2,7 @@
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Android.Content;
 using Prism;
 using Prism.Ioc;
 using ImageCircle.Forms.Plugin.Droid;
@@ -13,12 +10,10 @@ using FFImageLoading.Svg.Forms;
 using Xamarin.Forms;
 using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
-using CarouselView.FormsPlugin.Android;
 using PanCardView.Droid;
-using Plugin.AppShortcuts;
 using IconEntry.FormsPlugin.Android;
 using Sharpnado.Presentation.Forms.Droid;
-using Plugin.FacebookClient;
+using Plugin.CurrentActivity;
 
 namespace PrismSportApp.Droid
 {
@@ -45,6 +40,7 @@ namespace PrismSportApp.Droid
             ImageCircleRenderer.Init();
             CachedImageRenderer.Init(true);
             SharpnadoInitializer.Initialize();
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
 
             LoadApplication(new App(new AndroidInitialize()));

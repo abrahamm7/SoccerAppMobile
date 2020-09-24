@@ -70,7 +70,7 @@ namespace PrismSportApp
             
             //Services//
             containerRegistry.Register<IApiServices, ApiService>();
-            containerRegistry.Register<ISqliteInterface, SqliteModel>();
+            containerRegistry.Register<ISqliteInterface, SqliteModel>();            
         }        
 
     }

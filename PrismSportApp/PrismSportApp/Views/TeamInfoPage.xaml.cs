@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrismSportApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace PrismSportApp.Views
     {
         public TeamInfoPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PrismSportApp.Services;
 
 namespace PrismSportApp.Views
 {
