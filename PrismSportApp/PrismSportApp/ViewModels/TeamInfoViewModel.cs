@@ -18,6 +18,9 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Prism.Common;
 using Refit;
+using Xamarin.Essentials;
+using Plugin.Share.Abstractions;
+using Plugin.Share;
 
 namespace PrismSportApp.ViewModels
 {
@@ -33,7 +36,7 @@ namespace PrismSportApp.ViewModels
         //Commands//
         public DelegateCommand Follow { get; set; }
         public DelegateCommand UnFollow { get; set; }
-        public DelegateCommand ShareNews { get; set; }
+        public DelegateCommand<object> ShareNews { get; set; }
 
         //Properties//   
         public bool UnFollowVisible { get; set; }
@@ -61,7 +64,8 @@ namespace PrismSportApp.ViewModels
         public TeamInfoViewModel(ISqliteInterface sqliteInterface, IApiServices api)
         {
             Sqlite = sqliteInterface;
-            apiServices = api;           
+            apiServices = api;
+            ShareNews = new DelegateCommand<object>(ShareNewsTitle);
 
         }
         
@@ -79,6 +83,13 @@ namespace PrismSportApp.ViewModels
             {
                 Debug.WriteLine(e.Message);
             }
+        }
+
+        //Share news//
+        async void ShareNewsTitle(object obj) 
+        {
+            var news = obj as Article;
+            await Share.RequestAsync(new ShareTextRequest{ Title = $"{news.Title}", Text = $"{news.Url}" });
         }
     }
 }

@@ -102,6 +102,7 @@
                     </StackLayout>
                 </materialFrame:MaterialFrame>
                 <CollectionView
+                    x:Name="FeedNews"
                     Grid.Row="4"
                     Grid.RowSpan="5"
                     Grid.Column="0"
@@ -131,7 +132,7 @@
                                             HorizontalOptions="EndAndExpand"
                                             Source="@drawable/share.svg">
                                             <Svg:SvgCachedImage.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding ShareNews}" CommandParameter="{Binding .}" />
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.ShareNews, Source={x:Reference FeedNews}}" CommandParameter="{Binding .}" />
                                             </Svg:SvgCachedImage.GestureRecognizers>
                                         </Svg:SvgCachedImage>
                                     </StackLayout>
